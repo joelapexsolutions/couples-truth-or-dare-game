@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couples Truth or Dare - Strengthen Your Relationship Through Play</title>
+    <meta name="description" content="Discover a fun, romantic, and sometimes naughty app that helps couples deepen their connection through interactive games and challenges.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Couples Truth or Dare Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#games">Our Games</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#download" class="nav-cta">Download Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Reignite Your Passion, Strengthen Your Bond</h1>
+                <p>Experience four exciting ways to connect with your partner through fun, intimate challenges and conversations.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-heart-pulse"></i>
+                        <p><strong>85%</strong> of couples report improved intimacy after playing together</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-comments"></i>
+                        <p><strong>73%</strong> discovered new things about their partner</p>
+                    </div>
+                </div>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i>
+                        <div class="app-button-text">
+                            <span>GET IT ON</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="app-button secondary">
+                        <i class="fas fa-qrcode"></i>
+                        <div class="app-button-text">
+                            <span>SCAN</span>
+                            <strong>QR Code</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-device.png" alt="Couples Truth or Dare App" class="device-mockup">
+                <div class="hero-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Showcase Section -->
+    <section class="games" id="games">
+        <div class="container">
+            <div class="section-header">
+                <h2>Four Ways to Connect</h2>
+                <p>Each game offers a unique way to strengthen your relationship. Explore them all!</p>
+            </div>
+            <div class="games-grid">
+                <!-- Truth or Dare Game Card -->
+                <div class="game-card" id="truthDareCard">
+                    <div class="game-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Truth or Dare</h3>
+                    <p>From innocent questions to spicy challenges, explore each other in new ways</p>
+                    <button class="try-button" data-game="truthDare">Try Now</button>
+                </div>
+                
+                <!-- Couples Tasks Card -->
+                <div class="game-card" id="couplesTasksCard">
+                    <div class="game-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Couples Tasks</h3>
+                    <p>Complete romantic and passionate tasks together to deepen your connection</p>
+                    <button class="try-button" data-game="couplesTasks">Try Now</button>
+                </div>
+                
+                <!-- Who's More Likely Card -->
+                <div class="game-card" id="whosMoreCard">
+                    <div class="game-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Who's More Likely?</h3>
+                    <p>Discover surprising truths about your relationship dynamics and personalities</p>
+                    <button class="try-button" data-game="whosMore">Try Now</button>
+                </div>
+                
+                <!-- Couples Intimacy Profile Card -->
+                <div class="game-card" id="intimacyProfileCard">
+                    <div class="game-icon">
+                        <i class="fas fa-fire-flame-curved"></i>
+                    </div>
+                    <h3>Couples Intimacy Profile</h3>
+                    <p>Discover your unique romantic and erotic connection profile</p>
+                    <button class="try-button" data-game="intimacyProfile">Try Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <!-- Truth or Dare Demo -->
+            <div class="demo-container active" id="truthDareDemo">
+                <div class="demo-header">
+                    <h2>Truth or Dare</h2>
+                    <p>Experience heart-racing questions and exciting challenges</p>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-controls">
+                        <div class="level-selector">
+                            <button class="level-button active" data-level="Soft">Soft</button>
+                            <button class="level-button" data-level="Sensual">Sensual</button>
+                            <button class="level-button locked" data-level="Hot">Hot</button>
+                            <button class="level-button locked" data-level="Explicit">Explicit</button>
+                        </div>
+                        <div class="choice-buttons">
+                            <button class="choice-button" id="truthButton">Truth</button>
+                            <button class="choice-button" id="dareButton">Dare</button>
+                        </div>
+                    </div>
+                    <div class="demo-display">
+                        <div class="demo-card">
+                            <p id="demoQuestion">Click "Truth" or "Dare" to get started!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Couples Tasks Demo -->
+            <div class="demo-container" id="couplesTasksDemo">
+                <div class="demo-header">
+                    <h2>Couples Tasks</h2>
+                    <p>Complete tasks together to build passion and romantic connection</p>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-controls">
+                        <div class="type-selector">
+                            <button class="type-button active" data-type="romantic">Romantic</button>
+                            <button class="type-button" data-type="passion">Passion</button>
+                        </div>
+                    </div>
+                    <div class="demo-display">
+                        <div class="demo-card">
+                            <p id="taskDisplay">Select a task type to get started!</p>
+                        </div>
+                        <div class="gauges-container">
+                            <div class="gauge">
+                                <h4>Romantic Connection</h4>
+                                <div class="gauge-visualization">
+                                    <div class="gauge-bar" id="romanticGauge"></div>
+                                </div>
+                                <p class="gauge-level" id="romanticLevel">Blooming</p>
+                            </div>
+                            <div class="gauge">
+                                <h4>Passion Connection</h4>
+                                <div class="gauge-visualization">
+                                    <div class="gauge-bar" id="passionGauge"></div>
+                                </div>
+                                <p class="gauge-level" id="passionLevel">Spark</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Who's More Likely Demo -->
+            <div class="demo-container" id="whosMoreDemo">
+                <div class="demo-header">
+                    <h2>Who's More Likely?</h2>
+                    <p>Discover surprising truths about each other</p>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-display">
+                        <div class="demo-card">
+                            <p id="whosMoreQuestion">Who's more likely to forget an important date?</p>
+                            <div class="whosmore-buttons">
+                                <button class="person-button" id="himButton">Him</button>
+                                <button class="person-button" id="herButton">Her</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-preview">
+                        <div class="profile-card">
+                            <h4>After answering questions, you'll discover:</h4>
+                            <ul>
+                                <li>Your relationship dynamic</li>
+                                <li>Who's more romantic, adventurous, or responsible</li>
+                                <li>Surprising insights about your personalities</li>
+                                <li>How well you truly know each other</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intimacy Profile Demo -->
+            <div class="demo-container" id="intimacyProfileDemo">
+                <div class="demo-header">
+                    <h2>Couples Intimacy Profile</h2>
+                    <p>Discover your unique relationship balance</p>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-display">
+                        <div class="profile-gauges">
+                            <div class="profile-gauge">
+                                <h4>Erotic Connection</h4>
+                                <div class="gauge-visualization circular">
+                                    <div class="gauge-circle" id="eroticGauge"></div>
+                                    <div class="gauge-marker"></div>
+                                </div>
+                                <p class="gauge-level">Currently: <span id="eroticLevel">Novice</span></p>
+                            </div>
+                            <div class="profile-gauge">
+                                <h4>Romantic Connection</h4>
+                                <div class="gauge-visualization circular">
+                                    <div class="gauge-circle" id="romanticProfileGauge"></div>
+                                    <div class="gauge-marker"></div>
+                                </div>
+                                <p class="gauge-level">Currently: <span id="romanticProfileLevel">Casual</span></p>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <p>Complete the assessment in the app to discover your unique intimacy profile!</p>
+                            <p>Learn about your relationship strengths and growth opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="download-prompt">
+            <p>Ready for the full experience?</p>
+            <a href="#download" class="download-button">Download the App</a>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Play Together?</h2>
+                <p>Couples who play together, stay together</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Improved Communication</h3>
+                    <p>73% of couples report better communication after playing relationship games regularly</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Rekindled Passion</h3>
+                    <p>8 out of 10 couples experience a noticeable increase in physical intimacy</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-unlock"></i>
+                    </div>
+                    <h3>Deeper Understanding</h3>
+                    <p>Discover new sides of your partner that bring you closer together</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Emotional Connection</h3>
+                    <p>Create shared experiences that strengthen your emotional bond</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Break the Routine</h3>
+                    <p>Add excitement and novelty to your relationship with fresh interactions</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-heart"></i>
+                    </div>
+                    <h3>Relationship Resilience</h3>
+                    <p>Couples who play together are 65% more likely to overcome challenges</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hear from Our Couples</h2>
+                <p>Real stories from real relationships transformed</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"After 8 years together, we thought we knew everything about each other. This app proved us wrong in the best way possible! We've reconnected on a whole new level."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/couple1.jpg" alt="Jessica & Mike">
+                        </div>
+                        <div class="author-info">
+                            <h4>Jessica & Mike</h4>
+                            <p>Together for 8 years</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The Couples Intimacy Profile was eye-opening! We realized we had different expectations that we never discussed. Now we're more in sync than ever."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/couple2.jpg" alt="David & Emma">
+                        </div>
+                        <div class="author-info">
+                            <h4>David & Emma</h4>
+                            <p>Together for 3 years</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"As newlyweds, we were looking for ways to keep the spark alive. The Couples Tasks game has become our favorite weekend activity!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/couple3.jpg" alt="James & Sofia">
+                        </div>
+                        <div class="author-info">
+                            <h4>James & Sofia</h4>
+                            <p>Together for 1 year</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-control prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+                <button class="testimonial-control next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-content">
+                <h2>Ready to Transform Your Relationship?</h2>
+                <p>Download now and begin your journey to a deeper connection</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i>
+                        <div class="app-button-text">
+                            <span>GET IT ON</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                </div>
+                <div class="download-features">
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <p>4 unique relationship games</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <p>Regular updates with new content</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <p>Designed for all relationship stages</p>
+                    </div>
+                </div>
+            </div>
+            <div class="download-image">
+                <img src="images/app-showcase.png" alt="Couples Truth or Dare App Showcase">
+                <div class="download-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Couples Truth or Dare Logo">
+                </div>
+                <div class="footer-links">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#games">Our Games</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="https://github.com/joelapexsolutions/couples-truth-or-dare-android">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Couples Truth or Dare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Premium Feature Modal -->
+    <div class="modal" id="premiumModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Premium Feature</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="premium-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <p>This feature is part of the premium experience. Download the full app to enjoy:</p>
+                <ul class="premium-features">
+                    <li><i class="fas fa-check"></i> Hot and Explicit levels</li>
+                    <li><i class="fas fa-check"></i> Couples Tasks game</li>
+                    <li><i class="fas fa-check"></i> Intimacy Profile assessment</li>
+                    <li><i class="fas fa-check"></i> Extended game sessions</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="#download" class="modal-button">Download Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
