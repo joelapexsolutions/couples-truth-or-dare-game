@@ -29,6 +29,12 @@ function initWebsite() {
     
     // Add scroll animations
     initScrollAnimations();
+    
+    // Initialize screenshots tabs
+    initScreenshotsTabs();
+    
+    // Initialize screenshot carousel
+    initScreenshotCarousel();
 }
 
 /**
@@ -641,4 +647,64 @@ function initScrollAnimations() {
     animateElements.forEach(element => {
         observer.observe(element);
     });
+}
+
+/**
+ * Initialize screenshots tabs functionality
+ */
+function initScreenshotsTabs() {
+    const tabs = document.querySelectorAll('.screenshot-tab');
+    const items = document.querySelectorAll('.screenshot-item');
+    
+    if (tabs.length && items.length) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Get selected category
+                const category = this.getAttribute('data-tab');
+                
+                // Filter items
+                items.forEach(item => {
+                    const itemCategories = item.getAttribute('data-category').split(' ');
+                    if (category === 'all' || itemCategories.includes(category)) {
+                        item.style.display = 'block';
+                        // Add fade-in animation
+                        item.style.animation = 'fadeIn 0.5s ease forwards';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+}
+
+/**
+ * Initialize screenshot carousel
+ */
+function initScreenshotCarousel() {
+    const carousel = document.querySelector('.screenshot-carousel');
+    if (carousel) {
+        // Auto-scroll the carousel
+        setInterval(() => {
+            carousel.scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+            
+            // Reset scroll if reached the end
+            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 100) {
+                setTimeout(() => {
+                    carousel.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }, 1000);
+            }
+        }, 5000);
+    }
 }
