@@ -1646,3 +1646,44 @@ button {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* Additional CSS for the repositioned demo controls */
+
+/* Add spacing between the image and controls */
+.demo-screenshot {
+    margin-bottom: 25px;
+}
+
+/* Add spacing between controls and demo card */
+.demo-controls {
+    margin-bottom: 25px;
+}
+
+/* Ensure consistent spacing in the demo content */
+.demo-display {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Additional styling for better mobile appearance */
+@media (max-width: 768px) {
+    .level-selector, 
+    .type-selector {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .level-button, 
+    .type-button {
+        flex: 1;
+        min-width: 80px;
+    }
+    
+    .choice-buttons {
+        width: 100%;
+    }
+    
+    .choice-button {
+        flex: 1;
+    }
+}
