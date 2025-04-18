@@ -123,15 +123,20 @@
     </section>
 
     <!-- Interactive Demo Section -->
-    <section class="demo-section" id="demo">
-        <div class="container">
-            <!-- Truth or Dare Demo -->
-            <div class="demo-container active" id="truthDareDemo">
-                <div class="demo-header">
-                    <h2>Truth or Dare</h2>
-                    <p>Experience heart-racing questions and exciting challenges</p>
-                </div>
-                <div class="demo-content">
+<section class="demo-section" id="demo">
+    <div class="container">
+        <!-- Truth or Dare Demo -->
+        <div class="demo-container active" id="truthDareDemo">
+            <div class="demo-header">
+                <h2>Truth or Dare</h2>
+                <p>Experience heart-racing questions and exciting challenges</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-display">
+                    <!-- Image first -->
+                    <img src="images/TruthorDaresensual.png" alt="Truth or Dare Levels" class="demo-screenshot">
+                    
+                    <!-- Controls below the image -->
                     <div class="demo-controls">
                         <div class="level-selector">
                             <button class="level-button active" data-level="Soft">Soft</button>
@@ -144,125 +149,132 @@
                             <button class="choice-button" id="dareButton">Dare</button>
                         </div>
                     </div>
-                    <div class="demo-display">
-                        <img src="images/TruthorDaresensual.png" alt="Truth or Dare Levels" class="demo-screenshot">
-                        <div class="demo-card">
-                            <p id="demoQuestion">Click "Truth" or "Dare" to get started!</p>
-                        </div>
+                    
+                    <!-- Demo card below the controls -->
+                    <div class="demo-card">
+                        <p id="demoQuestion">Click "Truth" or "Dare" to get started!</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Couples Tasks Demo -->
-            <div class="demo-container" id="couplesTasksDemo">
-                <div class="demo-header">
-                    <h2>Couples Tasks</h2>
-                    <p>Complete tasks together to build passion and romantic connection</p>
-                </div>
-                <div class="demo-content">
+        <!-- Couples Tasks Demo -->
+        <div class="demo-container" id="couplesTasksDemo">
+            <div class="demo-header">
+                <h2>Couples Tasks</h2>
+                <p>Complete tasks together to build passion and romantic connection</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-display">
+                    <!-- Image first -->
+                    <img src="images/CouplesTasksgenerator.png" alt="Couples Tasks Generator" class="demo-screenshot">
+                    
+                    <!-- Controls below the image -->
                     <div class="demo-controls">
                         <div class="type-selector">
                             <button class="type-button active" data-type="romantic">Romantic</button>
                             <button class="type-button" data-type="passion">Passion</button>
                         </div>
                     </div>
-                    <div class="demo-display">
-                        <img src="images/CouplesTasksgenerator.png" alt="Couples Tasks Generator" class="demo-screenshot">
-                        <div class="demo-card">
-                            <p id="taskDisplay">Select a task type to get started!</p>
-                        </div>
-                        <div class="gauges-container">
-                            <div class="gauge">
-                                <h4>Romantic Connection</h4>
-                                <div class="gauge-visualization">
-                                    <div class="gauge-bar" id="romanticGauge"></div>
-                                </div>
-                                <p class="gauge-level" id="romanticLevel">Blooming</p>
-                            </div>
-                            <div class="gauge">
-                                <h4>Passion Connection</h4>
-                                <div class="gauge-visualization">
-                                    <div class="gauge-bar" id="passionGauge"></div>
-                                </div>
-                                <p class="gauge-level" id="passionLevel">Spark</p>
-                            </div>
-                        </div>
+                    
+                    <!-- Demo card below the controls -->
+                    <div class="demo-card">
+                        <p id="taskDisplay">Select a task type to get started!</p>
                     </div>
-                </div>
-            </div>
-
-            <!-- Who's More Likely Demo -->
-            <div class="demo-container" id="whosMoreDemo">
-                <div class="demo-header">
-                    <h2>Who's More Likely?</h2>
-                    <p>Discover surprising truths about each other</p>
-                </div>
-                <div class="demo-content">
-                    <div class="demo-display">
-                        <img src="images/Whosmore.png" alt="Who's More Likely" class="demo-screenshot">
-                        <div class="demo-card">
-                            <p id="whosMoreQuestion">Who's more likely to forget an important date?</p>
-                            <div class="whosmore-buttons">
-                                <button class="person-button" id="himButton">Him</button>
-                                <button class="person-button" id="herButton">Her</button>
+                    
+                    <div class="gauges-container">
+                        <div class="gauge">
+                            <h4>Romantic Connection</h4>
+                            <div class="gauge-visualization">
+                                <div class="gauge-bar" id="romanticGauge"></div>
                             </div>
+                            <p class="gauge-level" id="romanticLevel">Blooming</p>
                         </div>
-                    </div>
-                    <div class="profile-preview">
-                        <div class="profile-card">
-                            <h4>After answering questions, you'll discover:</h4>
-                            <ul>
-                                <li>Your relationship dynamic</li>
-                                <li>Who's more romantic, adventurous, or responsible</li>
-                                <li>Surprising insights about your personalities</li>
-                                <li>How well you truly know each other</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Intimacy Profile Demo -->
-            <div class="demo-container" id="intimacyProfileDemo">
-                <div class="demo-header">
-                    <h2>Couples Intimacy Profile</h2>
-                    <p>Discover your unique relationship balance</p>
-                </div>
-                <div class="demo-content">
-                    <div class="demo-display">
-                        <img src="images/IntimacyProfile2.png" alt="Intimacy Profile" class="demo-screenshot">
-                        <div class="profile-gauges">
-                            <div class="profile-gauge">
-                                <h4>Erotic Connection</h4>
-                                <div class="gauge-visualization circular">
-                                    <div class="gauge-circle" id="eroticGauge"></div>
-                                    <div class="gauge-marker"></div>
-                                </div>
-                                <p class="gauge-level">Currently: <span id="eroticLevel">Novice</span></p>
+                        <div class="gauge">
+                            <h4>Passion Connection</h4>
+                            <div class="gauge-visualization">
+                                <div class="gauge-bar" id="passionGauge"></div>
                             </div>
-                            <div class="profile-gauge">
-                                <h4>Romantic Connection</h4>
-                                <div class="gauge-visualization circular">
-                                    <div class="gauge-circle" id="romanticProfileGauge"></div>
-                                    <div class="gauge-marker"></div>
-                                </div>
-                                <p class="gauge-level">Currently: <span id="romanticProfileLevel">Casual</span></p>
-                            </div>
-                        </div>
-                        <div class="profile-info">
-                            <p>Complete the assessment in the app to discover your unique intimacy profile!</p>
-                            <p>Learn about your relationship strengths and growth opportunities.</p>
+                            <p class="gauge-level" id="passionLevel">Spark</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="download-prompt">
-            <p>Ready for the full experience?</p>
-            <a href="#download" class="download-button">Download the App</a>
-        </div>
-    </section>
 
+        <!-- Who's More Likely Demo -->
+        <div class="demo-container" id="whosMoreDemo">
+            <div class="demo-header">
+                <h2>Who's More Likely?</h2>
+                <p>Discover surprising truths about each other</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-display">
+                    <!-- Image first (no changes needed as the buttons are already in the right place) -->
+                    <img src="images/Whosmore.png" alt="Who's More Likely" class="demo-screenshot">
+                    <div class="demo-card">
+                        <p id="whosMoreQuestion">Who's more likely to forget an important date?</p>
+                        <div class="whosmore-buttons">
+                            <button class="person-button" id="himButton">Him</button>
+                            <button class="person-button" id="herButton">Her</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-preview">
+                    <div class="profile-card">
+                        <h4>After answering questions, you'll discover:</h4>
+                        <ul>
+                            <li>Your relationship dynamic</li>
+                            <li>Who's more romantic, adventurous, or responsible</li>
+                            <li>Surprising insights about your personalities</li>
+                            <li>How well you truly know each other</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intimacy Profile Demo -->
+        <div class="demo-container" id="intimacyProfileDemo">
+            <div class="demo-header">
+                <h2>Couples Intimacy Profile</h2>
+                <p>Discover your unique relationship balance</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-display">
+                    <!-- No changes needed here as there are no buttons to reposition -->
+                    <img src="images/IntimacyProfile2.png" alt="Intimacy Profile" class="demo-screenshot">
+                    <div class="profile-gauges">
+                        <div class="profile-gauge">
+                            <h4>Erotic Connection</h4>
+                            <div class="gauge-visualization circular">
+                                <div class="gauge-circle" id="eroticGauge"></div>
+                                <div class="gauge-marker"></div>
+                            </div>
+                            <p class="gauge-level">Currently: <span id="eroticLevel">Novice</span></p>
+                        </div>
+                        <div class="profile-gauge">
+                            <h4>Romantic Connection</h4>
+                            <div class="gauge-visualization circular">
+                                <div class="gauge-circle" id="romanticProfileGauge"></div>
+                                <div class="gauge-marker"></div>
+                            </div>
+                            <p class="gauge-level">Currently: <span id="romanticProfileLevel">Casual</span></p>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <p>Complete the assessment in the app to discover your unique intimacy profile!</p>
+                        <p>Learn about your relationship strengths and growth opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="download-prompt">
+        <p>Ready for the full experience?</p>
+        <a href="#download" class="download-button">Download the App</a>
+    </div>
+</section>
     <!-- Screenshots Showcase Section -->
     <section class="screenshots" id="screenshots">
         <div class="container">
