@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joelapexsolutions.github.io/couples-truth-or-dare-game/sitemap.xml
