@@ -1687,3 +1687,252 @@ button {
         flex: 1;
     }
 }
+
+/* === Question Packs Preview Section === */
+.question-packs-preview {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #1a0505, var(--dark-bg));
+}
+
+.packs-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.preview-card {
+    background: linear-gradient(135deg, rgba(26, 15, 19, 0.8), rgba(50, 30, 40, 0.6));
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+    border: 1px solid rgba(178, 0, 0, 0.3);
+}
+
+.preview-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.preview-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(178, 0, 0, 0.2);
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-icon i {
+    font-size: 35px;
+    color: var(--secondary-color);
+}
+
+.packs-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.download-packs-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-packs-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* === Packs Page Styles === */
+.packs-hero {
+    padding: 150px 0 100px;
+    background: linear-gradient(135deg, #1a0505, #2d0a0a);
+    text-align: center;
+}
+
+.packs-hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.packs-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.packs-main {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, var(--dark-bg), #1a0505);
+}
+
+.pack-category {
+    margin-bottom: 100px;
+}
+
+.pack-category h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.category-desc {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.packs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.pack-card {
+    background: linear-gradient(135deg, rgba(26, 15, 19, 0.8), rgba(50, 30, 40, 0.6));
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(178, 0, 0, 0.3);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+}
+
+.pack-card.featured {
+    border-color: var(--secondary-color);
+}
+
+.pack-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pack-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--secondary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.pack-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.pack-card p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.pack-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.pack-stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(178, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.pack-stat i {
+    color: var(--secondary-color);
+}
+
+.download-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+.download-btn:hover {
+    background: var(--darker-red);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.download-btn i {
+    margin-right: 10px;
+}
+
+.pack-card.coming-soon {
+    opacity: 0.8;
+}
+
+.upcoming-features {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.upcoming-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upcoming-features i {
+    color: var(--secondary-color);
+}
+
+.instruction-list {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.instruction-list li {
+    margin-bottom: 10px;
+}
+
+.packs-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a0505, #2d0a0a);
+    text-align: center;
+}
+
+.packs-cta h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.packs-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
