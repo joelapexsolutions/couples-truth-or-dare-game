@@ -148,7 +148,7 @@
         },
 		{
             id: 'dating_romantic_18',
-            text: 'Go ice skating or roller skating',
+            text: 'Sign up for dance classes',
             level: 'easy',
             description: 'Dance your way into each other\'s hearts! Sign up for a dance class that\'ll have you moving, laughing, and falling in love all over again. From passionate salsa to elegant ballroom, let the music guide your connection.',
             value: 1,
@@ -293,7 +293,7 @@
             type: 'erotic'
         },
 		{
-            id: 'dating_passionate_15',
+            id: 'dating_passionate_16',
             text: 'Give Female a full body-to-body massage',
             level: 'spicy',
             description: 'Plan a luxurious spa night at home this week! Male, transform your bedroom into a sensual retreat with candles, soft music, and premium massage oils. Treat Female to a full 40-minute relaxing experience',
@@ -301,7 +301,7 @@
             type: 'erotic'
         },
 		{
-            id: 'dating_passionate_15',
+            id: 'dating_passionate_17',
             text: 'Create a home spa retreat for each other',
             level: 'spicy',
             description: 'Home spa retreat for two! Pamper each other with luxurious massages, soothing facials, and pure, uninterrupted connection. Turn relaxation into an art of love.',
@@ -309,7 +309,7 @@
             type: 'erotic'
         },
 		{
-            id: 'dating_passionate_15',
+            id: 'dating_passionate_18',
             text: 'Give Male a full body-to-body massage',
             level: 'spicy',
             description: 'Plan a luxurious spa night at home this week! Female, transform your bedroom into a sensual retreat with candles, soft music, and premium massage oils. Treat Male to a full 40-minute relaxing experience',
@@ -317,7 +317,7 @@
             type: 'erotic'
         },
         {
-            id: 'dating_passionate_16',
+            id: 'dating_passionate_19',
             text: 'Kiss for 3 minutes in public',
             level: 'spicy',
             description: 'Find a semi-private public spot - like a park bench or quiet corner. Share a continuous 3-minute kiss, remaining respectful of surroundings.',
