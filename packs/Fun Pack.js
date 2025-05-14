@@ -14,7 +14,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'What\'s the silliest thing you\'ve done to impress me when we first met?',
+      text: 'What\'s the silliest thing you\'ve done to impress Female when you first met?',
       points: 1,
       timer: 0
     },
@@ -22,7 +22,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'If I were a superhero, what would my ridiculous power be?',
+      text: 'If Female were a superhero, what would her ridiculous power be?',
       points: 1,
       timer: 0
     },
@@ -38,7 +38,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'If I had a theme song that played every time I entered a room, what would it be?',
+      text: 'If Female had a theme song that played every time she entered a room, what would it be?',
       points: 1,
       timer: 0
     },
@@ -54,7 +54,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'If you could change one of my quirky habits, which would it be and why?',
+      text: 'If you could change one of Female\'s quirky habits, which would it be and why?',
       points: 1,
       timer: 0
     },
@@ -62,7 +62,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'What\'s the most ridiculous nickname you\'ve ever given me in your head?',
+      text: 'What\'s the most ridiculous nickname you\'ve ever given Female in your head?',
       points: 1,
       timer: 0
     },
@@ -70,7 +70,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'If we were cartoon characters, which ones would we be?',
+      text: 'If you and Female were cartoon characters, which ones would you be?',
       points: 1,
       timer: 0
     },
@@ -78,7 +78,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'What\'s your secret dance move that you think I\'ve never seen?',
+      text: 'What\'s your secret dance move that you think Female has never seen?',
       points: 1,
       timer: 0
     },
@@ -86,7 +86,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'If I were invisible for a day, what would I probably do first?',
+      text: 'If Female were invisible for a day, what would she probably do first?',
       points: 1,
       timer: 0
     },
@@ -94,7 +94,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'What\'s the funniest dream you\'ve had about us?',
+      text: 'What\'s the funniest dream you\'ve had about you and Female?',
       points: 1,
       timer: 0
     },
@@ -102,7 +102,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'If you could give me a funny warning label, what would it say?',
+      text: 'If you could give Female a funny warning label, what would it say?',
       points: 1,
       timer: 0
     },
@@ -118,7 +118,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Male',
-      text: 'If I were a flavor of ice cream, what ridiculous flavor would I be?',
+      text: 'If Female were a flavor of ice cream, what ridiculous flavor would she be?',
       points: 1,
       timer: 0
     },
@@ -135,7 +135,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'What\'s the most ridiculous thing you\'ve convinced me to do with you?',
+      text: 'What\'s the most ridiculous thing you\'ve convinced Male to do with you?',
       points: 1,
       timer: 0
     },
@@ -143,7 +143,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'If you could redesign me as a robot, what funny feature would you add?',
+      text: 'If you could redesign Male as a robot, what funny feature would you add?',
       points: 1,
       timer: 0
     },
@@ -151,7 +151,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'What\'s your most embarrassing fashion moment that I\'ve witnessed?',
+      text: 'What\'s your most embarrassing fashion moment that Male has witnessed?',
       points: 1,
       timer: 0
     },
@@ -159,7 +159,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'If I had my own reality TV show, what would it be called and why?',
+      text: 'If Male had his own reality TV show, what would it be called and why?',
       points: 1,
       timer: 0
     },
@@ -167,7 +167,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'What\'s the weirdest thing you\'ve stalked on my social media?',
+      text: 'What\'s the weirdest thing you\'ve stalked on Male\'s social media?',
       points: 1,
       timer: 0
     },
@@ -175,7 +175,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'If I could read your mind for one day, what embarrassing thought would you hide?',
+      text: 'If Male could read your mind for one day, what embarrassing thought would you hide?',
       points: 1,
       timer: 0
     },
@@ -183,7 +183,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'What\'s the most childish thing I do that you secretly find adorable?',
+      text: 'What\'s the most childish thing Male does that you secretly find adorable?',
       points: 1,
       timer: 0
     },
@@ -191,7 +191,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'If we were in a sitcom, which characters would play us?',
+      text: 'If you and Male were in a sitcom, which characters would play you?',
       points: 1,
       timer: 0
     },
@@ -207,7 +207,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'If I got plastic surgery, what silly thing would you want me to change?',
+      text: 'If Male got plastic surgery, what silly thing would you want him to change?',
       points: 1,
       timer: 0
     },
@@ -215,7 +215,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'What\'s the most ridiculous argument we\'ve had?',
+      text: 'What\'s the most ridiculous argument you\'ve had with Male?',
       points: 1,
       timer: 0
     },
@@ -223,7 +223,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'If you could swap one of my body parts with a kitchen appliance, what would it be?',
+      text: 'If you could swap one of Male\'s body parts with a kitchen appliance, what would it be?',
       points: 1,
       timer: 0
     },
@@ -239,7 +239,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'If I were a pizza, what toppings would I have?',
+      text: 'If Male were a pizza, what toppings would he have?',
       points: 1,
       timer: 0
     },
@@ -247,7 +247,7 @@
       type: 'truth',
       level: 'Soft',
       gender: 'Female',
-      text: 'What\'s your most embarrassing autocorrect moment with me?',
+      text: 'What\'s your most embarrassing autocorrect moment with Male?',
       points: 1,
       timer: 0
     },
@@ -498,7 +498,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the funniest thing that has happened during a romantic evening?',
+      text: 'What\'s the funniest thing that has happened during a romantic evening with Female?',
       points: 2,
       timer: 0
     },
@@ -514,7 +514,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the weirdest place you\'ve been caught laughing during a serious moment?',
+      text: 'What\'s the weirdest place you\'ve been caught laughing during a serious moment with Female?',
       points: 2,
       timer: 0
     },
@@ -522,7 +522,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'If you had to describe our chemistry using food combinations, what would it be?',
+      text: 'If you had to describe your chemistry with Female using food combinations, what would it be?',
       points: 2,
       timer: 0
     },
@@ -530,7 +530,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the most awkward sweet moment you\'ve attempted with me?',
+      text: 'What\'s the most awkward sweet moment you\'ve attempted with Female?',
       points: 2,
       timer: 0
     },
@@ -538,7 +538,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'If we were a sitcom couple, what would our catchphrase be?',
+      text: 'If you and Female were a sitcom couple, what would your catchphrase be?',
       points: 2,
       timer: 0
     },
@@ -546,7 +546,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the silliest thing you\'ve done to impress my friends or family?',
+      text: 'What\'s the silliest thing you\'ve done to impress Female\'s friends or family?',
       points: 2,
       timer: 0
     },
@@ -554,7 +554,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'If you could invent a ridiculous holiday just for us, what would it be?',
+      text: 'If you could invent a ridiculous holiday just for you and Female, what would it be?',
       points: 2,
       timer: 0
     },
@@ -562,7 +562,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the most embarrassing text you\'ve sent me by mistake?',
+      text: 'What\'s the most embarrassing text you\'ve sent Female by mistake?',
       points: 2,
       timer: 0
     },
@@ -570,7 +570,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'If our relationship was a commercial product, what warning label would it have?',
+      text: 'If your relationship with Female was a commercial product, what warning label would it have?',
       points: 2,
       timer: 0
     },
@@ -578,7 +578,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the weirdest compliment you\'ve given me that actually worked?',
+      text: 'What\'s the weirdest compliment you\'ve given Female that actually worked?',
       points: 2,
       timer: 0
     },
@@ -586,7 +586,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'If you could turn one of my quirks into a party trick, what would it be?',
+      text: 'If you could turn one of Female\'s quirks into a party trick, what would it be?',
       points: 2,
       timer: 0
     },
@@ -594,7 +594,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the most ridiculous thing you\'ve pretended to understand for my sake?',
+      text: 'What\'s the most ridiculous thing you\'ve pretended to understand for Female\'s sake?',
       points: 2,
       timer: 0
     },
@@ -602,7 +602,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'If we had our own couple workout video, what bizarre exercises would it include?',
+      text: 'If you and Female had your own couple workout video, what bizarre exercises would it include?',
       points: 2,
       timer: 0
     },
@@ -610,7 +610,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What\'s the funniest misunderstanding we\'ve had in our relationship?',
+      text: 'What\'s the funniest misunderstanding you\'ve had in your relationship with Female?',
       points: 2,
       timer: 0
     },
@@ -619,7 +619,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the most hilariously failed romantic gesture I\'ve attempted?',
+      text: 'What\'s the most hilariously failed romantic gesture Male has attempted?',
       points: 2,
       timer: 0
     },
@@ -627,7 +627,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'If you could narrate my attempts at being smooth like David Attenborough, how would it sound?',
+      text: 'If you could narrate Male\'s attempts at being smooth like David Attenborough, how would it sound?',
       points: 2,
       timer: 0
     },
@@ -635,7 +635,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the strangest place you\'ve randomly burst out laughing with me?',
+      text: 'What\'s the strangest place you\'ve randomly burst out laughing with Male?',
       points: 2,
       timer: 0
     },
@@ -643,7 +643,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'If our relationship was a genre of music, what ridiculous genre would it be?',
+      text: 'If your relationship with Male was a genre of music, what ridiculous genre would it be?',
       points: 2,
       timer: 0
     },
@@ -651,7 +651,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the most cringeworthy sweet thing I\'ve said to you?',
+      text: 'What\'s the most cringeworthy sweet thing Male has said to you?',
       points: 2,
       timer: 0
     },
@@ -659,7 +659,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'If we were contestants on a game show, what silly team name would we have?',
+      text: 'If you and Male were contestants on a game show, what silly team name would you have?',
       points: 2,
       timer: 0
     },
@@ -667,7 +667,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the most ridiculous thing you\'ve done to avoid doing household chores?',
+      text: 'What\'s the most ridiculous thing you\'ve done to avoid doing household chores with Male?',
       points: 2,
       timer: 0
     },
@@ -675,7 +675,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'If you could create a weird emoji just for our relationship, what would it look like?',
+      text: 'If you could create a weird emoji just for your relationship with Male, what would it look like?',
       points: 2,
       timer: 0
     },
@@ -683,7 +683,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the most embarrassing autocorrect moment that involved us?',
+      text: 'What\'s the most embarrassing autocorrect moment that involved you and Male?',
       points: 2,
       timer: 0
     },
@@ -691,7 +691,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'If our relationship status was a video game, what would be the cheat codes?',
+      text: 'If your relationship status with Male was a video game, what would be the cheat codes?',
       points: 2,
       timer: 0
     },
@@ -699,7 +699,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the weirdest pet name I\'ve called you that actually stuck?',
+      text: 'What\'s the weirdest pet name Male has called you that actually stuck?',
       points: 2,
       timer: 0
     },
@@ -707,7 +707,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'If you could transform one of your bad habits into my superpower, what would it be?',
+      text: 'If you could transform one of Male\'s bad habits into your superpower, what would it be?',
       points: 2,
       timer: 0
     },
@@ -715,7 +715,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the most ridiculous thing you\'ve faked interest in for me?',
+      text: 'What\'s the most ridiculous thing you\'ve faked interest in for Male?',
       points: 2,
       timer: 0
     },
@@ -723,7 +723,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'If we had our own couple\'s cooking show, what would be our signature disaster dish?',
+      text: 'If you and Male had your own couple\'s cooking show, what would be your signature disaster dish?',
       points: 2,
       timer: 0
     },
@@ -731,7 +731,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What\'s the funniest argument-ending tactic we\'ve used?',
+      text: 'What\'s the funniest argument-ending tactic you\'ve used with Male?',
       points: 2,
       timer: 0
     },
@@ -982,7 +982,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'What\'s the most ridiculous excuse you\'ve given for avoiding social plans with my friends?',
+      text: 'What\'s the most ridiculous excuse you\'ve given for avoiding social plans with Female\'s friends?',
       points: 3,
       timer: 0
     },
@@ -990,7 +990,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'If our relationship was a sitcom episode, what would be the most outrageous plot twist?',
+      text: 'If your relationship with Female was a sitcom episode, what would be the most outrageous plot twist?',
       points: 3,
       timer: 0
     },
@@ -1014,7 +1014,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'What\'s the most embarrassing thing you\'ve cried over that I don\'t know about?',
+      text: 'What\'s the most embarrassing thing you\'ve cried over that Female doesn\'t know about?',
       points: 3,
       timer: 0
     },
@@ -1022,7 +1022,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'If our pets could rate our relationship on Yelp, what would their review say?',
+      text: 'If your pets could rate your relationship with Female on Yelp, what would their review say?',
       points: 3,
       timer: 0
     },
@@ -1038,7 +1038,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'If you had to create a terrible dating app profile for me, what would it say?',
+      text: 'If you had to create a terrible dating app profile for Female, what would it say?',
       points: 3,
       timer: 0
     },
@@ -1054,7 +1054,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'If our future kids could see us now, what would be their most embarrassing story about us?',
+      text: 'If your future kids could see you and Female now, what would be their most embarrassing story about you?',
       points: 3,
       timer: 0
     },
@@ -1062,7 +1062,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'What\'s the weirdest middle-of-the-night thought you\'ve had about our relationship?',
+      text: 'What\'s the weirdest middle-of-the-night thought you\'ve had about your relationship with Female?',
       points: 3,
       timer: 0
     },
@@ -1070,7 +1070,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'If you had to turn one of my annoying habits into a dance move, what would it be called?',
+      text: 'If you had to turn one of Female\'s annoying habits into a dance move, what would it be called?',
       points: 3,
       timer: 0
     },
@@ -1078,7 +1078,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'What\'s the most ridiculous thing you\'ve negotiated with me like a business deal?',
+      text: 'What\'s the most ridiculous thing you\'ve negotiated with Female like a business deal?',
       points: 3,
       timer: 0
     },
@@ -1086,7 +1086,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'If our relationship had a bizarre conspiracy theory, what would it be?',
+      text: 'If your relationship with Female had a bizarre conspiracy theory, what would it be?',
       points: 3,
       timer: 0
     },
@@ -1094,7 +1094,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'What\'s the funniest thing you\'ve overheard someone say about us?',
+      text: 'What\'s the funniest thing you\'ve overheard someone say about you and Female?',
       points: 3,
       timer: 0
     },
@@ -1103,7 +1103,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'What\'s the most hilariously failed attempt at adulting you\'ve witnessed me do?',
+      text: 'What\'s the most hilariously failed attempt at adulting you\'ve witnessed Male do?',
       points: 3,
       timer: 0
     },
@@ -1111,7 +1111,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'If you could create a reality show about my daily mishaps, what would it be called?',
+      text: 'If you could create a reality show about Male\'s daily mishaps, what would it be called?',
       points: 3,
       timer: 0
     },
@@ -1119,7 +1119,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'What\'s the strangest thing you\'ve blamed me for that was clearly not my fault?',
+      text: 'What\'s the strangest thing you\'ve blamed Male for that was clearly not his fault?',
       points: 3,
       timer: 0
     },
@@ -1127,7 +1127,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'If you could prank your past self about our relationship, what joke would you play?',
+      text: 'If you could prank your past self about your relationship with Male, what joke would you play?',
       points: 3,
       timer: 0
     },
@@ -1135,7 +1135,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'What\'s the most ridiculous thing you\'ve pretended to be good at to impress me?',
+      text: 'What\'s the most ridiculous thing you\'ve pretended to be good at to impress Male?',
       points: 3,
       timer: 0
     },
@@ -1143,7 +1143,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'If my shopping habits were a horror movie, what would the tagline be?',
+      text: 'If Male\'s shopping habits were a horror movie, what would the tagline be?',
       points: 3,
       timer: 0
     },
@@ -1151,7 +1151,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'What\'s the weirdest thing you\'ve been envious of that I own?',
+      text: 'What\'s the weirdest thing you\'ve been envious of that Male owns?',
       points: 3,
       timer: 0
     },
@@ -1159,7 +1159,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'If you had to make a video game based on living with me, what would the final boss be?',
+      text: 'If you had to make a video game based on living with Male, what would the final boss be?',
       points: 3,
       timer: 0
     },
@@ -1175,7 +1175,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'If aliens studied our relationship, what would be their weirdest observation?',
+      text: 'If aliens studied your relationship with Male, what would be their weirdest observation?',
       points: 3,
       timer: 0
     },
@@ -1183,7 +1183,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'What\'s the strangest 3 AM thought you\'ve had about us growing old together?',
+      text: 'What\'s the strangest 3 AM thought you\'ve had about you and Male growing old together?',
       points: 3,
       timer: 0
     },
@@ -1191,7 +1191,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'If one of my quirks was turned into a carnival ride, what would it be?',
+      text: 'If one of Male\'s quirks was turned into a carnival ride, what would it be?',
       points: 3,
       timer: 0
     },
@@ -1199,7 +1199,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'What\'s the most absurd negotiation we\'ve had over household chores?',
+      text: 'What\'s the most absurd negotiation you\'ve had with Male over household chores?',
       points: 3,
       timer: 0
     },
@@ -1207,7 +1207,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'If our relationship was a viral internet challenge, what would it involve?',
+      text: 'If your relationship with Male was a viral internet challenge, what would it involve?',
       points: 3,
       timer: 0
     },
@@ -1215,7 +1215,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'What\'s the funniest misunderstanding someone\'s had about our relationship?',
+      text: 'What\'s the funniest misunderstanding someone\'s had about your relationship with Male?',
       points: 3,
       timer: 0
     },
