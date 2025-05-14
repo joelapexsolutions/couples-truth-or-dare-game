@@ -340,6 +340,14 @@
       points: 2,
       timer: 60
     },
+	{
+      type: 'dare',
+      level: 'Soft',
+      gender: 'Male',
+      text: 'Imitate Female\'s laugh in three different settings: at a fancy restaurant, at a horror movie, and at a funeral.',
+      points: 2,
+      timer: 0
+    },
     {
       type: 'dare',
       level: 'Soft',
@@ -377,9 +385,9 @@
       type: 'dare',
       level: 'Soft',
       gender: 'Female',
-      text: 'Do the Cha-Cha Slide dance solo while explaining each move.',
+      text: 'Reenact your first date from Male\'s perspective, exaggerating all his mannerisms.',
       points: 2,
-      timer: 60
+      timer: 0
     },
     {
       type: 'dare',
@@ -441,7 +449,7 @@
       type: 'dare',
       level: 'Soft',
       gender: 'Female',
-      text: 'Tell a ghost story using only emoji gestures.',
+      text: 'Compose and perform a short rap about Male\'s favorite food.',
       points: 2,
       timer: 0
     },
@@ -598,6 +606,14 @@
       points: 2,
       timer: 0
     },
+	{
+      type: 'truth',
+      level: 'Sensual',
+      gender: 'Male',
+      text: 'What\'s the most hilariously unsexy thing that\'s happened during a romantic moment with Female?',
+      points: 2,
+      timer: 0
+    },
     {
       type: 'truth',
       level: 'Sensual',
@@ -719,6 +735,14 @@
       points: 2,
       timer: 0
     },
+	{
+      type: 'truth',
+      level: 'Sensual',
+      gender: 'Female',
+      text: 'What\'s the most embarrassing thing you\'ve done in front of Male that you hoped he didn\'t notice?',
+      points: 2,
+      timer: 0
+    },
     {
       type: 'truth',
       level: 'Sensual',
@@ -756,7 +780,7 @@
       type: 'dare',
       level: 'Sensual',
       gender: 'Male',
-      text: 'Describe making instant ramen as if it\'s a gourmet cooking show.',
+      text: 'Create a new interpretive dance called "When Female Steals the Blankets."',
       points: 3,
       timer: 0
     },
@@ -1224,7 +1248,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Create a dramatic interpretive dance about doing laundry for 2 minutes.',
+      text: 'Give an elaborate acceptance speech thanking Female for putting up with your three worst habits.',
       points: 4,
       timer: 120
     },
@@ -1256,7 +1280,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Attempt to teach a cooking class while everything goes wrong.',
+      text: 'Perform a nature documentary about Female\'s hunting and gathering techniques at the grocery store.',
       points: 4,
       timer: 0
     },
@@ -1361,7 +1385,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Recreate a sports commentary about Male playing video games.',
+      text: 'Create and perform a puppet show using socks about the most ridiculous argument you\'ve had with Male.',
       points: 4,
       timer: 0
     },
@@ -1442,6 +1466,14 @@
       level: 'Hot',
       gender: 'Female',
       text: 'Recreate Male\'s dance moves as a ballet performance.',
+      points: 4,
+      timer: 0
+    },
+	{
+      type: 'dare',
+      level: 'Hot',
+      gender: 'Female',
+      text: 'Act out how you imagine Male explains your relationship to his friends when you\'re not around.',
       points: 4,
       timer: 0
     },
