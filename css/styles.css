@@ -1936,3 +1936,207 @@ button {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
+
+/* FAQ Section Styles */
+.faq-section {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, var(--dark-bg), #1a0505);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: linear-gradient(135deg, rgba(26, 15, 19, 0.8), rgba(50, 30, 40, 0.6));
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(178, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all var(--transition-speed) ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(178, 0, 0, 0.8);
+    transform: translateY(-5px);
+}
+
+.faq-question {
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.faq-question h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.faq-question i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 30px 25px 30px;
+}
+
+.faq-answer p {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Relationship Tips Section */
+.relationship-tips {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #1a0505, var(--dark-bg));
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.tip-card {
+    background: linear-gradient(135deg, rgba(26, 15, 19, 0.8), rgba(50, 30, 40, 0.6));
+    border-radius: 15px;
+    padding: 35px 25px;
+    border: 1px solid rgba(178, 0, 0, 0.3);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: all var(--transition-speed) ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(178, 0, 0, 0.8);
+}
+
+.tip-card:hover::before {
+    opacity: 1;
+}
+
+.tip-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(178, 0, 0, 0.2);
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.tip-icon i {
+    font-size: 30px;
+    color: var(--secondary-color);
+}
+
+.tip-card:hover .tip-icon {
+    background: rgba(178, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.tip-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tip-card p {
+    color: var(--text-color);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.tip-stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tip-stats span {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.tip-stats i {
+    color: var(--secondary-color);
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 20px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tip-stats {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
