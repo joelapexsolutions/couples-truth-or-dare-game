@@ -27,6 +27,9 @@ function initWebsite() {
     // Initialize modal functionality
     initModals();
     
+    // Initialize FAQ functionality
+    initFAQ();
+    
     // Add scroll animations
     initScrollAnimations();
     
@@ -507,6 +510,29 @@ function initIntimacyProfileDemo() {
             )`;
         }
     }
+}
+
+/**
+ * Initialize FAQ functionality
+ */
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
 }
 
 /**
