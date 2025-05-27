@@ -230,10 +230,6 @@ button {
 .hamburger {
     display: none;
     flex-direction: column;
-
-.hamburger {
-    display: none;
-    flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
