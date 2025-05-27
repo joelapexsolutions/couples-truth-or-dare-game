@@ -227,6 +227,45 @@ button {
     display: none !important;
 }
 
+/* === FIX FOR NAVIGATION OVERFLOW - ADD THIS NEW SECTION === */
+/* Fix for navigation overflow on medium screens */
+@media (max-width: 1200px) and (min-width: 769px) {
+    .nav-links {
+        gap: 15px; /* Reduce spacing between items */
+    }
+    
+    .nav-links li {
+        margin-left: 15px; /* Reduce margin between items */
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem; /* Slightly smaller font */
+        padding: 6px 3px; /* Reduce padding */
+    }
+    
+    .nav-cta {
+        padding: 8px 15px !important; /* Smaller CTA button */
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Additional fix for smaller laptops */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .nav-cta {
+        padding: 6px 12px !important;
+        font-size: 0.85rem !important;
+    }
+}
+/* === END OF NEW NAVIGATION FIX === */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+
 .hamburger {
     display: none;
     flex-direction: column;
