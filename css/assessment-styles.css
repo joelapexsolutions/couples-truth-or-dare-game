@@ -207,6 +207,7 @@ html, body {
     justify-content: center;
     gap: 30px;
     margin-bottom: 30px;
+    min-height: 280px;
 }
 
 .gauge-container h3 {
@@ -218,8 +219,16 @@ html, body {
 
 .gauge {
     width: 100%;
+    height: 200px;
     max-width: 300px;
     margin: 0 auto;
+}
+
+.gauge svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 200px;
 }
 
 .gauge-label {
@@ -338,6 +347,8 @@ html, body {
     position: relative;
     margin: 20px auto;
     width: 300px;
+    min-width: 300px;
+    max-width: 300px;
     filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
 }
 
