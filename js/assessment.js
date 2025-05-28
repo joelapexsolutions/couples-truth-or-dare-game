@@ -24,14 +24,14 @@ const assessmentState = {
     relationshipDuration: 'new'
 };
 
-// Age verification modal
+// Age verification modal - Updated to show every time and include consent text
 function showAgeModal() {
     const modal = document.createElement('div');
     modal.className = 'age-modal';
     modal.innerHTML = `
         <div class="age-modal-content">
             <h2><i class="fas fa-exclamation-triangle"></i> Age Verification</h2>
-            <p>This content is designed for adults only. You must be 18 years or older to continue.</p>
+            <p>This content is designed for adults only. You must be 18 years or older to continue. By clicking 'Yes', you confirm that you are at least 18 years of age and consent to viewing adult content.</p>
             <p>Are you 18 years of age or older?</p>
             <div class="age-buttons">
                 <button class="age-button yes" onclick="confirmAge(true)">
@@ -53,8 +53,7 @@ function confirmAge(isAdult) {
     }
     
     if (isAdult) {
-        // Continue with the assessment
-        localStorage.setItem('ageVerified', 'true');
+        // Continue with the assessment (no longer saving to localStorage)
         initAssessment();
     } else {
         // Redirect back to main page
@@ -64,12 +63,9 @@ function confirmAge(isAdult) {
 
 // Wait for window to load completely before initializing
 window.onload = function() {
-    // Check age verification first
-    const ageVerified = localStorage.getItem('ageVerified');
-    if (!ageVerified) {
-        showAgeModal();
-        return;
-    }
+    // Always show age verification popup (removed localStorage check)
+    showAgeModal();
+};
     
     // DEBUG: Check global variables availability
     console.log("DEBUG: Checking globals at window.onload:");
