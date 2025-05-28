@@ -748,3 +748,13 @@ html, body {
 #eroticGauge .gauge-segment-3 { fill: #f1c40f !important; }
 #eroticGauge .gauge-segment-4 { fill: #e67e22 !important; }
 #eroticGauge .gauge-segment-5 { fill: #e74c3c !important; }
+
+/* Hide percentage text from gauges */
+.gauge-percentage {
+    display: none !important;
+}
+
+#eroticPercentage, #romanticPercentage, 
+#eroticPercentagePreview, #romanticPercentagePreview {
+    display: none !important;
+}
