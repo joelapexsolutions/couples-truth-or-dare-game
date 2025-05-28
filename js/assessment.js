@@ -32,6 +32,7 @@ function showAgeModal() {
         <div class="age-modal-content">
             <h2><i class="fas fa-exclamation-triangle"></i> Age Verification</h2>
             <p>This content is designed for adults only. You must be 18 years or older to continue.</p>
+            <p>By clicking 'Yes', you confirm that you are at least 18 years of age and consent to viewing adult content.</p>
             <p>Are you 18 years of age or older?</p>
             <div class="age-buttons">
                 <button class="age-button yes" onclick="confirmAge(true)">
