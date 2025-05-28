@@ -65,7 +65,6 @@ function confirmAge(isAdult) {
 window.onload = function() {
     // Always show age verification popup (removed localStorage check)
     showAgeModal();
-};
     
     // DEBUG: Check global variables availability
     console.log("DEBUG: Checking globals at window.onload:");
