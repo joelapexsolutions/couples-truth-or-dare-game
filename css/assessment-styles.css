@@ -685,3 +685,46 @@ html, body {
     width: 300px !important;
     min-width: 300px !important;
 }
+
+/* Fix grey background on erotic gauge */
+#eroticGauge .gauge-segment, #eroticGaugePreview .gauge-segment {
+    background: none !important;
+}
+
+/* Fix mobile gauge shrinking */
+@media (max-width: 768px) {
+    .gauge-container {
+        width: 280px !important;
+        min-width: 280px !important;
+        max-width: 280px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .gauge, .gauge svg {
+        width: 280px !important;
+        height: 180px !important;
+        max-width: 280px !important;
+        max-height: 180px !important;
+    }
+    
+    #eroticGauge, #romanticGauge, #eroticGaugePreview, #romanticGaugePreview {
+        width: 280px !important;
+        height: 180px !important;
+    }
+    
+    .gauges-container {
+        min-height: 200px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .gauge-container {
+        width: 250px !important;
+        min-width: 250px !important;
+    }
+    
+    .gauge, .gauge svg {
+        width: 250px !important;
+        height: 160px !important;
+    }
+}
