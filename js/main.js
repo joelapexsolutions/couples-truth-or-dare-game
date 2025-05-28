@@ -65,7 +65,7 @@ function initNavigation() {
                 e.preventDefault();
                 
                 // Close mobile menu if open
-                if (navLinks.classList.contains('active')) {
+                if (navLinks && navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                 }
                 
@@ -127,6 +127,13 @@ function initGameCards() {
             tryButton.addEventListener('click', function() {
                 const gameType = this.getAttribute('data-game');
                 
+                // Check if this is the intimacy profile game
+                if (gameType === 'intimacyProfile') {
+                    // Redirect to the standalone intimacy profile page
+                    window.location.href = 'couples-intimacy-profile.html';
+                    return;
+                }
+                
                 // Hide all demo containers
                 demoContainers.forEach(container => {
                     container.classList.remove('active');
@@ -138,10 +145,13 @@ function initGameCards() {
                     targetDemo.classList.add('active');
                     
                     // Scroll to demo section
-                    document.getElementById('demo').scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    const demoSection = document.getElementById('demo');
+                    if (demoSection) {
+                        demoSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         }
@@ -247,7 +257,9 @@ function initTruthOrDareDemo() {
             currentLevel = this.getAttribute('data-level');
             
             // Reset question display
-            demoQuestion.textContent = "Click 'Truth' or 'Dare' to get started!";
+            if (demoQuestion) {
+                demoQuestion.textContent = "Click 'Truth' or 'Dare' to get started!";
+            }
         });
     });
     
@@ -257,17 +269,19 @@ function initTruthOrDareDemo() {
             const truths = demoContent[currentLevel].truths;
             const randomIndex = Math.floor(Math.random() * truths.length);
             
-            // Animate the text change
-            demoQuestion.style.opacity = '0';
-            
-            setTimeout(() => {
-                demoQuestion.textContent = truths[randomIndex];
-                demoQuestion.style.opacity = '1';
-            }, 300);
-            
-            // Show premium modal for locked levels
-            if (currentLevel === 'Hot' || currentLevel === 'Explicit') {
-                setTimeout(showPremiumModal, 1500);
+            if (demoQuestion) {
+                // Animate the text change
+                demoQuestion.style.opacity = '0';
+                
+                setTimeout(() => {
+                    demoQuestion.textContent = truths[randomIndex];
+                    demoQuestion.style.opacity = '1';
+                }, 300);
+                
+                // Show premium modal for locked levels
+                if (currentLevel === 'Hot' || currentLevel === 'Explicit') {
+                    setTimeout(showPremiumModal, 1500);
+                }
             }
         });
     }
@@ -278,17 +292,19 @@ function initTruthOrDareDemo() {
             const dares = demoContent[currentLevel].dares;
             const randomIndex = Math.floor(Math.random() * dares.length);
             
-            // Animate the text change
-            demoQuestion.style.opacity = '0';
-            
-            setTimeout(() => {
-                demoQuestion.textContent = dares[randomIndex];
-                demoQuestion.style.opacity = '1';
-            }, 300);
-            
-            // Show premium modal for locked levels
-            if (currentLevel === 'Hot' || currentLevel === 'Explicit') {
-                setTimeout(showPremiumModal, 1500);
+            if (demoQuestion) {
+                // Animate the text change
+                demoQuestion.style.opacity = '0';
+                
+                setTimeout(() => {
+                    demoQuestion.textContent = dares[randomIndex];
+                    demoQuestion.style.opacity = '1';
+                }, 300);
+                
+                // Show premium modal for locked levels
+                if (currentLevel === 'Hot' || currentLevel === 'Explicit') {
+                    setTimeout(showPremiumModal, 1500);
+                }
             }
         });
     }
@@ -344,6 +360,8 @@ function initCouplesTasksDemo() {
     
     // Generate random task based on selected type
     function generateRandomTask() {
+        if (!taskDisplay) return;
+        
         const typeArray = tasks[currentType];
         const randomIndex = Math.floor(Math.random() * typeArray.length);
         
@@ -392,29 +410,37 @@ function initCouplesTasksDemo() {
     // Update gauge visuals
     function updateGauges() {
         // Update romantic gauge
-        romanticGauge.style.width = romanticProgress + '%';
+        if (romanticGauge) {
+            romanticGauge.style.width = romanticProgress + '%';
+        }
         
-        if (romanticProgress < 25) {
-            romanticLevel.textContent = 'Blooming';
-        } else if (romanticProgress < 50) {
-            romanticLevel.textContent = 'Partners';
-        } else if (romanticProgress < 75) {
-            romanticLevel.textContent = 'Devoted';
-        } else {
-            romanticLevel.textContent = 'Soulmates';
+        if (romanticLevel) {
+            if (romanticProgress < 25) {
+                romanticLevel.textContent = 'Blooming';
+            } else if (romanticProgress < 50) {
+                romanticLevel.textContent = 'Partners';
+            } else if (romanticProgress < 75) {
+                romanticLevel.textContent = 'Devoted';
+            } else {
+                romanticLevel.textContent = 'Soulmates';
+            }
         }
         
         // Update passion gauge
-        passionGauge.style.width = passionProgress + '%';
+        if (passionGauge) {
+            passionGauge.style.width = passionProgress + '%';
+        }
         
-        if (passionProgress < 25) {
-            passionLevel.textContent = 'Spark';
-        } else if (passionProgress < 50) {
-            passionLevel.textContent = 'Flame';
-        } else if (passionProgress < 75) {
-            passionLevel.textContent = 'Blaze';
-        } else {
-            passionLevel.textContent = 'Inferno';
+        if (passionLevel) {
+            if (passionProgress < 25) {
+                passionLevel.textContent = 'Spark';
+            } else if (passionProgress < 50) {
+                passionLevel.textContent = 'Flame';
+            } else if (passionProgress < 75) {
+                passionLevel.textContent = 'Blaze';
+            } else {
+                passionLevel.textContent = 'Inferno';
+            }
         }
     }
     
@@ -455,19 +481,21 @@ function initWhosMoreDemo() {
     function answerQuestion() {
         questionsAnswered++;
         
-        // Show new question with animation
-        whosMoreQuestion.style.opacity = '0';
-        
-        setTimeout(() => {
-            questionIndex = (questionIndex + 1) % questions.length;
-            whosMoreQuestion.textContent = questions[questionIndex];
-            whosMoreQuestion.style.opacity = '1';
+        if (whosMoreQuestion) {
+            // Show new question with animation
+            whosMoreQuestion.style.opacity = '0';
             
-            // Show premium modal after 3 questions
-            if (questionsAnswered === 3) {
-                setTimeout(showPremiumModal, 1500);
-            }
-        }, 300);
+            setTimeout(() => {
+                questionIndex = (questionIndex + 1) % questions.length;
+                whosMoreQuestion.textContent = questions[questionIndex];
+                whosMoreQuestion.style.opacity = '1';
+                
+                // Show premium modal after 3 questions
+                if (questionsAnswered === 3) {
+                    setTimeout(showPremiumModal, 1500);
+                }
+            }, 300);
+        }
     }
 }
 
@@ -488,15 +516,15 @@ function initIntimacyProfileDemo() {
     const profileInfo = document.querySelector('.profile-info');
     if (profileInfo) {
         const assessmentButton = document.createElement('button');
-        assessmentButton.textContent = 'Take Assessment Sample';
+        assessmentButton.textContent = 'Take Full Assessment';
         assessmentButton.className = 'try-button';
         assessmentButton.style.marginTop = '20px';
         profileInfo.appendChild(assessmentButton);
         
         // Add event listener to assessment button
         assessmentButton.addEventListener('click', function() {
-            // Show premium modal after clicking the button
-            showPremiumModal();
+            // Redirect to the full assessment page
+            window.location.href = 'couples-intimacy-profile.html';
         });
     }
     
@@ -521,17 +549,19 @@ function initFAQ() {
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         
-        question.addEventListener('click', function() {
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
+        if (question) {
+            question.addEventListener('click', function() {
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
             });
-            
-            // Toggle current item
-            item.classList.toggle('active');
-        });
+        }
     });
 }
 
@@ -584,12 +614,20 @@ function initTestimonials() {
         }
         
         // Hide current testimonial
-        testimonialCards[currentTestimonial].style.display = 'none';
-        indicators[currentTestimonial].classList.remove('active');
+        if (testimonialCards[currentTestimonial]) {
+            testimonialCards[currentTestimonial].style.display = 'none';
+        }
+        if (indicators[currentTestimonial]) {
+            indicators[currentTestimonial].classList.remove('active');
+        }
         
         // Show new testimonial
-        testimonialCards[index].style.display = 'block';
-        indicators[index].classList.add('active');
+        if (testimonialCards[index]) {
+            testimonialCards[index].style.display = 'block';
+        }
+        if (indicators[index]) {
+            indicators[index].classList.add('active');
+        }
         
         // Update current index
         currentTestimonial = index;
@@ -612,7 +650,9 @@ function initModals() {
     // Close modal when close button is clicked
     if (closeModal) {
         closeModal.addEventListener('click', function() {
-            premiumModal.classList.remove('active');
+            if (premiumModal) {
+                premiumModal.classList.remove('active');
+            }
         });
     }
     
@@ -629,14 +669,19 @@ function initModals() {
     modalButtons.forEach(button => {
         button.addEventListener('click', function() {
             // Close the modal
-            premiumModal.classList.remove('active');
+            if (premiumModal) {
+                premiumModal.classList.remove('active');
+            }
             
             // Scroll to download section if link contains #download
             if (this.getAttribute('href') === '#download') {
-                document.getElementById('download').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                const downloadSection = document.getElementById('download');
+                if (downloadSection) {
+                    downloadSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         });
     });
@@ -695,8 +740,8 @@ function initScreenshotsTabs() {
                 
                 // Filter items
                 items.forEach(item => {
-                    const itemCategories = item.getAttribute('data-category').split(' ');
-                    if (category === 'all' || itemCategories.includes(category)) {
+                    const itemCategories = item.getAttribute('data-category');
+                    if (itemCategories && (category === 'all' || itemCategories.includes(category))) {
                         item.style.display = 'block';
                         // Add fade-in animation
                         item.style.animation = 'fadeIn 0.5s ease forwards';
