@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couples Intimacy Profile - Discover Your Relationship Dynamic | Couples Truth or Dare</title>
+    <meta name="description" content="Take our comprehensive couples intimacy assessment to discover your unique relationship profile. Understand your romantic and erotic connection levels.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Assessment-specific CSS -->
+    <link rel="stylesheet" href="css/assessment-styles.css">
+    
+    <style>
+        /* Page-specific overrides */
+        .assessment-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 20px 50px;
+            min-height: 100vh;
+        }
+
+        .assessment-intro {
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: var(--text-color);
+            padding: 30px;
+            background: rgba(26, 15, 19, 0.4);
+            border-radius: 15px;
+            border: 1px solid rgba(178, 0, 0, 0.3);
+        }
+
+        .assessment-intro h1 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255, 145, 35, 0.5);
+        }
+
+        /* App Download CTA */
+        .app-download-cta {
+            background: linear-gradient(135deg, rgba(26, 15, 19, 0.9), rgba(50, 30, 40, 0.7));
+            border: 2px solid var(--secondary-color);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .app-download-cta h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .app-download-cta p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .google-play-badge {
+            max-width: 200px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .google-play-badge:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 145, 35, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 145, 35, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 145, 35, 0); }
+        }
+
+        /* Navigation override for this page */
+        .navbar {
+            background: rgba(26, 5, 5, 0.95) !important;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .assessment-container {
+                padding: 100px 10px 30px;
+            }
+
+            .assessment-intro h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .assessment-intro h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Couples Truth or Dare Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#games">Our Games</a></li>
+                <li><a href="index.html#screenshots">Screenshots</a></li>
+                <li><a href="packs.html">Question Packs</a></li>
+                <li><a href="index.html#benefits">Benefits</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#download" class="nav-cta">Download App</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="assessment-container">
+        <a id="top-anchor" name="top"></a>
+
+        <!-- Assessment Screen -->
+        <div id="assessmentScreen" class="screen active">
+            <div class="assessment-intro">
+                <h1>Couples Intimacy Profile</h1>
+                <p>Complete this assessment together to discover your unique relationship profile. 
+                Select all activities you've experienced together as a couple in the last 6 months.</p>
+            </div>
+            
+            <!-- Gauges shown at the top first -->
+            <div class="gauges-preview">
+                <div class="gauges-container">
+                    <!-- Erotic Gauge Preview -->
+                    <div class="gauge-container">
+                        <h3>Erotic Connection</h3>
+                        <div class="gauge">
+                            <svg id="eroticGaugePreview" viewBox="0 0 200 120">
+                                <!-- Gauge segments -->
+                                <path class="gauge-segment gauge-segment-1" d="M 10,100 A 90,90 0 0,1 28,25" stroke="none" stroke-width="20"></path>
+                                <path class="gauge-segment gauge-segment-2" d="M 28,25 A 90,90 0 0,1 75,5" stroke="none" stroke-width="20"></path>
+                                <path class="gauge-segment gauge-segment-3" d="M 75,5 A 90,90 0 0,1 125,5" stroke="none" stroke-width="20"></path>
+                                <path class="gauge-segment gauge-segment-4" d="M 125,5 A 90,90 0 0,1 172,25" stroke="none" stroke-width="20"></path>
+                                <path class="gauge-segment gauge-segment-5" d="M 172,25 A 90,90 0 0,1 190,100" stroke="none" stroke-width="20"></path>
+                                
+                                <!-- Gauge labels -->
+                                <text x="15" y="100" class="gauge-label">Novice</text>
+                                <text x="35" y="40" class="gauge-label">Curious</text>
+                                <text x="100" y="20" class="gauge-label">Adventurous</text>
+                                <text x="165" y="40" class="gauge-label">Daring</text>
+                                <text x="175" y="100" class="gauge-label">Fiery</text>
+                                
+                                <!-- Gauge needle -->
+                                <line class="gauge-needle" x1="100" y1="100" x2="100" y2="20" stroke-width="3" stroke="red" style="transform: rotate(-90deg); transform-origin: 100px 100px;"></line>
+                                <circle class="gauge-center" cx="100" cy="100" r="8" fill="#e74c3c" stroke="#000" stroke-width="1"></circle>
+                                
+                                <!-- Default value text -->
+                                <text x="100" y="130" class="gauge-percentage" text-anchor="middle" id="eroticPercentagePreview">0%</text>
+                            </svg>
+                        </div>
+                        <div class="gauge-level" id="eroticLevelPreview">Current Level: Novice</div>
+                    </div>
+                    
+                    <!-- Romantic Gauge Preview -->
+                    <div class="gauge-container">
+                        <h3>Romantic Connection</h3>
+                        <div class="gauge">
+                            <svg id="romanticGaugePreview" viewBox="0 0 200 120">
+                                <!-- Gauge segments -->
+                                <path class="gauge-segment gauge-segment-1" d="M 10,100 A 90,90 0 0,1 38,30" stroke="none" stroke-width="20"></path>
+                                <path class="gauge-segment gauge-segment-2" d="M 38,30 A 90,90 0 0,1 100,5" stroke="none" stroke-width="20"></path>
+                                <path class="gauge-segment gauge-segment-3" d="M 100,5 A 90,90 0 0,1 162,30" stroke="none" stroke-width="20"></path>
+                                <path class="gauge-segment gauge-segment-4" d="M 162,30 A 90,90 0 0,1 190,100" stroke="none" stroke-width="20"></path>
+                                
+                                <!-- Gauge labels -->
+                                <text x="15" y="100" class="gauge-label">Casual</text>
+                                <text x="45" y="40" class="gauge-label">Affectionate</text>
+                                <text x="150" y="40" class="gauge-label">Devoted</text>
+                                <text x="175" y="100" class="gauge-label">Soulmates</text>
+                                
+                                <!-- Gauge needle -->
+                                <line class="gauge-needle" x1="100" y1="100" x2="100" y2="20" stroke="purple" stroke-width="3" style="transform: rotate(-90deg); transform-origin: 100px 100px;"></line>
+                                <circle class="gauge-center" cx="100" cy="100" r="8" fill="#8e44ad" stroke="#000" stroke-width="1"></circle>
+                                
+                                <!-- Default value text -->
+                                <text x="100" y="130" class="gauge-percentage" text-anchor="middle" id="romanticPercentagePreview">0%</text>
+                            </svg>
+                        </div>
+                        <div class="gauge-level" id="romanticLevelPreview">Current Level: Casual</div>
+                    </div>
+                </div>
+                
+                <div class="gauge-info">
+                    <p>Complete the assessment below to see your full relationship profile!</p>
+                </div>
+            </div>
+            
+            <div class="relationship-duration-container">
+                <h3>How long have you been together?</h3>
+                <div class="duration-options">
+                    <button id="newRelationship" class="duration-button active" data-duration="new">
+                        <i class="fas fa-heart"></i>
+                        <span>New Relationship</span>
+                        <small>Less than 2 years</small>
+                    </button>
+                    <button id="establishedRelationship" class="duration-button" data-duration="established">
+                        <i class="fas fa-infinity"></i>
+                        <span>Established Relationship</span>
+                        <small>2+ years</small>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="assessment-sections">
+                <!-- Toggle buttons for sections -->
+                <div class="section-toggles">
+                    <button class="section-toggle active" data-section="erotic">Erotic Connection</button>
+                    <button class="section-toggle" data-section="romantic">Romantic Connection</button>
+                </div>
+                
+                <!-- Erotic Section -->
+                <div class="assessment-section active" id="eroticSection">
+                    <h3>Erotic Connection</h3>
+                    <div class="tasks-list" id="eroticTasks">
+                        <!-- Tasks will be loaded here -->
+                        <p class="loading-message">Loading tasks...</p>
+                    </div>
+                </div>
+                
+                <!-- Romantic Section -->
+                <div class="assessment-section" id="romanticSection">
+                    <h3>Romantic Connection</h3>
+                    <div class="tasks-list" id="romanticTasks">
+                        <!-- Tasks will be loaded here -->
+                        <p class="loading-message">Loading tasks...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <a id="submitAssessmentButton" class="button" href="#top-anchor" onclick="submitAssessment(); return false;">
+                    <i class="fas fa-chart-pie"></i> Generate Profile
+                </a>
+                <button id="resetAssessmentButton" class="button">
+                    <i class="fas fa-undo"></i> Reset Selections
+                </button>
+                <a href="index.html" class="button back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Menu
+                </a>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <h2 style="text-align: center; color: var(--secondary-color); font-size: 2.5rem; margin-bottom: 20px;">Your Intimacy Profile</h2>
+            
+            <div class="profile-summary">
+                <p>Based on your selections, here's your unique couple profile:</p>
+                <div class="profile-name" id="profileName">Loading your profile...</div>
+                <div class="profile-description" id="profileDescription"></div>
+            </div>
+
+            <!-- Transition Message (only shown when retaking the assessment) -->
+            <div id="transitionMessage" class="transition-message" style="display: none;"></div>
+
+            <!-- Previous Results Section -->
+            <div id="previousResultsSection" class="previous-results" style="display: none;">
+                <h3>Your Journey Together</h3>
+                <div class="previous-scores">
+                    <p>Previous Assessment: <span id="previousDate"></span></p>
+                    <div class="score-comparison">
+                        <div class="previous-score">
+                            <span class="score-label">Erotic: </span>
+                            <span id="previousEroticScore"></span>
+                            <span class="score-label">Romantic: </span>
+                            <span id="previousRomanticScore"></span>
+                        </div>
+                        <div class="score-arrows">
+                            <span id="eroticArrow" class="arrow-same">→</span>
+                            <span id="romanticArrow" class="arrow-same">→</span>
+                        </div>
+                        <div class="current-score">
+                            <span class="score-label">Erotic: </span>
+                            <span id="currentEroticScore"></span>
+                            <span class="score-label">Romantic: </span>
+                            <span id="currentRomanticScore"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gauges-container">
+                <!-- Erotic Gauge -->
+                <div class="gauge-container">
+                    <h3>Erotic Connection</h3>
+                    <div class="gauge">
+                        <svg id="eroticGauge" viewBox="0 0 200 120">
+                            <!-- Gauge segments -->
+                            <path class="gauge-segment gauge-segment-1" d="M 10,100 A 90,90 0 0,1 28,25" stroke="none" stroke-width="20"></path>
+                            <path class="gauge-segment gauge-segment-2" d="M 28,25 A 90,90 0 0,1 75,5" stroke="none" stroke-width="20"></path>
+                            <path class="gauge-segment gauge-segment-3" d="M 75,5 A 90,90 0 0,1 125,5" stroke="none" stroke-width="20"></path>
+                            <path class="gauge-segment gauge-segment-4" d="M 125,5 A 90,90 0 0,1 172,25" stroke="none" stroke-width="20"></path>
+                            <path class="gauge-segment gauge-segment-5" d="M 172,25 A 90,90 0 0,1 190,100" stroke="none" stroke-width="20"></path>
+                            
+                            <!-- Gauge labels -->
+                            <text x="15" y="100" class="gauge-label">Novice</text>
+                            <text x="35" y="40" class="gauge-label">Curious</text>
+                            <text x="100" y="20" class="gauge-label">Adventurous</text>
+                            <text x="165" y="40" class="gauge-label">Daring</text>
+                            <text x="175" y="100" class="gauge-label">Fiery</text>
+                            
+                            <!-- Gauge needle -->
+                            <line class="gauge-needle" x1="100" y1="100" x2="100" y2="20" stroke="red" stroke-width="3" style="--rotation-angle: 0deg"></line>
+                            <circle class="gauge-center" cx="100" cy="100" r="8" fill="#e74c3c" stroke="#000" stroke-width="1"></circle>
+                            
+                            <!-- Percentage text -->
+                            <text x="100" y="130" class="gauge-percentage" text-anchor="middle" id="eroticPercentage">0%</text>
+                        </svg>
+                    </div>
+                    <div class="gauge-level" id="eroticLevel">Level: Novice</div>
+                </div>
+                
+                <!-- Romantic Gauge -->
+                <div class="gauge-container">
+                    <h3>Romantic Connection</h3>
+                    <div class="gauge">
+                        <svg id="romanticGauge" viewBox="0 0 200 120">
+                            <!-- Gauge segments -->
+                            <path class="gauge-segment gauge-segment-1" d="M 10,100 A 90,90 0 0,1 38,30" stroke="none" stroke-width="20"></path>
+                            <path class="gauge-segment gauge-segment-2" d="M 38,30 A 90,90 0 0,1 100,5" stroke="none" stroke-width="20"></path>
+                            <path class="gauge-segment gauge-segment-3" d="M 100,5 A 90,90 0 0,1 162,30" stroke="none" stroke-width="20"></path>
+                            <path class="gauge-segment gauge-segment-4" d="M 162,30 A 90,90 0 0,1 190,100" stroke="none" stroke-width="20"></path>
+                            
+                            <!-- Gauge labels -->
+                            <text x="15" y="100" class="gauge-label">Casual</text>
+                            <text x="45" y="40" class="gauge-label">Affectionate</text>
+                            <text x="150" y="40" class="gauge-label">Devoted</text>
+                            <text x="175" y="100" class="gauge-label">Soulmates</text>
+                            
+                            <!-- Gauge needle -->
+                            <line class="gauge-needle" x1="100" y1="100" x2="100" y2="20" stroke="purple" stroke-width="3" style="--rotation-angle: 0deg"></line>
+                            <circle class="gauge-center" cx="100" cy="100" r="8" fill="#8e44ad" stroke="#000" stroke-width="1"></circle>
+                            
+                            <!-- Percentage text -->
+                            <text x="100" y="130" class="gauge-percentage" text-anchor="middle" id="romanticPercentage">0%</text>
+                        </svg>
+                    </div>
+                    <div class="gauge-level" id="romanticLevel">Level: Casual</div>
+                </div>
+            </div>
+            
+            <div class="relationship-balance">
+                <h3>Your Relationship Balance</h3>
+                <div id="balanceDescription">
+                    Complete the assessment to see your unique relationship balance.
+                </div>
+            </div>
+
+            <!-- App Download CTA -->
+            <div class="app-download-cta">
+                <h3><i class="fas fa-mobile-alt"></i> Ready to Strengthen Your Connection?</h3>
+                <p>This assessment revealed your relationship profile - now take action! Our mobile app features romantic tasks, couple challenges, and activities specifically designed to help you grow in both areas. Download now to access tools that will help boost your intimacy scores!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.truthordarecouples.game">
+                    <img src="images/google-play-badge.png" alt="Get it on Google Play" class="google-play-badge">
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-heart"></i> Join thousands of couples improving their relationships daily
+                </p>
+            </div>
+            
+            <div class="button-container">
+                <a id="retakeAssessmentButton" class="button" href="#top-anchor" onclick="retakeAssessment(); return false;">
+                    <i class="fas fa-redo"></i> Retake Assessment
+                </a>
+                <a href="index.html" class="button back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load assessment questions -->
+    <script src="js/assessment-questions.js"></script>
+
+    <!-- Load the main assessment script -->
+    <script src="js/assessment.js"></script>
+
+    <!-- Load main website JavaScript for navigation -->
+    <script src="js/main.js"></script>
+</body>
+</html>
