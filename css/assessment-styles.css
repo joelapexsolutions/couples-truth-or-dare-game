@@ -665,3 +665,23 @@ html, body {
         max-width: 250px;
     }
 }
+
+/* Force consistent gauge sizing */
+#eroticGauge, #romanticGauge, #eroticGaugePreview, #romanticGaugePreview {
+    width: 300px !important;
+    height: 200px !important;
+    max-width: 300px !important;
+    max-height: 200px !important;
+}
+
+#eroticGauge svg, #romanticGauge svg, #eroticGaugePreview svg, #romanticGaugePreview svg {
+    width: 300px !important;
+    height: 200px !important;
+}
+
+/* Ensure gauge containers don't shrink */
+.gauges-container .gauge-container {
+    flex-shrink: 0 !important;
+    width: 300px !important;
+    min-width: 300px !important;
+}
