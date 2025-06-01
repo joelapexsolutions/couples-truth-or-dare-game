@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Long Distance Truth or Dare Game | Couples Truth or Dare</title>
+    <meta name="description" content="Join your partner's truth or dare game remotely! Enter the game code from the mobile app and play together across any distance.">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="keywords" content="long distance couples, truth or dare online, remote couples game, join truth dare game, couples game code">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://couplestruthdare.com/longdistance.html">
+    <meta property="og:title" content="Join Long Distance Truth or Dare Game">
+    <meta property="og:description" content="Play truth or dare with your partner remotely! Join using a game code from the mobile app.">
+    <meta property="og:image" content="https://couplestruthdare.com/images/logo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://couplestruthdare.com/longdistance.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ld-web-styles.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Couples Truth or Dare Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#games">Our Games</a></li>
+                <li><a href="index.html#screenshots">Screenshots</a></li>
+                <li><a href="index.html#benefits">Benefits</a></li>
+                <li><a href="index.html#download" class="nav-cta">Download App</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="ld-container">
+        <!-- Hero Section -->
+        <section class="ld-hero">
+            <div class="container">
+                <div class="ld-hero-content">
+                    <h1>Join Your Partner's Game</h1>
+                    <p class="ld-subtitle">Connect with your partner across any distance using a game code from the mobile app</p>
+                    
+                    <div class="feature-highlights">
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Partner creates game on mobile app</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-globe"></i>
+                            <span>You join from any web browser</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Play together in real-time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Game Screen -->
+        <section class="join-section" id="joinSection">
+            <div class="container">
+                <div class="join-card">
+                    <div class="join-header">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <h2>Join Game Session</h2>
+                        <p>Enter the 6-character code shared by your partner</p>
+                    </div>
+                    
+                    <div class="join-form">
+                        <div class="input-group">
+                            <label for="playerName">
+                                <i class="fas fa-user"></i>
+                                Your Name
+                            </label>
+                            <input type="text" id="playerName" placeholder="Enter your name..." maxlength="20">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="gameCode">
+                                <i class="fas fa-key"></i>
+                                Game Code
+                            </label>
+                            <input type="text" id="gameCode" placeholder="Enter 6-character code..." maxlength="6" 
+                                   style="text-transform: uppercase; text-align: center; font-family: 'Courier New', monospace; letter-spacing: 3px; font-size: 18px;">
+                        </div>
+                        
+                        <button id="joinGameButton" class="join-button">
+                            <i class="fas fa-rocket"></i>
+                            Join Game
+                        </button>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3>How to Join:</h3>
+                        <ol>
+                            <li>Have your partner download the mobile app</li>
+                            <li>Partner creates a "Long Distance" game</li>
+                            <li>Partner shares the 6-character code</li>
+                            <li>Enter the code above to join!</li>
+                        </ol>
+                        
+                        <div class="download-prompt">
+                            <p>Don't have the mobile app yet?</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.truthordarecouples.game" class="download-link">
+                                <img src="images/google-play-badge.png" alt="Get it on Google Play" class="play-badge">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Screen -->
+        <section class="game-section hidden" id="gameSection">
+            <div class="container">
+                <!-- Connection Status -->
+                <div class="connection-bar">
+                    <div class="partner-status">
+                        <div class="partner-info">
+                            <span class="status-dot" id="partnerStatusDot"></span>
+                            <span id="partnerNameDisplay">Partner</span>
+                        </div>
+                        <div class="game-code-display-small">
+                            Code: <span id="gameCodeSmall">------</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Status -->
+                <div class="game-status-bar">
+                    <div class="status-item">
+                        <span class="status-label">Level:</span>
+                        <span id="levelDisplay" class="status-value">Soft</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Round:</span>
+                        <span id="roundDisplay" class="status-value">1/4</span>
+                    </div>
+                </div>
+
+                <!-- Player Points -->
+                <div class="points-display">
+                    <div class="player-score">
+                        <i class="fas fa-mars" id="player1Icon"></i>
+                        <span id="player1NameDisplay">Partner</span>
+                        <span id="player1PointsDisplay" class="points">0</span>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="player-score">
+                        <i class="fas fa-venus" id="player2Icon"></i>
+                        <span id="player2NameDisplay">You</span>
+                        <span id="player2PointsDisplay" class="points">0</span>
+                    </div>
+                </div>
+
+                <!-- Current Turn Indicator -->
+                <div class="turn-indicator">
+                    <div id="currentPlayerTurn" class="current-turn">
+                        <i class="fas fa-user"></i> 
+                        <span id="currentPlayerName">Waiting</span>
+                    </div>
+                </div>
+
+                <!-- Question Display -->
+                <div class="question-container">
+                    <div id="questionDisplay" class="question-text">
+                        Waiting for your partner to start the game...
+                    </div>
+                </div>
+
+                <!-- Timer Display -->
+                <div id="timerContainer" class="timer-section hidden">
+                    <div class="timer-display">
+                        <i class="fas fa-clock"></i>
+                        <span id="timerDisplay">00:00</span>
+                    </div>
+                </div>
+
+                <!-- Choice Buttons -->
+                <div id="choiceButtons" class="action-buttons hidden">
+                    <button id="truthButton" class="game-action-btn truth-btn">
+                        <i class="fas fa-comment"></i>
+                        Truth
+                    </button>
+                    <button id="dareButton" class="game-action-btn dare-btn">
+                        <i class="fas fa-fire"></i>
+                        Dare
+                    </button>
+                </div>
+
+                <!-- Task Completion Buttons -->
+                <div id="taskCompletionButtons" class="action-buttons hidden">
+                    <button id="completedButton" class="game-action-btn completed-btn">
+                        <i class="fas fa-check"></i>
+                        Completed
+                    </button>
+                    <button id="skippedButton" class="game-action-btn skipped-btn">
+                        <i class="fas fa-times"></i>
+                        Skipped
+                    </button>
+                </div>
+
+                <!-- Game Controls -->
+                <div class="game-controls">
+                    <button id="leaveGameButton" class="control-btn leave-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Leave Game
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section class="results-section hidden" id="resultsSection">
+            <div class="container">
+                <div class="results-card">
+                    <div class="results-header">
+                        <i class="fas fa-trophy"></i>
+                        <h2>Game Complete!</h2>
+                        <div id="resultMessage" class="result-message"></div>
+                    </div>
+                    
+                    <div class="final-scores">
+                        <div class="final-score">
+                            <span id="finalPlayer1Name">Partner</span>
+                            <span id="finalPlayer1Points" class="final-points">0</span>
+                        </div>
+                        <div class="final-score">
+                            <span id="finalPlayer2Name">You</span>
+                            <span id="finalPlayer2Points" class="final-points">0</span>
+                        </div>
+                    </div>
+
+                    <div class="session-stats">
+                        <h3>Session Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <span id="sessionDuration">0 min</span>
+                                <label>Time Played</label>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-question-circle"></i>
+                                <span id="questionsAnswered">0</span>
+                                <label>Questions</label>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span id="connectionScore">0</span>
+                                <label>Connection Score</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-actions">
+                        <button id="newGameButton" class="result-btn primary">
+                            <i class="fas fa-redo"></i>
+                            Join Another Game
+                        </button>
+                        <button id="backHomeButton" class="result-btn secondary">
+                            <i class="fas fa-home"></i>
+                            Back to Home
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Alert Modal -->
+    <div id="alertModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Message</h3>
+                <button class="close-modal" id="closeAlert">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="alertMessage">This is an alert message.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="alertOkButton" class="modal-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p id="loadingMessage">Connecting to game...</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/firebase-config-web.js"></script>
+    <script src="js/longdistance-web-simple.js"></script>
+</body>
+</html>
