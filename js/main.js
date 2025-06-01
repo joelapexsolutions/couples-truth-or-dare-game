@@ -38,6 +38,9 @@ function initWebsite() {
     
     // Initialize screenshot carousel
     initScreenshotCarousel();
+    
+    // Initialize long distance feature animations
+    initLongDistanceAnimations();
 }
 
 /**
@@ -702,7 +705,7 @@ function showPremiumModal() {
  */
 function initScrollAnimations() {
     // Add animation to elements when they enter the viewport
-    const animateElements = document.querySelectorAll('.game-card, .benefit-card, .section-header');
+    const animateElements = document.querySelectorAll('.game-card, .benefit-card, .section-header, .ld-feature');
     
     // Initialize observer
     const observer = new IntersectionObserver((entries) => {
@@ -778,4 +781,79 @@ function initScreenshotCarousel() {
             }
         }, 5000);
     }
+}
+
+/**
+ * Initialize long distance feature animations
+ */
+function initLongDistanceAnimations() {
+    // Animate connection pulse
+    const connectionPulse = document.querySelector('.connection-pulse');
+    if (connectionPulse) {
+        // Already handled by CSS animation
+    }
+    
+    // Add hover effects to LD buttons
+    const ldButtons = document.querySelectorAll('.ld-button');
+    ldButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Add intersection observer for LD stats
+    const ldStats = document.querySelectorAll('.ld-stat');
+    const ldObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target.querySelector('.stat-number');
+                if (statNumber) {
+                    animateNumber(statNumber);
+                }
+                ldObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    ldStats.forEach(stat => {
+        ldObserver.observe(stat);
+    });
+    
+    // Animate number counting
+    function animateNumber(element) {
+        const target = element.textContent;
+        const isNumberOnly = !isNaN(target.replace('+', ''));
+        
+        if (isNumberOnly) {
+            const finalNumber = parseInt(target.replace('+', ''));
+            let current = 0;
+            const increment = finalNumber / 50; // 50 steps
+            const hasPlus = target.includes('+');
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= finalNumber) {
+                    current = finalNumber;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (hasPlus ? '+' : '');
+            }, 30);
+        }
+    }
+    
+    // Add device hover effects
+    const devices = document.querySelectorAll('.device');
+    devices.forEach(device => {
+        device.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        device.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
 }
