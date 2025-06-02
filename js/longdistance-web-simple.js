@@ -195,7 +195,7 @@ function setupGameListeners() {
         }
     });
 
-    // FIXED: Listen for shared questions - NOW INSIDE THE FUNCTION
+    // Listen for shared questions from mobile user
     const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
     sharedQuestionRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
