@@ -199,13 +199,37 @@ function setupGameListeners() {
     });
 
     // FIXED: Listen for shared questions from mobile user
-    const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
-    sharedQuestionRef.on('value', (snapshot) => {
-        const questionData = snapshot.val();
-        if (questionData) {
-            displaySharedQuestion(questionData);
+const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
+sharedQuestionRef.on('value', (snapshot) => {
+    const questionData = snapshot.val();
+    console.log('Web received shared question:', questionData);
+    
+    if (questionData && questionData.text) {
+        const questionDisplay = document.getElementById('questionDisplay');
+        
+        // Show question to both players
+        questionDisplay.innerHTML = `
+            <div class="question-content">
+                <div class="question-header">
+                    <span class="question-type">${questionData.type.toUpperCase()}</span>
+                </div>
+                <div class="question-text">${questionData.text}</div>
+            </div>
+        `;
+        
+        // Show buttons only if it's web player's turn
+        if (questionData.currentPlayer === 'player2') {
+            showCompletionButtons();
+        } else {
+            hideAllButtons(); // Web user just watches
         }
-    });
+        
+        // Handle timer if provided
+        if (questionData.timer > 0) {
+            handleTimer({ duration: questionData.timer });
+        }
+    }
+});
 }
 
 /**
