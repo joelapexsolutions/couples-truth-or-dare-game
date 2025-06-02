@@ -300,26 +300,37 @@ function handleGameUpdate(sessionData) {
     // Handle game state updates
     if (sessionData.gameState) {
         updateGameDisplay(sessionData.gameState);
+        
+        // FIXED: Force clear shared questions when turn switches to web player
+        const isMyTurn = sessionData.gameState.currentPlayerIndex === 2;
+        if (isMyTurn) {
+            // Clear any shared questions from previous turn
+            const questionDisplay = document.getElementById('questionDisplay');
+            if (questionDisplay.innerHTML.includes('question-content') && 
+                !questionDisplay.innerHTML.includes('Your turn! Complete this challenge:')) {
+                // This is a previous turn's question, clear it
+                questionDisplay.innerHTML = 'Your turn! Choose Truth or Dare:';
+                showChoiceButtons();
+            }
+        }
     }
 
-    // FIXED: Handle shared questions for both players to see
+    // Handle shared questions
     if (sessionData.sharedQuestion) {
         displaySharedQuestion(sessionData.sharedQuestion);
     }
 
-    // FIXED: Handle questions specifically for web user
+    // Handle web-specific questions
     if (sessionData.questionResponse && sessionData.questionResponse.forPlayer === 'player2') {
         displayWebQuestion(sessionData.questionResponse);
-        // Clear the response after displaying
         FirebaseUtils.clearQuestionResponse(webState.sessionCode);
     }
 
-    // Handle game completion
+    // Handle game completion and disconnection
     if (sessionData.status === 'completed') {
         showResults(sessionData.results || sessionData.gameResults);
     }
 
-    // Handle disconnection
     if (sessionData.status === 'disconnected') {
         showAlert('Connection lost. Your partner may have disconnected.');
     }
