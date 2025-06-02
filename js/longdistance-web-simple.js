@@ -337,10 +337,11 @@ function updateGameDisplay(gameState) {
     document.getElementById('player1PointsDisplay').textContent = gameState.player1Points || 0;
     document.getElementById('player2PointsDisplay').textContent = gameState.player2Points || 0;
 
-    // FIXED: Proper turn indicator and button management
+    // Check if it's web player's turn
     const isMyTurn = gameState.currentPlayerIndex === 2; // Web player is always player2
     const turnElement = document.getElementById('currentPlayerName');
     const currentPlayerTurn = document.getElementById('currentPlayerTurn');
+    const questionDisplay = document.getElementById('questionDisplay');
     
     if (isMyTurn) {
         turnElement.textContent = 'Your Turn';
@@ -349,18 +350,19 @@ function updateGameDisplay(gameState) {
             currentPlayerTurn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
         }
         
-        // Check if there's an active question being displayed
-        const questionDisplay = document.getElementById('questionDisplay');
-        const hasActiveQuestion = questionDisplay.innerHTML.includes('question-content') || 
-                                 questionDisplay.innerHTML.includes('TRUTH') || 
-                                 questionDisplay.innerHTML.includes('DARE');
+        // FIXED: Clear previous question content and show choice buttons when it becomes web player's turn
+        // Only keep question content if it was specifically generated for the web player in this turn
+        const hasCurrentTurnQuestion = questionDisplay.innerHTML.includes('question-content') && 
+                                      (questionDisplay.innerHTML.includes('for You') || 
+                                       questionDisplay.innerHTML.includes('Your turn!'));
         
-        if (!hasActiveQuestion) {
-            // Show choice buttons when it's web player's turn and no active question
+        if (!hasCurrentTurnQuestion) {
+            // Clear previous content and show choice buttons for new turn
+            questionDisplay.innerHTML = 'Your turn! Choose Truth or Dare:';
             showChoiceButtons();
-            console.log('Showing choice buttons for web player turn');
+            console.log('Showing choice buttons for web player new turn');
         } else {
-            // If there's an active question, show completion buttons
+            // Player already has a question for this turn, show completion buttons
             showCompletionButtons();
             console.log('Showing completion buttons for active question');
         }
@@ -373,7 +375,6 @@ function updateGameDisplay(gameState) {
         hideAllButtons();
         
         // Show waiting message when it's not web player's turn
-        const questionDisplay = document.getElementById('questionDisplay');
         if (!questionDisplay.innerHTML.includes('question-content')) {
             questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
         }
@@ -385,26 +386,27 @@ function updateGameDisplay(gameState) {
  */
 function displaySharedQuestion(questionData) {
     const questionDisplay = document.getElementById('questionDisplay');
-    const forPlayer = questionData.fromPlayer === 'player1' ? webState.partnerName : 'You';
+    const isForMe = questionData.currentPlayer === 'player2';
+    const playerName = isForMe ? 'You' : webState.partnerName;
     
     questionDisplay.innerHTML = `
         <div class="question-content">
             <div class="question-header">
                 <span class="question-type">${questionData.type.toUpperCase()}</span>
-                <span class="question-for">for ${forPlayer}</span>
+                <span class="question-for">for ${playerName}</span>
             </div>
             <div class="question-text">${questionData.text}</div>
-            ${questionData.fromPlayer === 'player1' ? 
-                `<p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>` :
-                `<p class="turn-prompt">Your turn! Complete this challenge:</p>`
+            ${isForMe ? 
+                '<p class="turn-prompt">Your turn! Complete this challenge:</p>' :
+                `<p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>`
             }
         </div>
     `;
     
-    if (questionData.fromPlayer !== 'player1') {
+    if (isForMe) {
         showCompletionButtons();
     } else {
-        hideAllButtons(); // Web user just watches
+        hideAllButtons();
     }
     
     // Handle timer if provided
