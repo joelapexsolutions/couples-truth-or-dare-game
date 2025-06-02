@@ -510,6 +510,9 @@ async function sendResponse(responseType) {
             `;
             hideAllButtons();
             
+            // FIXED: Listen specifically for the question response
+            listenForQuestionResponse();
+            
         } else if (responseType === 'completed' || responseType === 'skipped') {
             // Send completion status
             await FirebaseUtils.sendWebResponse(webState.sessionCode, {
@@ -551,23 +554,27 @@ async function sendResponse(responseType) {
 function listenForQuestionResponse() {
     const responseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
     
-    responseRef.once('value', (snapshot) => {
+    responseRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
+        console.log('Question response received:', questionData);
+        
         if (questionData && questionData.forPlayer === 'player2') {
             // Display the question
             displayWebQuestion(questionData);
             
-            // Clear the response
-            responseRef.remove();
+            // Clear the response after displaying
+            responseRef.off(); // Stop listening
+            responseRef.remove(); // Clear from Firebase
         }
     });
     
     // Set timeout in case no response comes
     setTimeout(() => {
         const questionDisplay = document.getElementById('questionDisplay');
-        if (questionDisplay.textContent.includes('Waiting for your question')) {
+        if (questionDisplay.innerHTML.includes('Generating your question')) {
             questionDisplay.textContent = 'No question received. Please try selecting Truth or Dare again.';
             showChoiceButtons();
+            responseRef.off(); // Stop listening on timeout
         }
     }, 10000); // 10 second timeout
 }
