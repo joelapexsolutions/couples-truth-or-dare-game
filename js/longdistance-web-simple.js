@@ -196,34 +196,15 @@ function setupGameListeners() {
     });
 
     // Listen for shared questions from mobile user
-    const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
-    sharedQuestionRef.on('value', (snapshot) => {
-        const questionData = snapshot.val();
-        console.log('Web received shared question:', questionData);
-        
-        if (questionData && questionData.text) {
-            const questionDisplay = document.getElementById('questionDisplay');
-            
-            questionDisplay.innerHTML = `
-                <div class="question-content">
-                    <div class="question-header">
-                        <span class="question-type">${questionData.type.toUpperCase()}</span>
-                    </div>
-                    <div class="question-text">${questionData.text}</div>
-                </div>
-            `;
-            
-            if (questionData.currentPlayer === 'player2') {
-                showCompletionButtons();
-            } else {
-                hideAllButtons();
-            }
-            
-            if (questionData.timer > 0) {
-                handleTimer({ duration: questionData.timer });
-            }
-        }
-    });
+const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
+sharedQuestionRef.on('value', (snapshot) => {
+    const questionData = snapshot.val();
+    console.log('Web received shared question:', questionData);
+    
+    if (questionData && questionData.text) {
+        displaySharedQuestion(questionData);
+    }
+});
 
     // Connection monitoring
     setupConnectionMonitoring();
