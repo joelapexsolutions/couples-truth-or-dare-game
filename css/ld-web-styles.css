@@ -1005,3 +1005,103 @@
         padding: 15px 25px;
     }
 }
+
+/* Communication Features */
+.communication-section {
+    background: rgba(26, 15, 19, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    border: 1px solid rgba(178, 0, 0, 0.3);
+}
+
+.communication-header h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.communication-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.comm-option {
+    background: rgba(178, 0, 0, 0.2);
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comm-option:hover {
+    background: rgba(178, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.comm-option i {
+    font-size: 24px;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.response-area {
+    background: rgba(26, 15, 19, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.response-area textarea {
+    width: 100%;
+    background: rgba(26, 15, 19, 0.8);
+    border: 1px solid rgba(178, 0, 0, 0.3);
+    border-radius: 8px;
+    color: white;
+    padding: 12px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.response-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.app-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.app-button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.app-button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.external-apps {
+    background: rgba(26, 15, 19, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+}
