@@ -429,10 +429,16 @@ function displayWebQuestion(questionData) {
         </div>
     `;
     
-    hideChoiceButtons();
-    showCompletionButtons();
+    // Force show completion buttons
+    const choiceButtons = document.getElementById('choiceButtons');
+    const completionButtons = document.getElementById('taskCompletionButtons');
     
-    // Handle timer if provided
+    if (choiceButtons) choiceButtons.classList.add('hidden');
+    if (completionButtons) {
+        completionButtons.classList.remove('hidden');
+        completionButtons.style.display = 'flex';
+    }
+    
     if (questionData.timer > 0) {
         handleTimer({ duration: questionData.timer });
     }
