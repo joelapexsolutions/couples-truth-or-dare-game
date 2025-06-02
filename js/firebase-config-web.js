@@ -213,6 +213,16 @@ const FirebaseUtils = {
             console.error('Error sending web response:', error);
             throw error;
         }
+    },
+
+    // Clear web response after processing
+    async clearWebResponse(gameCode) {
+        try {
+            const responseRef = database.ref(`sessions/${gameCode}/webResponse`);
+            await responseRef.remove();
+        } catch (error) {
+            console.error('Error clearing web response:', error);
+        }
     }
 };
 
