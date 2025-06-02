@@ -289,7 +289,6 @@ function handleGameUpdate(sessionData) {
     } else {
         webState.isConnected = false;
         updateConnectionStatus();
-        // Check if partner left
         if (sessionData.players?.player1?.connected === false) {
             showAlert('Your partner has left the game.');
             cleanup();
@@ -303,10 +302,16 @@ function handleGameUpdate(sessionData) {
         updateGameDisplay(sessionData.gameState);
     }
 
-    // Check for web response from mobile app (when mobile generates question for web user)
-    if (sessionData.webResponse && sessionData.webResponse.playerKey === 'player2') {
-        // Clear the response so it doesn't repeat
-        FirebaseUtils.clearWebResponse(webState.sessionCode);
+    // FIXED: Handle shared questions for both players to see
+    if (sessionData.sharedQuestion) {
+        displaySharedQuestion(sessionData.sharedQuestion);
+    }
+
+    // FIXED: Handle questions specifically for web user
+    if (sessionData.questionResponse && sessionData.questionResponse.forPlayer === 'player2') {
+        displayWebQuestion(sessionData.questionResponse);
+        // Clear the response after displaying
+        FirebaseUtils.clearQuestionResponse(webState.sessionCode);
     }
 
     // Handle game completion
@@ -472,11 +477,14 @@ function startSimpleTimer(seconds) {
  * Send response to mobile app
  */
 async function sendResponse(responseType) {
-    if (!webState.sessionCode) return;
+    if (!webState.sessionCode) {
+        console.error('No session code available');
+        return;
+    }
 
     try {
         if (responseType === 'truth' || responseType === 'dare') {
-            // Send choice to mobile app and wait for question
+            // Send choice to mobile app
             await FirebaseUtils.sendWebResponse(webState.sessionCode, {
                 type: 'choice',
                 choice: responseType,
@@ -485,13 +493,16 @@ async function sendResponse(responseType) {
             });
 
             // Show waiting message and hide buttons
-            document.getElementById('questionDisplay').textContent = `You chose ${responseType.toUpperCase()}! Waiting for your question...`;
+            document.getElementById('questionDisplay').innerHTML = `
+                <div class="waiting-message">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>You chose ${responseType.toUpperCase()}!</p>
+                    <p>Generating your question...</p>
+                </div>
+            `;
             hideAllButtons();
             
-            // Set up a one-time listener for the question response
-            listenForQuestionResponse();
-            
-        } else {
+        } else if (responseType === 'completed' || responseType === 'skipped') {
             // Send completion status
             await FirebaseUtils.sendWebResponse(webState.sessionCode, {
                 type: 'completion',
@@ -500,18 +511,28 @@ async function sendResponse(responseType) {
                 playerKey: 'player2'
             });
 
-            document.getElementById('questionDisplay').textContent = 'Response sent! Waiting for next turn...';
+            document.getElementById('questionDisplay').innerHTML = `
+                <div class="response-sent">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Response sent!</p>
+                    <p>Waiting for next turn...</p>
+                </div>
+            `;
             hideAllButtons();
         }
 
     } catch (error) {
         console.error('Error sending response:', error);
         showAlert('Failed to send response. Please try again.');
-        // Re-enable buttons on error
-        if (responseType === 'truth' || responseType === 'dare') {
-            showChoiceButtons();
-        } else {
+        
+        // Re-enable appropriate buttons on error
+        const questionDisplay = document.getElementById('questionDisplay');
+        const hasActiveQuestion = questionDisplay.innerHTML.includes('question-content');
+        
+        if (hasActiveQuestion) {
             showCompletionButtons();
+        } else {
+            showChoiceButtons();
         }
     }
 }
@@ -796,6 +817,141 @@ function showAlert(message) {
         modal.classList.remove('hidden');
     }
 }
+
+// Add these functions to longdistance-web-simple.js
+
+function showChoiceButtons() {
+    const choiceButtons = document.getElementById('choiceButtons');
+    const completionButtons = document.getElementById('taskCompletionButtons');
+    
+    if (choiceButtons) {
+        choiceButtons.classList.remove('hidden');
+        choiceButtons.style.display = 'flex';
+    }
+    if (completionButtons) {
+        completionButtons.classList.add('hidden');
+        completionButtons.style.display = 'none';
+    }
+    
+    console.log('Choice buttons shown');
+}
+
+function showCompletionButtons() {
+    const choiceButtons = document.getElementById('choiceButtons');
+    const completionButtons = document.getElementById('taskCompletionButtons');
+    
+    if (choiceButtons) {
+        choiceButtons.classList.add('hidden');
+        choiceButtons.style.display = 'none';
+    }
+    if (completionButtons) {
+        completionButtons.classList.remove('hidden');
+        completionButtons.style.display = 'flex';
+    }
+    
+    console.log('Completion buttons shown');
+}
+
+function hideAllButtons() {
+    const choiceButtons = document.getElementById('choiceButtons');
+    const completionButtons = document.getElementById('taskCompletionButtons');
+    
+    if (choiceButtons) {
+        choiceButtons.classList.add('hidden');
+        choiceButtons.style.display = 'none';
+    }
+    if (completionButtons) {
+        completionButtons.classList.add('hidden');
+        completionButtons.style.display = 'none';
+    }
+    
+    console.log('All buttons hidden');
+}
+
+function displaySharedQuestion(questionData) {
+    const questionDisplay = document.getElementById('questionDisplay');
+    const isForMe = questionData.currentPlayer === 'player2';
+    const playerName = isForMe ? 'You' : webState.partnerName;
+    
+    questionDisplay.innerHTML = `
+        <div class="question-content">
+            <div class="question-header">
+                <span class="question-type">${questionData.type.toUpperCase()}</span>
+                <span class="question-for">for ${playerName}</span>
+            </div>
+            <div class="question-text">${questionData.text}</div>
+            ${isForMe ? 
+                '<p class="turn-prompt">Your turn! Complete this challenge:</p>' :
+                `<p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>`
+            }
+        </div>
+    `;
+    
+    if (isForMe) {
+        hideChoiceButtons();
+        showCompletionButtons();
+    } else {
+        hideAllButtons();
+    }
+    
+    // Handle timer if provided
+    if (questionData.timer > 0) {
+        handleTimer({ duration: questionData.timer });
+    }
+}
+
+function displayWebQuestion(questionData) {
+    const questionDisplay = document.getElementById('questionDisplay');
+    questionDisplay.innerHTML = `
+        <div class="question-content">
+            <div class="question-header">
+                <span class="question-type">${questionData.type.toUpperCase()}</span>
+                <span class="question-for">for You</span>
+            </div>
+            <div class="question-text">${questionData.text}</div>
+            <p class="turn-prompt">Your turn! Complete this challenge:</p>
+        </div>
+    `;
+    
+    hideChoiceButtons();
+    showCompletionButtons();
+    
+    // Handle timer if provided
+    if (questionData.timer > 0) {
+        handleTimer({ duration: questionData.timer });
+    }
+}
+
+// Add to FirebaseUtils
+const enhancedFirebaseUtils = {
+    ...FirebaseUtils,
+    
+    async clearQuestionResponse(gameCode) {
+        try {
+            const responseRef = firebase.database().ref(`sessions/${gameCode}/questionResponse`);
+            await responseRef.remove();
+        } catch (error) {
+            console.error('Error clearing question response:', error);
+        }
+    },
+    
+    async sendWebResponse(gameCode, response) {
+        try {
+            const responseRef = firebase.database().ref(`sessions/${gameCode}/webResponse`);
+            await responseRef.set({
+                ...response,
+                timestamp: firebase.database.ServerValue.TIMESTAMP
+            });
+            console.log('Web response sent successfully:', response);
+        } catch (error) {
+            console.error('Error sending web response:', error);
+            throw error;
+        }
+    }
+};
+
+// Replace the global FirebaseUtils with enhanced version
+window.FirebaseUtils = enhancedFirebaseUtils;
 
 // Cleanup on page unload
 window.addEventListener('beforeunload', cleanup);
