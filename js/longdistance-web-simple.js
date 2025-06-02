@@ -180,8 +180,20 @@ function setupGameListeners() {
             showSection('joinSection');
             return;
         }
-
         handleGameUpdate(sessionData);
+    });
+
+    // FIXED: Direct listener for question responses
+    const questionResponseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
+    questionResponseRef.on('value', (snapshot) => {
+        const questionData = snapshot.val();
+        console.log('Direct question response received:', questionData);
+        
+        if (questionData && questionData.forPlayer === 'player2' && !questionData.error) {
+            displayWebQuestion(questionData);
+            // Clear after displaying
+            setTimeout(() => questionResponseRef.remove(), 1000);
+        }
     });
 
     // Connection monitoring
@@ -197,6 +209,7 @@ function setupGameListeners() {
         webState.isConnected = isConnected;
         updateConnectionStatus();
     });
+}
 
     // FIXED: Listen for shared questions from mobile user
 const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
@@ -462,34 +475,69 @@ function displayWebQuestion(questionData) {
  */
 function handleTimer(timerData) {
     const timerContainer = document.getElementById('timerContainer');
-    const timerDisplay = document.getElementById('timerDisplay');
     
     if (timerData.duration > 0) {
         timerContainer.classList.remove('hidden');
-        startSimpleTimer(timerData.duration);
+        timerContainer.innerHTML = `
+            <div class="timer-display">
+                <i class="fas fa-clock"></i>
+                <span id="timerDisplay">00:00</span>
+            </div>
+            <div class="timer-controls">
+                <button id="startTimer" class="timer-btn start"><i class="fas fa-play"></i></button>
+                <button id="pauseTimer" class="timer-btn pause"><i class="fas fa-pause"></i></button>
+                <button id="resetTimer" class="timer-btn reset"><i class="fas fa-undo"></i></button>
+            </div>
+        `;
+        
+        let timeLeft = timerData.duration;
+        let timerInterval = null;
+        let isRunning = false;
+        
+        const timerDisplay = document.getElementById('timerDisplay');
+        const startBtn = document.getElementById('startTimer');
+        const pauseBtn = document.getElementById('pauseTimer');
+        const resetBtn = document.getElementById('resetTimer');
+        
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        startBtn.addEventListener('click', () => {
+            if (!isRunning) {
+                isRunning = true;
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateDisplay();
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        isRunning = false;
+                        timerContainer.classList.add('hidden');
+                    }
+                }, 1000);
+            }
+        });
+        
+        pauseBtn.addEventListener('click', () => {
+            if (isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+            }
+        });
+        
+        resetBtn.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            isRunning = false;
+            timeLeft = timerData.duration;
+            updateDisplay();
+        });
+        
+        updateDisplay();
     } else {
         timerContainer.classList.add('hidden');
     }
-}
-
-/**
- * Simple timer countdown
- */
-function startSimpleTimer(seconds) {
-    const timerDisplay = document.getElementById('timerDisplay');
-    let timeLeft = seconds;
-    
-    const timer = setInterval(() => {
-        const minutes = Math.floor(timeLeft / 60);
-        const secs = timeLeft % 60;
-        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        
-        if (timeLeft <= 0) {
-            clearInterval(timer);
-            document.getElementById('timerContainer').classList.add('hidden');
-        }
-        timeLeft--;
-    }, 1000);
 }
 
 /**
