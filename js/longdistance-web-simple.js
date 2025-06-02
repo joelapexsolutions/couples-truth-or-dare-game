@@ -77,6 +77,9 @@ function setupEventListeners() {
     document.getElementById('closeAlert').addEventListener('click', () => {
         document.getElementById('alertModal').classList.add('hidden');
     });
+
+    // ADD THIS LINE HERE:
+    setupCommunicationHandlers();
 }
 
 /**
@@ -367,6 +370,8 @@ function displayWebQuestion(questionData) {
         handleTimer({ duration: questionData.timer });
     }
 }
+
+showCommunicationOptions();
 
 /**
  * Handle timer from mobile app
