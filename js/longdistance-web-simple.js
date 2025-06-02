@@ -1,5 +1,5 @@
 /**
- * Long Distance Truth or Dare - Simplified Web Version
+ * Long Distance Truth or Dare - Simplified Web Version - COMPLETE FIXED
  * Web users are just "remote controls" - mobile app handles all game logic
  */
 
@@ -32,6 +32,12 @@ function initSimpleWebGame() {
         return;
     }
 
+    // Load long distance questions
+    if (typeof loadLongDistanceQuestions === 'function') {
+        loadLongDistanceQuestions();
+        console.log('Long distance questions loaded for web');
+    }
+
     setupEventListeners();
     loadSavedPlayerName();
     showSection('joinSection');
@@ -61,7 +67,7 @@ function setupEventListeners() {
     // Game action buttons - these just send responses to mobile app
     document.getElementById('truthButton').addEventListener('click', () => sendResponse('truth'));
     document.getElementById('dareButton').addEventListener('click', () => sendResponse('dare'));
-    document.getElementById('completedButton').addEventListener('click', () => sendResponse('completed'));
+    document.getElementById('completedButton').addEventListener('click', () => showCommunicationOptions());
     document.getElementById('skippedButton').addEventListener('click', () => sendResponse('skipped'));
     
     // Game controls
@@ -78,8 +84,16 @@ function setupEventListeners() {
         document.getElementById('alertModal').classList.add('hidden');
     });
 
-    // ADD THIS LINE HERE:
+    // Setup communication handlers
     setupCommunicationHandlers();
+}
+
+/**
+ * Setup communication options for responses
+ */
+function setupCommunicationHandlers() {
+    // Communication handlers are already integrated into the completion flow
+    console.log('Communication handlers ready');
 }
 
 /**
@@ -184,27 +198,16 @@ function setupGameListeners() {
         updateConnectionStatus();
     });
 
-    // Listen for shared questions from mobile user
+    // FIXED: Listen for shared questions from mobile user
     const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
     sharedQuestionRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
-        if (questionData && questionData.forPlayer === 'player1') {
-            // Display shared question
-            const questionDisplay = document.getElementById('questionDisplay');
-            questionDisplay.innerHTML = `
-                <div class="question-content">
-                    <div class="question-header">
-                        <span class="question-type">${questionData.type.toUpperCase()}</span>
-                        <span class="question-for">for ${webState.partnerName}</span>
-                    </div>
-                    <div class="question-text">${questionData.text}</div>
-                    <p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>
-                </div>
-            `;
-            hideAllButtons(); // Web user just watches
+        if (questionData) {
+            displaySharedQuestion(questionData);
         }
     });
 }
+
 /**
  * Set up connection monitoring
  */
@@ -276,13 +279,6 @@ function handleGameUpdate(sessionData) {
         updateGameDisplay(sessionData.gameState);
     }
 
-    // Listen for any question-related updates in the session
-    // The mobile app might be storing current question differently
-    if (sessionData.currentQuestion || sessionData.question || sessionData.activeQuestion) {
-        const questionData = sessionData.currentQuestion || sessionData.question || sessionData.activeQuestion;
-        displaySharedQuestion(questionData);
-    }
-
     // Check for web response from mobile app (when mobile generates question for web user)
     if (sessionData.webResponse && sessionData.webResponse.playerKey === 'player2') {
         // Clear the response so it doesn't repeat
@@ -333,29 +329,35 @@ function updateGameDisplay(gameState) {
 }
 
 /**
- * Display question that both players should see
+ * FIXED: Display question that both players should see
  */
 function displaySharedQuestion(questionData) {
     const questionDisplay = document.getElementById('questionDisplay');
+    const forPlayer = questionData.fromPlayer === 'player1' ? webState.partnerName : 'You';
+    
     questionDisplay.innerHTML = `
         <div class="question-content">
             <div class="question-header">
                 <span class="question-type">${questionData.type.toUpperCase()}</span>
-                <span class="question-for">for ${questionData.forPlayer === 'player1' ? webState.partnerName : 'You'}</span>
+                <span class="question-for">for ${forPlayer}</span>
             </div>
             <div class="question-text">${questionData.text}</div>
+            ${questionData.fromPlayer === 'player1' ? 
+                `<p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>` :
+                `<p class="turn-prompt">Your turn! Complete this challenge:</p>`
+            }
         </div>
     `;
     
-    // Show appropriate buttons based on whose turn it is
-    if (questionData.forPlayer === 'player2') {
-        // It's my turn to answer
+    if (questionData.fromPlayer !== 'player1') {
         showCompletionButtons();
-        document.getElementById('questionDisplay').innerHTML += `<p class="turn-prompt">Your turn! Complete this challenge:</p>`;
     } else {
-        // Partner is answering
-        hideAllButtons();
-        document.getElementById('questionDisplay').innerHTML += `<p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>`;
+        hideAllButtons(); // Web user just watches
+    }
+    
+    // Handle timer if provided
+    if (questionData.timer > 0) {
+        handleTimer({ duration: questionData.timer });
     }
 }
 
@@ -383,8 +385,6 @@ function displayWebQuestion(questionData) {
         handleTimer({ duration: questionData.timer });
     }
 }
-
-showCommunicationOptions();
 
 /**
  * Handle timer from mobile app
@@ -494,6 +494,119 @@ function listenForQuestionResponse() {
             showChoiceButtons();
         }
     }, 10000); // 10 second timeout
+}
+
+/**
+ * Show communication options modal
+ */
+function showCommunicationOptions() {
+    const questionDisplay = document.getElementById('questionDisplay');
+    questionDisplay.innerHTML = `
+        <div class="communication-guide">
+            <h3>📱 Share Your Experience!</h3>
+            <p>How would you like to respond to your partner?</p>
+            
+            <div class="communication-options">
+                <div class="comm-option" onclick="openWhatsAppCall()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Video Call</span>
+                </div>
+                <div class="comm-option" onclick="openDiscordCall()">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord Call</span>
+                </div>
+                <div class="comm-option" onclick="openZoomCall()">
+                    <i class="fas fa-video"></i>
+                    <span>Zoom Call</span>
+                </div>
+                <div class="comm-option" onclick="openTelegram()">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </div>
+                <div class="comm-option" onclick="continueWithoutCall()">
+                    <i class="fas fa-message"></i>
+                    <span>Continue Without Call</span>
+                </div>
+            </div>
+            
+            <div class="communication-tip">
+                <p><strong>💡 Tip:</strong> Video calls make the experience much more intimate and fun! 
+                Share your reactions, laugh together, and see each other's expressions.</p>
+            </div>
+        </div>
+    `;
+    
+    hideAllButtons();
+}
+
+/**
+ * Communication app openers
+ */
+function openWhatsAppCall() {
+    // Open WhatsApp (if mobile) or WhatsApp Web
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        window.open('whatsapp://call', '_blank');
+    } else {
+        window.open('https://web.whatsapp.com/', '_blank');
+    }
+    
+    continueWithoutCall();
+}
+
+function openDiscordCall() {
+    window.open('discord://', '_blank');
+    setTimeout(() => {
+        // Fallback to web if app doesn't open
+        window.open('https://discord.com/app', '_blank');
+    }, 2000);
+    
+    continueWithoutCall();
+}
+
+function openZoomCall() {
+    window.open('https://zoom.us/start/videomeeting', '_blank');
+    continueWithoutCall();
+}
+
+function openTelegram() {
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        window.open('tg://', '_blank');
+    } else {
+        window.open('https://web.telegram.org/', '_blank');
+    }
+    
+    continueWithoutCall();
+}
+
+function continueWithoutCall() {
+    // Actually send the completion response
+    sendCompletionResponse();
+}
+
+/**
+ * Send the actual completion response
+ */
+async function sendCompletionResponse() {
+    try {
+        await FirebaseUtils.sendWebResponse(webState.sessionCode, {
+            type: 'completion',
+            completed: true, // Assume completed if they got to communication step
+            timestamp: Date.now(),
+            playerKey: 'player2'
+        });
+
+        document.getElementById('questionDisplay').textContent = 'Response sent! Waiting for next turn...';
+        hideAllButtons();
+
+    } catch (error) {
+        console.error('Error sending response:', error);
+        showAlert('Failed to send response. Please try again.');
+        showCompletionButtons();
+    }
 }
 
 /**
@@ -639,3 +752,10 @@ function showAlert(message) {
 
 // Cleanup on page unload
 window.addEventListener('beforeunload', cleanup);
+
+// Make functions globally available
+window.openWhatsAppCall = openWhatsAppCall;
+window.openDiscordCall = openDiscordCall;
+window.openZoomCall = openZoomCall;
+window.openTelegram = openTelegram;
+window.continueWithoutCall = continueWithoutCall;
