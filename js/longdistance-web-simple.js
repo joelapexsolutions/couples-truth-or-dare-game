@@ -183,8 +183,28 @@ function setupGameListeners() {
         webState.isConnected = isConnected;
         updateConnectionStatus();
     });
-}
 
+    // Listen for shared questions from mobile user
+    const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
+    sharedQuestionRef.on('value', (snapshot) => {
+        const questionData = snapshot.val();
+        if (questionData && questionData.forPlayer === 'player1') {
+            // Display shared question
+            const questionDisplay = document.getElementById('questionDisplay');
+            questionDisplay.innerHTML = `
+                <div class="question-content">
+                    <div class="question-header">
+                        <span class="question-type">${questionData.type.toUpperCase()}</span>
+                        <span class="question-for">for ${webState.partnerName}</span>
+                    </div>
+                    <div class="question-text">${questionData.text}</div>
+                    <p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>
+                </div>
+            `;
+            hideAllButtons(); // Web user just watches
+        }
+    });
+}
 /**
  * Set up connection monitoring
  */
@@ -299,23 +319,16 @@ function updateGameDisplay(gameState) {
     if (isMyTurn) {
         turnElement.textContent = 'Your Turn - Choose Truth or Dare';
         document.getElementById('currentPlayerTurn').classList.add('pulse-animation');
-        showChoiceButtons();
         
-        // Update question display for turn prompt
+        // Only show choice buttons if no question is displayed
         const questionDisplay = document.getElementById('questionDisplay');
-        if (questionDisplay.textContent.includes('Waiting for') || questionDisplay.textContent.includes('Response sent')) {
-            questionDisplay.textContent = 'Your turn! Choose Truth or Dare to get your question.';
+        if (!questionDisplay.textContent.includes('TRUTH') && !questionDisplay.textContent.includes('DARE')) {
+            showChoiceButtons();
         }
     } else {
         turnElement.textContent = `${webState.partnerName}'s Turn`;
         document.getElementById('currentPlayerTurn').classList.remove('pulse-animation');
-        hideAllButtons();
-        
-        // Update question display when waiting
-        const questionDisplay = document.getElementById('questionDisplay');
-        if (questionDisplay.textContent.includes('Choose Truth') || questionDisplay.textContent.includes('Your turn')) {
-            questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
-        }
+        hideAllButtons(); // Hide all buttons when it's partner's turn
     }
 }
 
