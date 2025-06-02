@@ -183,7 +183,7 @@ function setupGameListeners() {
         handleGameUpdate(sessionData);
     });
 
-    // FIXED: Direct listener for question responses
+    // Direct listener for question responses
     const questionResponseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
     questionResponseRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
@@ -191,8 +191,37 @@ function setupGameListeners() {
         
         if (questionData && questionData.forPlayer === 'player2' && !questionData.error) {
             displayWebQuestion(questionData);
-            // Clear after displaying
             setTimeout(() => questionResponseRef.remove(), 1000);
+        }
+    });
+
+    // FIXED: Listen for shared questions - NOW INSIDE THE FUNCTION
+    const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
+    sharedQuestionRef.on('value', (snapshot) => {
+        const questionData = snapshot.val();
+        console.log('Web received shared question:', questionData);
+        
+        if (questionData && questionData.text) {
+            const questionDisplay = document.getElementById('questionDisplay');
+            
+            questionDisplay.innerHTML = `
+                <div class="question-content">
+                    <div class="question-header">
+                        <span class="question-type">${questionData.type.toUpperCase()}</span>
+                    </div>
+                    <div class="question-text">${questionData.text}</div>
+                </div>
+            `;
+            
+            if (questionData.currentPlayer === 'player2') {
+                showCompletionButtons();
+            } else {
+                hideAllButtons();
+            }
+            
+            if (questionData.timer > 0) {
+                handleTimer({ duration: questionData.timer });
+            }
         }
     });
 
