@@ -150,14 +150,15 @@ async function joinGame() {
 }
 
 /**
- * Set up game listeners - just listen for updates from mobile app
+ * Set up game listeners - listen for all game updates
  */
 function setupGameListeners() {
     if (!webState.sessionCode) return;
 
+    // Main game listener
     gameListener = FirebaseUtils.listenToGameState(webState.sessionCode, (sessionData) => {
         if (!sessionData) {
-            showAlert('Game session has ended.');
+            showAlert('Game session has ended or no longer exists.');
             cleanup();
             showSection('joinSection');
             return;
@@ -165,36 +166,114 @@ function setupGameListeners() {
 
         handleGameUpdate(sessionData);
     });
+
+    // Connection monitoring
+    setupConnectionMonitoring();
+    
+    // Listen for partner disconnect
+    const partnerRef = firebase.database().ref(`sessions/${webState.sessionCode}/players/player1/connected`);
+    partnerRef.on('value', (snapshot) => {
+        const isConnected = snapshot.val();
+        if (isConnected === false && webState.isConnected) {
+            showAlert('Your partner has disconnected from the game.');
+        }
+        webState.isConnected = isConnected;
+        updateConnectionStatus();
+    });
+}
+
+/**
+ * Set up connection monitoring
+ */
+function setupConnectionMonitoring() {
+    const connectedRef = firebase.database().ref('.info/connected');
+    
+    connectedRef.on('value', (snapshot) => {
+        if (snapshot.val() === true) {
+            console.log('Connected to Firebase');
+            hideConnectionLostMessage();
+        } else {
+            console.log('Disconnected from Firebase');
+            showConnectionLostMessage();
+        }
+    });
+}
+
+/**
+ * Show connection lost message
+ */
+function showConnectionLostMessage() {
+    const questionDisplay = document.getElementById('questionDisplay');
+    questionDisplay.innerHTML = `
+        <div class="connection-lost">
+            <i class="fas fa-wifi" style="color: #dc3545; font-size: 2rem; margin-bottom: 10px;"></i>
+            <p>Connection lost. Trying to reconnect...</p>
+            <div class="loading-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    `;
+    hideAllButtons();
+}
+
+/**
+ * Hide connection lost message
+ */
+function hideConnectionLostMessage() {
+    const questionDisplay = document.getElementById('questionDisplay');
+    if (questionDisplay.textContent.includes('Connection lost')) {
+        questionDisplay.textContent = 'Reconnected! Waiting for game updates...';
+    }
 }
 
 /**
  * Handle game updates from mobile app
  */
 function handleGameUpdate(sessionData) {
+    console.log('Game update received:', sessionData);
+    
     // Update connection status
     if (sessionData.players?.player1?.connected) {
         webState.isConnected = true;
         updateConnectionStatus();
+    } else {
+        webState.isConnected = false;
+        updateConnectionStatus();
+        // Check if partner left
+        if (sessionData.players?.player1?.connected === false) {
+            showAlert('Your partner has left the game.');
+            cleanup();
+            showSection('joinSection');
+            return;
+        }
     }
 
-    // Handle game state updates sent by mobile app
+    // Handle game state updates
     if (sessionData.gameState) {
         updateGameDisplay(sessionData.gameState);
     }
 
-    // Handle question sent by mobile app
-    if (sessionData.currentQuestion) {
-        displayQuestion(sessionData.currentQuestion);
+    // Listen for any question-related updates in the session
+    // The mobile app might be storing current question differently
+    if (sessionData.currentQuestion || sessionData.question || sessionData.activeQuestion) {
+        const questionData = sessionData.currentQuestion || sessionData.question || sessionData.activeQuestion;
+        displaySharedQuestion(questionData);
     }
 
-    // Handle timer sent by mobile app
-    if (sessionData.timer) {
-        handleTimer(sessionData.timer);
+    // Check for web response from mobile app (when mobile generates question for web user)
+    if (sessionData.webResponse && sessionData.webResponse.playerKey === 'player2') {
+        // Clear the response so it doesn't repeat
+        FirebaseUtils.clearWebResponse(webState.sessionCode);
     }
 
     // Handle game completion
     if (sessionData.status === 'completed') {
-        showResults(sessionData.results);
+        showResults(sessionData.results || sessionData.gameResults);
+    }
+
+    // Handle disconnection
+    if (sessionData.status === 'disconnected') {
+        showAlert('Connection lost. Your partner may have disconnected.');
     }
 }
 
@@ -210,32 +289,82 @@ function updateGameDisplay(gameState) {
     document.getElementById('player1PointsDisplay').textContent = gameState.player1Points || 0;
     document.getElementById('player2PointsDisplay').textContent = gameState.player2Points || 0;
 
-    // Update turn indicator
+    // Update turn indicator and show appropriate buttons
     const isMyTurn = gameState.currentPlayerIndex === 2;
     const turnElement = document.getElementById('currentPlayerName');
     
     if (isMyTurn) {
-        turnElement.textContent = 'Your Turn';
+        turnElement.textContent = 'Your Turn - Choose Truth or Dare';
         document.getElementById('currentPlayerTurn').classList.add('pulse-animation');
         showChoiceButtons();
+        
+        // Update question display for turn prompt
+        const questionDisplay = document.getElementById('questionDisplay');
+        if (questionDisplay.textContent.includes('Waiting for') || questionDisplay.textContent.includes('Response sent')) {
+            questionDisplay.textContent = 'Your turn! Choose Truth or Dare to get your question.';
+        }
     } else {
         turnElement.textContent = `${webState.partnerName}'s Turn`;
         document.getElementById('currentPlayerTurn').classList.remove('pulse-animation');
         hideAllButtons();
+        
+        // Update question display when waiting
+        const questionDisplay = document.getElementById('questionDisplay');
+        if (questionDisplay.textContent.includes('Choose Truth') || questionDisplay.textContent.includes('Your turn')) {
+            questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
+        }
     }
 }
 
 /**
- * Display question sent by mobile app
+ * Display question that both players should see
  */
-function displayQuestion(questionData) {
+function displaySharedQuestion(questionData) {
     const questionDisplay = document.getElementById('questionDisplay');
-    questionDisplay.textContent = questionData.text || 'Question received';
+    questionDisplay.innerHTML = `
+        <div class="question-content">
+            <div class="question-header">
+                <span class="question-type">${questionData.type.toUpperCase()}</span>
+                <span class="question-for">for ${questionData.forPlayer === 'player1' ? webState.partnerName : 'You'}</span>
+            </div>
+            <div class="question-text">${questionData.text}</div>
+        </div>
+    `;
     
-    // Show completion buttons for the person who got the question
+    // Show appropriate buttons based on whose turn it is
     if (questionData.forPlayer === 'player2') {
-        hideChoiceButtons();
+        // It's my turn to answer
         showCompletionButtons();
+        document.getElementById('questionDisplay').innerHTML += `<p class="turn-prompt">Your turn! Complete this challenge:</p>`;
+    } else {
+        // Partner is answering
+        hideAllButtons();
+        document.getElementById('questionDisplay').innerHTML += `<p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>`;
+    }
+}
+
+/**
+ * Display question generated specifically for web user
+ */
+function displayWebQuestion(questionData) {
+    const questionDisplay = document.getElementById('questionDisplay');
+    questionDisplay.innerHTML = `
+        <div class="question-content">
+            <div class="question-header">
+                <span class="question-type">${questionData.type.toUpperCase()}</span>
+                <span class="question-for">for You</span>
+            </div>
+            <div class="question-text">${questionData.text}</div>
+            <p class="turn-prompt">Your turn! Complete this challenge:</p>
+        </div>
+    `;
+    
+    hideChoiceButtons();
+    showCompletionButtons();
+    
+    // Handle timer if provided
+    if (questionData.timer > 0) {
+        handleTimer({ duration: questionData.timer });
     }
 }
 
@@ -281,22 +410,72 @@ async function sendResponse(responseType) {
     if (!webState.sessionCode) return;
 
     try {
-        await FirebaseUtils.sendWebResponse(webState.sessionCode, {
-            type: responseType,
-            timestamp: Date.now(),
-            playerKey: 'player2'
-        });
+        if (responseType === 'truth' || responseType === 'dare') {
+            // Send choice to mobile app and wait for question
+            await FirebaseUtils.sendWebResponse(webState.sessionCode, {
+                type: 'choice',
+                choice: responseType,
+                timestamp: Date.now(),
+                playerKey: 'player2'
+            });
 
-        // Hide buttons after sending response
-        hideAllButtons();
-        
-        // Show waiting message
-        document.getElementById('questionDisplay').textContent = 'Response sent! Waiting for partner...';
+            // Show waiting message and hide buttons
+            document.getElementById('questionDisplay').textContent = `You chose ${responseType.toUpperCase()}! Waiting for your question...`;
+            hideAllButtons();
+            
+            // Set up a one-time listener for the question response
+            listenForQuestionResponse();
+            
+        } else {
+            // Send completion status
+            await FirebaseUtils.sendWebResponse(webState.sessionCode, {
+                type: 'completion',
+                completed: responseType === 'completed',
+                timestamp: Date.now(),
+                playerKey: 'player2'
+            });
+
+            document.getElementById('questionDisplay').textContent = 'Response sent! Waiting for next turn...';
+            hideAllButtons();
+        }
 
     } catch (error) {
         console.error('Error sending response:', error);
         showAlert('Failed to send response. Please try again.');
+        // Re-enable buttons on error
+        if (responseType === 'truth' || responseType === 'dare') {
+            showChoiceButtons();
+        } else {
+            showCompletionButtons();
+        }
     }
+}
+
+/**
+ * Listen for question response after web user makes a choice
+ */
+function listenForQuestionResponse() {
+    const responseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
+    
+    responseRef.once('value', (snapshot) => {
+        const questionData = snapshot.val();
+        if (questionData && questionData.forPlayer === 'player2') {
+            // Display the question
+            displayWebQuestion(questionData);
+            
+            // Clear the response
+            responseRef.remove();
+        }
+    });
+    
+    // Set timeout in case no response comes
+    setTimeout(() => {
+        const questionDisplay = document.getElementById('questionDisplay');
+        if (questionDisplay.textContent.includes('Waiting for your question')) {
+            questionDisplay.textContent = 'No question received. Please try selecting Truth or Dare again.';
+            showChoiceButtons();
+        }
+    }, 10000); // 10 second timeout
 }
 
 /**
