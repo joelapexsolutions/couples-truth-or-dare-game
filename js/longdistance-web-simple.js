@@ -332,23 +332,46 @@ function updateGameDisplay(gameState) {
     document.getElementById('player1PointsDisplay').textContent = gameState.player1Points || 0;
     document.getElementById('player2PointsDisplay').textContent = gameState.player2Points || 0;
 
-    // Update turn indicator and show appropriate buttons
-    const isMyTurn = gameState.currentPlayerIndex === 2;
+    // FIXED: Proper turn indicator and button management
+    const isMyTurn = gameState.currentPlayerIndex === 2; // Web player is always player2
     const turnElement = document.getElementById('currentPlayerName');
+    const currentPlayerTurn = document.getElementById('currentPlayerTurn');
     
     if (isMyTurn) {
-        turnElement.textContent = 'Your Turn - Choose Truth or Dare';
-        document.getElementById('currentPlayerTurn').classList.add('pulse-animation');
+        turnElement.textContent = 'Your Turn';
+        if (currentPlayerTurn) {
+            currentPlayerTurn.classList.add('pulse-animation');
+            currentPlayerTurn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
+        }
         
-        // Only show choice buttons if no question is displayed
+        // Check if there's an active question being displayed
         const questionDisplay = document.getElementById('questionDisplay');
-        if (!questionDisplay.textContent.includes('TRUTH') && !questionDisplay.textContent.includes('DARE')) {
+        const hasActiveQuestion = questionDisplay.innerHTML.includes('question-content') || 
+                                 questionDisplay.innerHTML.includes('TRUTH') || 
+                                 questionDisplay.innerHTML.includes('DARE');
+        
+        if (!hasActiveQuestion) {
+            // Show choice buttons when it's web player's turn and no active question
             showChoiceButtons();
+            console.log('Showing choice buttons for web player turn');
+        } else {
+            // If there's an active question, show completion buttons
+            showCompletionButtons();
+            console.log('Showing completion buttons for active question');
         }
     } else {
         turnElement.textContent = `${webState.partnerName}'s Turn`;
-        document.getElementById('currentPlayerTurn').classList.remove('pulse-animation');
-        hideAllButtons(); // Hide all buttons when it's partner's turn
+        if (currentPlayerTurn) {
+            currentPlayerTurn.classList.remove('pulse-animation');
+            currentPlayerTurn.style.background = 'rgba(26, 15, 19, 0.6)';
+        }
+        hideAllButtons();
+        
+        // Show waiting message when it's not web player's turn
+        const questionDisplay = document.getElementById('questionDisplay');
+        if (!questionDisplay.innerHTML.includes('question-content')) {
+            questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
+        }
     }
 }
 
