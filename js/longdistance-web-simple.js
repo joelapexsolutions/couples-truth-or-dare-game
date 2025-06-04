@@ -347,21 +347,18 @@ function updateGameDisplay(gameState) {
             currentPlayerTurn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
         }
         
-        // FIXED: Clear previous question content and show choice buttons when it becomes web player's turn
-        // Only keep question content if it was specifically generated for the web player in this turn
-        const hasCurrentTurnQuestion = questionDisplay.innerHTML.includes('question-content') && 
-                                      (questionDisplay.innerHTML.includes('for You') || 
-                                       questionDisplay.innerHTML.includes('Your turn!'));
+        // Clear any previous shared questions and show choice buttons for new turn
+        const hasActiveWebQuestion = questionDisplay.innerHTML.includes('for You');
         
-        if (!hasCurrentTurnQuestion) {
-            // Clear previous content and show choice buttons for new turn
+        if (!hasActiveWebQuestion) {
+            // It's a new turn for web player - clear content and show choices
             questionDisplay.innerHTML = 'Your turn! Choose Truth or Dare:';
             showChoiceButtons();
-            console.log('Showing choice buttons for web player new turn');
+            console.log('New turn for web player - showing choice buttons');
         } else {
-            // Player already has a question for this turn, show completion buttons
+            // Player already has a question for this turn
             showCompletionButtons();
-            console.log('Showing completion buttons for active question');
+            console.log('Web player has active question - showing completion buttons');
         }
     } else {
         turnElement.textContent = `${webState.partnerName}'s Turn`;
@@ -369,10 +366,13 @@ function updateGameDisplay(gameState) {
             currentPlayerTurn.classList.remove('pulse-animation');
             currentPlayerTurn.style.background = 'rgba(26, 15, 19, 0.6)';
         }
+        
+        // Hide action buttons when it's not web player's turn
         hideAllButtons();
         
-        // Show waiting message when it's not web player's turn
-        if (!questionDisplay.innerHTML.includes('question-content')) {
+        // Show waiting message only if no shared question is displayed
+        const hasSharedQuestion = questionDisplay.innerHTML.includes('question-content');
+        if (!hasSharedQuestion) {
             questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
         }
     }
