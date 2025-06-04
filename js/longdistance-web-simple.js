@@ -205,17 +205,6 @@ questionResponseRef.on('value', (snapshot) => {
     }
 });
 
-    // Listen for shared questions from mobile user
-const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
-sharedQuestionRef.on('value', (snapshot) => {
-    const questionData = snapshot.val();
-    console.log('Web received shared question:', questionData);
-    
-    if (questionData && questionData.text) {
-        displaySharedQuestion(questionData);
-    }
-});
-
     // Connection monitoring
     setupConnectionMonitoring();
     
