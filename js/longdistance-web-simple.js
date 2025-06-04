@@ -299,27 +299,14 @@ function handleGameUpdate(sessionData) {
     // Handle game state updates
     if (sessionData.gameState) {
         updateGameDisplay(sessionData.gameState);
-        
-        // FIXED: Force clear shared questions when turn switches to web player
-        const isMyTurn = sessionData.gameState.currentPlayerIndex === 2;
-        if (isMyTurn) {
-            // Clear any shared questions from previous turn
-            const questionDisplay = document.getElementById('questionDisplay');
-            if (questionDisplay.innerHTML.includes('question-content') && 
-                !questionDisplay.innerHTML.includes('Your turn! Complete this challenge:')) {
-                // This is a previous turn's question, clear it
-                questionDisplay.innerHTML = 'Your turn! Choose Truth or Dare:';
-                showChoiceButtons();
-            }
-        }
     }
 
-    // Handle shared questions
+    // Handle shared questions (when mobile user plays)
     if (sessionData.sharedQuestion) {
         displaySharedQuestion(sessionData.sharedQuestion);
     }
 
-    // Handle web-specific questions
+    // Handle web-specific questions (when web user plays)
     if (sessionData.questionResponse && sessionData.questionResponse.forPlayer === 'player2') {
         displayWebQuestion(sessionData.questionResponse);
         FirebaseUtils.clearQuestionResponse(webState.sessionCode);
