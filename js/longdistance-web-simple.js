@@ -543,12 +543,7 @@ async function sendResponse(responseType) {
         playerKey: 'player2'
     });
 
-    document.getElementById('questionDisplay').innerHTML = `
-        <div class="response-sent">
-            <i class="fas fa-check-circle"></i>
-            <p>Completed! Waiting for next turn...</p>
-        </div>
-    `;
+    // Don't update display here - let the game update handle it
     hideAllButtons();
 } else if (responseType === 'skipped') {
     // Send skipped status - same player chooses again
