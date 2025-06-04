@@ -558,7 +558,7 @@ async function sendResponse(responseType) {
 function listenForQuestionResponse() {
     const responseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
     
-    responseRef.off(); // Clear any existing listeners
+    responseRef.off();
     
     responseRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
@@ -566,12 +566,11 @@ function listenForQuestionResponse() {
         
         if (questionData && questionData.forPlayer === 'player2') {
             displayWebQuestion(questionData);
+            responseRef.off();
             responseRef.remove();
         }
     });
-}
     
-    // Set timeout in case no response comes
     setTimeout(() => {
         const questionDisplay = document.getElementById('questionDisplay');
         if (questionDisplay.innerHTML.includes('Generating your question')) {
