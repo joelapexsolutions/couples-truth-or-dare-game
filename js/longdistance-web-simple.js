@@ -184,16 +184,26 @@ function setupGameListeners() {
     });
 
     // Direct listener for question responses
-    const questionResponseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
-    questionResponseRef.on('value', (snapshot) => {
-        const questionData = snapshot.val();
-        console.log('Direct question response received:', questionData);
-        
-        if (questionData && questionData.forPlayer === 'player2' && !questionData.error) {
+const questionResponseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
+questionResponseRef.on('value', (snapshot) => {
+    const questionData = snapshot.val();
+    console.log('Direct question response received:', questionData);
+    
+    if (questionData && questionData.forPlayer === 'player2') {
+        if (questionData.error) {
+            // Show error message
+            document.getElementById('questionDisplay').innerHTML = `
+                <div class="error-message">
+                    <p>${questionData.text}</p>
+                </div>
+            `;
+            showChoiceButtons(); // Allow retry
+        } else {
             displayWebQuestion(questionData);
-            setTimeout(() => questionResponseRef.remove(), 1000);
         }
-    });
+        setTimeout(() => questionResponseRef.remove(), 1000);
+    }
+});
 
     // Listen for shared questions from mobile user
 const sharedQuestionRef = firebase.database().ref(`sessions/${webState.sessionCode}/sharedQuestion`);
