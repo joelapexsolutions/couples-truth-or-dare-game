@@ -558,22 +558,18 @@ async function sendResponse(responseType) {
 function listenForQuestionResponse() {
     const responseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
     
-    // Remove any existing listener first
-    responseRef.off();
+    responseRef.off(); // Clear any existing listeners
     
-    const responseListener = responseRef.on('value', (snapshot) => {
+    responseRef.once('value', (snapshot) => { // Use 'once' instead of 'on'
         const questionData = snapshot.val();
         console.log('Question response received:', questionData);
         
         if (questionData && questionData.forPlayer === 'player2') {
-            // Display the question
             displayWebQuestion(questionData);
-            
-            // Clean up listener and data
-            responseRef.off();
             responseRef.remove();
         }
     });
+}
     
     // Set timeout in case no response comes
     setTimeout(() => {
