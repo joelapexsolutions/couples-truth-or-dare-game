@@ -580,7 +580,10 @@ async function sendResponse(responseType) {
 function listenForQuestionResponse() {
     const responseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
     
-    responseRef.on('value', (snapshot) => {
+    // Remove any existing listener first
+    responseRef.off();
+    
+    const responseListener = responseRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
         console.log('Question response received:', questionData);
         
@@ -588,9 +591,9 @@ function listenForQuestionResponse() {
             // Display the question
             displayWebQuestion(questionData);
             
-            // Clear the response after displaying
-            responseRef.off(); // Stop listening
-            responseRef.remove(); // Clear from Firebase
+            // Clean up listener and data
+            responseRef.off();
+            responseRef.remove();
         }
     });
     
@@ -600,9 +603,9 @@ function listenForQuestionResponse() {
         if (questionDisplay.innerHTML.includes('Generating your question')) {
             questionDisplay.textContent = 'No question received. Please try selecting Truth or Dare again.';
             showChoiceButtons();
-            responseRef.off(); // Stop listening on timeout
+            responseRef.off();
         }
-    }, 10000); // 10 second timeout
+    }, 10000);
 }
 
 /**
