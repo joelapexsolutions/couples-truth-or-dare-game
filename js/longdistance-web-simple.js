@@ -328,21 +328,17 @@ function updateGameDisplay(gameState) {
             console.log('Web player has active question - showing completion buttons');
         }
     } else {
-        turnElement.textContent = `${webState.partnerName}'s Turn`;
-        if (currentPlayerTurn) {
-            currentPlayerTurn.classList.remove('pulse-animation');
-            currentPlayerTurn.style.background = 'rgba(26, 15, 19, 0.6)';
-        }
-        
-        // Hide action buttons when it's not web player's turn
-        hideAllButtons();
-        
-        // Show waiting message only if no shared question is displayed
-        const hasSharedQuestion = questionDisplay.innerHTML.includes('question-content');
-        if (!hasSharedQuestion) {
-            questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
-        }
+    turnElement.textContent = `${webState.partnerName}'s Turn`;
+    if (currentPlayerTurn) {
+        currentPlayerTurn.classList.remove('pulse-animation');
+        currentPlayerTurn.style.background = 'rgba(26, 15, 19, 0.6)';
     }
+    
+    // Hide action buttons when it's not web player's turn
+    hideAllButtons();
+    
+    // Clear web player's previous question and show waiting message
+    questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
 }
 
 /**
