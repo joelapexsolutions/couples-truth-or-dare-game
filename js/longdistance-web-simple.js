@@ -67,7 +67,7 @@ function setupEventListeners() {
     // Game action buttons - these just send responses to mobile app
     document.getElementById('truthButton').addEventListener('click', () => sendResponse('truth'));
     document.getElementById('dareButton').addEventListener('click', () => sendResponse('dare'));
-    document.getElementById('completedButton').addEventListener('click', () => showCommunicationOptions());
+    document.getElementById('completedButton').addEventListener('click', () => sendResponse('completed'));
     document.getElementById('skippedButton').addEventListener('click', () => sendResponse('skipped'));
     
     // Game controls
@@ -548,24 +548,34 @@ async function sendResponse(responseType) {
             // FIXED: Listen specifically for the question response
             listenForQuestionResponse();
             
-        } else if (responseType === 'completed' || responseType === 'skipped') {
-            // Send completion status
-            await FirebaseUtils.sendWebResponse(webState.sessionCode, {
-                type: 'completion',
-                completed: responseType === 'completed',
-                timestamp: Date.now(),
-                playerKey: 'player2'
-            });
+        } else if (responseType === 'completed') {
+    // Send completion status - switches turn
+    await FirebaseUtils.sendWebResponse(webState.sessionCode, {
+        type: 'completion',
+        completed: true,
+        timestamp: Date.now(),
+        playerKey: 'player2'
+    });
 
-            document.getElementById('questionDisplay').innerHTML = `
-                <div class="response-sent">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Response sent!</p>
-                    <p>Waiting for next turn...</p>
-                </div>
-            `;
-            hideAllButtons();
-        }
+    document.getElementById('questionDisplay').innerHTML = `
+        <div class="response-sent">
+            <i class="fas fa-check-circle"></i>
+            <p>Completed! Waiting for next turn...</p>
+        </div>
+    `;
+    hideAllButtons();
+} else if (responseType === 'skipped') {
+    // Send skipped status - same player chooses again
+    await FirebaseUtils.sendWebResponse(webState.sessionCode, {
+        type: 'completion',
+        completed: false,
+        timestamp: Date.now(),
+        playerKey: 'player2'
+    });
+
+    document.getElementById('questionDisplay').innerHTML = 'Choose Truth or Dare to continue!';
+    showChoiceButtons();
+}
 
     } catch (error) {
         console.error('Error sending response:', error);
