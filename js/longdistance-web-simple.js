@@ -560,7 +560,7 @@ function listenForQuestionResponse() {
     
     responseRef.off(); // Clear any existing listeners
     
-    responseRef.once('value', (snapshot) => { // Use 'once' instead of 'on'
+    responseRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
         console.log('Question response received:', questionData);
         
