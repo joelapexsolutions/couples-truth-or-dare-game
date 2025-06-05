@@ -341,8 +341,11 @@ function updateGameDisplay(gameState) {
     // Hide action buttons when it's not web player's turn
     hideAllButtons();
     
-    // Clear web player's previous question and show waiting message
-    questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
+    // Show waiting message only if no shared question is displayed
+    const hasSharedQuestion = questionDisplay.innerHTML.includes('question-content');
+    if (!hasSharedQuestion) {
+        questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
+    }
 }
 
 /**
