@@ -533,8 +533,8 @@ async function sendResponse(responseType) {
         timestamp: Date.now(),
         playerKey: 'player2'
     });
-
-    // Don't update display here - let the game update handle it
+    // Immediately clear question and show waiting message
+    document.getElementById('questionDisplay').innerHTML = `Waiting for ${webState.partnerName} to choose...`;
     hideAllButtons();
 } else if (responseType === 'skipped') {
     // Send skipped status - same player chooses again
@@ -544,11 +544,9 @@ async function sendResponse(responseType) {
         timestamp: Date.now(),
         playerKey: 'player2'
     });
-
     document.getElementById('questionDisplay').innerHTML = 'Choose Truth or Dare to continue!';
     showChoiceButtons();
 }
-
     } catch (error) {
         console.error('Error sending response:', error);
         showAlert('Failed to send response. Please try again.');
