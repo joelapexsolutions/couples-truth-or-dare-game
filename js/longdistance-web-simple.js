@@ -27,9 +27,17 @@ document.addEventListener('DOMContentLoaded', function() {
 function initSimpleWebGame() {
     console.log('Initializing Simplified Web Game...');
     
+    // Always set up event listeners first, regardless of Firebase status
+    setupEventListeners();
+    loadSavedPlayerName();
+    showSection('joinSection');
+    
+    // Then check Firebase (but don't block if it fails)
     if (!initializeFirebase()) {
-        showAlert('Unable to connect to game servers. Please refresh and try again.');
-        return;
+        console.warn('Firebase initialization failed, but UI is ready');
+        // Don't show alert immediately - let user try to join and then show error
+    } else {
+        console.log('Firebase ready');
     }
 
     // Load long distance questions
@@ -37,10 +45,6 @@ function initSimpleWebGame() {
         loadLongDistanceQuestions();
         console.log('Long distance questions loaded for web');
     }
-
-    setupEventListeners();
-    loadSavedPlayerName();
-    showSection('joinSection');
 }
 
 /**
