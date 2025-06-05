@@ -354,7 +354,7 @@ function updateGameDisplay(gameState) {
         hideAllButtons();
         
         // Clear web player's previous question and show waiting message
-        questionDisplay.textContent = `Waiting for ${webState.partnerName} to choose...`;
+       questionDisplay.innerHTML = `Waiting for ${webState.partnerName} to choose...`;
     }
 }
 
