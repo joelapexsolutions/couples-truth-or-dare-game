@@ -59,8 +59,20 @@ function setupEventListeners() {
         hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
     }
 
-    // Join game
-    document.getElementById('joinGameButton').addEventListener('click', joinGame);
+    // Join game - DEBUG VERSION
+const joinButton = document.getElementById('joinGameButton');
+console.log('Join button found:', joinButton);
+
+if (joinButton) {
+    console.log('Adding click listener to join button');
+    joinButton.addEventListener('click', function() {
+        console.log('JOIN BUTTON CLICKED!');
+        joinGame();
+    });
+    console.log('Click listener added successfully');
+} else {
+    console.error('JOIN BUTTON NOT FOUND!');
+}
     
     // Auto-format game code
     const gameCodeInput = document.getElementById('gameCode');
