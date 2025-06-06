@@ -522,31 +522,43 @@ async function sendResponse(responseType) {
             `;
             hideAllButtons();
             
-            // FIXED: Listen specifically for the question response
+            // Listen specifically for the question response
             listenForQuestionResponse();
             
         } else if (responseType === 'completed') {
-    // Send completion status - switches turn
-    await FirebaseUtils.sendWebResponse(webState.sessionCode, {
-        type: 'completion',
-        completed: true,
-        timestamp: Date.now(),
-        playerKey: 'player2'
-    });
-    // Immediately clear question and show waiting message
-    document.getElementById('questionDisplay').innerHTML = `Waiting for ${webState.partnerName} to choose...`;
-    hideAllButtons();
-} else if (responseType === 'skipped') {
-    // Send skipped status - same player chooses again
-    await FirebaseUtils.sendWebResponse(webState.sessionCode, {
-        type: 'completion',
-        completed: false,
-        timestamp: Date.now(),
-        playerKey: 'player2'
-    });
-    document.getElementById('questionDisplay').innerHTML = 'Choose Truth or Dare to continue!';
-    showChoiceButtons();
-}
+            // HIDE TIMER FIRST
+            const timerContainer = document.getElementById('timerContainer');
+            if (timerContainer) {
+                timerContainer.classList.add('hidden');
+            }
+            
+            // Send completion status - switches turn
+            await FirebaseUtils.sendWebResponse(webState.sessionCode, {
+                type: 'completion',
+                completed: true,
+                timestamp: Date.now(),
+                playerKey: 'player2'
+            });
+            // Immediately clear question and show waiting message
+            document.getElementById('questionDisplay').innerHTML = `Waiting for ${webState.partnerName} to choose...`;
+            hideAllButtons();
+        } else if (responseType === 'skipped') {
+            // HIDE TIMER FIRST
+            const timerContainer = document.getElementById('timerContainer');
+            if (timerContainer) {
+                timerContainer.classList.add('hidden');
+            }
+            
+            // Send skipped status - same player chooses again
+            await FirebaseUtils.sendWebResponse(webState.sessionCode, {
+                type: 'completion',
+                completed: false,
+                timestamp: Date.now(),
+                playerKey: 'player2'
+            });
+            document.getElementById('questionDisplay').innerHTML = 'Choose Truth or Dare to continue!';
+            showChoiceButtons();
+        }
     } catch (error) {
         console.error('Error sending response:', error);
         showAlert('Failed to send response. Please try again.');
