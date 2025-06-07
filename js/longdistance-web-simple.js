@@ -27,24 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function initSimpleWebGame() {
     console.log('Initializing Simplified Web Game...');
     
-    // Always set up event listeners first, regardless of Firebase status
     setupEventListeners();
     loadSavedPlayerName();
     showSection('joinSection');
     
-    // Then check Firebase (but don't block if it fails)
     if (!initializeFirebase()) {
         console.warn('Firebase initialization failed, but UI is ready');
-        // Don't show alert immediately - let user try to join and then show error
     } else {
         console.log('Firebase ready');
     }
 
-    // Load long distance questions
-    if (typeof loadLongDistanceQuestions === 'function') {
-        loadLongDistanceQuestions();
-        console.log('Long distance questions loaded for web');
-    }
+    // REMOVED: loadLongDistanceQuestions() - web doesn't load questions
+    console.log('Web game initialized - waiting for mobile to provide questions');
 }
 
 /**
@@ -264,7 +258,7 @@ function hideConnectionLostMessage() {
 function handleGameUpdate(sessionData) {
     console.log('Game update received:', sessionData);
     
-    // Update connection status
+    // Handle connection status
     if (sessionData.players?.player1?.connected) {
         webState.isConnected = true;
         updateConnectionStatus();
@@ -279,23 +273,33 @@ function handleGameUpdate(sessionData) {
         }
     }
 
-    // Handle game state updates
+    // FIXED: Handle game state updates from mobile (mobile controls all logic)
     if (sessionData.gameState) {
         updateGameDisplay(sessionData.gameState);
+        
+        // Ensure points are displayed correctly from mobile's calculations
+        const player1Points = Number(sessionData.gameState.player1Points) || 0;
+        const player2Points = Number(sessionData.gameState.player2Points) || 0;
+        
+        document.getElementById('player1PointsDisplay').textContent = player1Points;
+        document.getElementById('player2PointsDisplay').textContent = player2Points;
+        
+        console.log('Points updated from mobile - Partner:', player1Points, 'Web User:', player2Points);
     }
 
-    // Handle shared questions (when mobile user plays)
+    // Handle shared questions (mobile pushes questions to web)
     if (sessionData.sharedQuestion) {
         displaySharedQuestion(sessionData.sharedQuestion);
     }
 
-    // Handle web-specific questions (when web user plays)
+    // Handle web-specific questions (mobile generates for web user)
     if (sessionData.questionResponse && sessionData.questionResponse.forPlayer === 'player2') {
         displayWebQuestion(sessionData.questionResponse);
-        FirebaseUtils.clearQuestionResponse(webState.sessionCode);
+        // Clear after displaying
+        firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`).remove();
     }
 
-    // Handle game completion and disconnection
+    // Handle game completion
     if (sessionData.status === 'completed') {
         showResults(sessionData.results || sessionData.gameResults);
     }
@@ -309,15 +313,18 @@ function handleGameUpdate(sessionData) {
  * Update game display with data from mobile app
  */
 function updateGameDisplay(gameState) {
-    // Update level and round
+    // Update level and round from mobile
     document.getElementById('levelDisplay').textContent = gameState.level || 'Soft';
     document.getElementById('roundDisplay').textContent = `${gameState.currentRound || 1}/${gameState.totalRounds || 4}`;
 
-    // Update points
-    document.getElementById('player1PointsDisplay').textContent = gameState.player1Points || 0;
-    document.getElementById('player2PointsDisplay').textContent = gameState.player2Points || 0;
+    // FIXED: Display points as calculated by mobile
+    const player1Points = Number(gameState.player1Points) || 0;
+    const player2Points = Number(gameState.player2Points) || 0;
+    
+    document.getElementById('player1PointsDisplay').textContent = player1Points;
+    document.getElementById('player2PointsDisplay').textContent = player2Points;
 
-    // Check if it's web player's turn
+    // Check if it's web player's turn (mobile controls turn logic)
     const isMyTurn = gameState.currentPlayerIndex === 2; // Web player is always player2
     const turnElement = document.getElementById('currentPlayerName');
     const currentPlayerTurn = document.getElementById('currentPlayerTurn');
@@ -330,31 +337,29 @@ function updateGameDisplay(gameState) {
             currentPlayerTurn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
         }
         
-        // Clear any previous shared questions and show choice buttons for new turn
-        const hasActiveWebQuestion = questionDisplay.innerHTML.includes('for You');
+        // Check if web user already has a question for this turn
+        const hasActiveWebQuestion = questionDisplay.innerHTML.includes('for You') || 
+                                   questionDisplay.innerHTML.includes('question-content');
         
         if (!hasActiveWebQuestion) {
-            // It's a new turn for web player - clear content and show choices
+            // New turn - show choices
             questionDisplay.innerHTML = 'Your turn! Choose Truth or Dare:';
             showChoiceButtons();
-            console.log('New turn for web player - showing choice buttons');
+            console.log('New turn for web player');
         } else {
-            // Player already has a question for this turn
+            // Already has question - show completion buttons
             showCompletionButtons();
-            console.log('Web player has active question - showing completion buttons');
+            console.log('Web player has active question');
         }
-        } else {
+    } else {
         turnElement.textContent = `${webState.partnerName}'s Turn`;
         if (currentPlayerTurn) {
             currentPlayerTurn.classList.remove('pulse-animation');
             currentPlayerTurn.style.background = 'rgba(26, 15, 19, 0.6)';
         }
         
-        // Hide action buttons when it's not web player's turn
         hideAllButtons();
-        
-        // Clear web player's previous question and show waiting message
-       questionDisplay.innerHTML = `Waiting for ${webState.partnerName} to choose...`;
+        questionDisplay.innerHTML = `Waiting for ${webState.partnerName} to choose...`;
     }
 }
 
@@ -386,7 +391,7 @@ function displaySharedQuestion(questionData) {
         hideAllButtons();
     }
     
-    // Handle timer if provided
+    // Handle timer from mobile
     if (questionData.timer > 0) {
         handleTimer({ duration: questionData.timer });
     }
@@ -408,15 +413,9 @@ function displayWebQuestion(questionData) {
         </div>
     `;
     
-    // Force show completion buttons
-    const choiceButtons = document.getElementById('choiceButtons');
-    const completionButtons = document.getElementById('taskCompletionButtons');
-    
-    if (choiceButtons) choiceButtons.classList.add('hidden');
-    if (completionButtons) {
-        completionButtons.classList.remove('hidden');
-        completionButtons.style.display = 'flex';
-    }
+    // Always show completion buttons for web user's question
+    hideAllButtons();
+    showCompletionButtons();
     
     if (questionData.timer > 0) {
         handleTimer({ duration: questionData.timer });
@@ -512,7 +511,6 @@ async function sendResponse(responseType) {
                 playerKey: 'player2'
             });
 
-            // Show waiting message and hide buttons
             document.getElementById('questionDisplay').innerHTML = `
                 <div class="waiting-message">
                     <i class="fas fa-spinner fa-spin"></i>
@@ -521,41 +519,41 @@ async function sendResponse(responseType) {
                 </div>
             `;
             hideAllButtons();
-            
-            // Listen specifically for the question response
             listenForQuestionResponse();
             
         } else if (responseType === 'completed') {
-            // HIDE TIMER FIRST
             const timerContainer = document.getElementById('timerContainer');
             if (timerContainer) {
                 timerContainer.classList.add('hidden');
             }
             
-            // Send completion status - switches turn
+            // FIXED: Send completion signal that mobile will process for points
             await FirebaseUtils.sendWebResponse(webState.sessionCode, {
                 type: 'completion',
                 completed: true,
                 timestamp: Date.now(),
-                playerKey: 'player2'
+                playerKey: 'player2',
+                forPlayer: 'player2' // Identify this is web user completing
             });
-            // Immediately clear question and show waiting message
+            
             document.getElementById('questionDisplay').innerHTML = `Waiting for ${webState.partnerName} to choose...`;
             hideAllButtons();
+            
         } else if (responseType === 'skipped') {
-            // HIDE TIMER FIRST
             const timerContainer = document.getElementById('timerContainer');
             if (timerContainer) {
                 timerContainer.classList.add('hidden');
             }
             
-            // Send skipped status - same player chooses again
+            // FIXED: Send skip signal that mobile will process
             await FirebaseUtils.sendWebResponse(webState.sessionCode, {
                 type: 'completion',
                 completed: false,
                 timestamp: Date.now(),
-                playerKey: 'player2'
+                playerKey: 'player2',
+                forPlayer: 'player2' // Identify this is web user skipping
             });
+            
             document.getElementById('questionDisplay').innerHTML = 'Choose Truth or Dare to continue!';
             showChoiceButtons();
         }
@@ -563,7 +561,6 @@ async function sendResponse(responseType) {
         console.error('Error sending response:', error);
         showAlert('Failed to send response. Please try again.');
         
-        // Re-enable appropriate buttons on error
         const questionDisplay = document.getElementById('questionDisplay');
         const hasActiveQuestion = questionDisplay.innerHTML.includes('question-content');
         
@@ -581,7 +578,7 @@ async function sendResponse(responseType) {
 function listenForQuestionResponse() {
     const responseRef = firebase.database().ref(`sessions/${webState.sessionCode}/questionResponse`);
     
-    responseRef.off();
+    responseRef.off(); // Clear any existing listeners
     
     responseRef.on('value', (snapshot) => {
         const questionData = snapshot.val();
@@ -590,10 +587,11 @@ function listenForQuestionResponse() {
         if (questionData && questionData.forPlayer === 'player2') {
             displayWebQuestion(questionData);
             responseRef.off();
-            responseRef.remove();
+            responseRef.remove(); // Clean up
         }
     });
     
+    // Timeout handling
     setTimeout(() => {
         const questionDisplay = document.getElementById('questionDisplay');
         if (questionDisplay.innerHTML.includes('Generating your question')) {
