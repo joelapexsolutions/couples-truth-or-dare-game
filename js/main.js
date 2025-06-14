@@ -41,6 +41,138 @@ function initWebsite() {
     
     // Initialize long distance feature animations
     initLongDistanceAnimations();
+    
+    // Initialize age verification for erotic packs
+    initAgeVerification();
+}
+
+/**
+ * Initialize age verification for erotic packs
+ */
+function initAgeVerification() {
+    const eroticDownloadButtons = document.querySelectorAll('.erotic-download');
+    const ageModal = document.getElementById('ageVerificationModal');
+    const closeAgeModal = document.getElementById('closeAgeModal');
+    const cancelDownload = document.getElementById('cancelDownload');
+    const confirmDownload = document.getElementById('confirmDownload');
+    
+    let currentPackUrl = '';
+    let currentFilename = '';
+    
+    // Handle erotic pack download button clicks
+    eroticDownloadButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Store the pack details
+            currentPackUrl = this.getAttribute('data-pack');
+            currentFilename = this.getAttribute('data-filename');
+            
+            // Show age verification modal
+            if (ageModal) {
+                ageModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    });
+    
+    // Handle close modal button
+    if (closeAgeModal) {
+        closeAgeModal.addEventListener('click', function() {
+            closeAgeVerificationModal();
+        });
+    }
+    
+    // Handle cancel button
+    if (cancelDownload) {
+        cancelDownload.addEventListener('click', function() {
+            closeAgeVerificationModal();
+        });
+    }
+    
+    // Handle confirm download button
+    if (confirmDownload) {
+        confirmDownload.addEventListener('click', function() {
+            // Proceed with download
+            if (currentPackUrl && currentFilename) {
+                // Create a temporary link element and trigger download
+                const link = document.createElement('a');
+                link.href = currentPackUrl;
+                link.download = currentFilename;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Show success message
+                showDownloadSuccess();
+            }
+            
+            // Close modal
+            closeAgeVerificationModal();
+        });
+    }
+    
+    // Close modal when clicking outside
+    if (ageModal) {
+        ageModal.addEventListener('click', function(e) {
+            if (e.target === ageModal) {
+                closeAgeVerificationModal();
+            }
+        });
+    }
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && ageModal && ageModal.classList.contains('active')) {
+            closeAgeVerificationModal();
+        }
+    });
+    
+    function closeAgeVerificationModal() {
+        if (ageModal) {
+            ageModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+        // Reset current pack details
+        currentPackUrl = '';
+        currentFilename = '';
+    }
+    
+    function showDownloadSuccess() {
+        // Create a temporary success notification
+        const notification = document.createElement('div');
+        notification.className = 'download-notification';
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-check-circle"></i>
+                <span>Download started! Check your downloads folder.</span>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Add styles dynamically
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            z-index: 3000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideInRight 0.5s ease, fadeOut 0.5s ease 3s forwards;
+        `;
+        
+        // Remove notification after 3.5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                document.body.removeChild(notification);
+            }
+        }, 3500);
+    }
 }
 
 /**
