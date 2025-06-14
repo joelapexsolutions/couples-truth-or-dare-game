@@ -2516,3 +2516,270 @@ button {
         text-align: center;
     }
 }
+
+/* === Modal === */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-speed) ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, rgba(26, 15, 19, 0.95), rgba(50, 30, 40, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    transform: scale(0.8);
+    transition: all var(--transition-speed) ease;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.close-modal {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.close-modal:hover {
+    color: var(--secondary-color);
+    opacity: 1;
+}
+
+.modal-body {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.premium-icon {
+    font-size: 3rem;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.premium-icon i {
+    animation: glow 2s infinite;
+}
+
+.premium-features {
+    list-style: none;
+    text-align: left;
+    margin: 25px 0;
+}
+
+.premium-features li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.premium-features i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    animation: pulse 2s infinite;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.modal-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-button.secondary {
+    background: rgba(26, 15, 19, 0.8);
+    color: var(--text-color);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: none;
+}
+
+.modal-button.secondary:hover {
+    background: rgba(50, 30, 40, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-button.primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    animation: pulse 2s infinite;
+}
+
+/* Age Verification Modal Styles */
+.age-verification-icon {
+    font-size: 3rem;
+    color: #ff6b35;
+    margin-bottom: 20px;
+}
+
+.age-verification-icon i {
+    animation: glow 2s infinite;
+}
+
+.age-verification-list {
+    list-style: none;
+    text-align: left;
+    margin: 25px 0;
+    background: rgba(26, 15, 19, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.age-verification-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.age-verification-list i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.age-disclaimer {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    background: rgba(255, 107, 53, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ff6b35;
+    margin-top: 20px;
+}
+
+/* Erotic Pack Styles */
+.pack-card.erotic-pack {
+    border-color: #ff6b35;
+    background: linear-gradient(135deg, rgba(26, 15, 19, 0.9), rgba(60, 25, 35, 0.8));
+    position: relative;
+}
+
+.pack-card.erotic-pack::before {
+    background: linear-gradient(90deg, #ff6b35, var(--primary-color));
+}
+
+.pack-card.erotic-pack:hover {
+    border-color: #ff8c69;
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+}
+
+.adult-badge {
+    background: #ff6b35 !important;
+    color: white;
+    font-weight: 700;
+    animation: pulse 2s infinite;
+}
+
+.erotic-download {
+    background: linear-gradient(135deg, #ff6b35, var(--primary-color));
+    border: none;
+    cursor: pointer;
+}
+
+.erotic-download:hover {
+    background: linear-gradient(135deg, #ff8c69, var(--darker-red));
+}
+
+/* Download Notification */
+.download-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    z-index: 3000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideInRight 0.5s ease, fadeOut 0.5s ease 3s forwards;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-content i {
+    color: #4CAF50;
+    font-size: 1.2rem;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
