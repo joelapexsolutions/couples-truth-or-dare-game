@@ -995,18 +995,44 @@ function initLongDistanceAnimations() {
  */
 function initializeAds() {
     try {
-        // Initialize banner ads
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        console.log('AdSense ads initialized');
+        // Check if AdSense is loaded
+        if (typeof window.adsbygoogle === 'undefined') {
+            console.log('AdSense not loaded yet, retrying...');
+            setTimeout(initializeAds, 1000);
+            return;
+        }
+        
+        // Find all uninitialized ads
+        const ads = document.querySelectorAll('.adsbygoogle:not([data-adsbygoogle-status])');
+        console.log('Found', ads.length, 'uninitialized ads');
+        
+        if (ads.length > 0) {
+            // Initialize each ad
+            ads.forEach((ad, index) => {
+                try {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    console.log('Initialized ad', index + 1);
+                } catch (error) {
+                    console.error('Error initializing ad', index + 1, error);
+                }
+            });
+        }
+        
+        console.log('AdSense ads initialization complete');
     } catch (error) {
-        console.error('Error initializing ads:', error);
+        console.error('Error in initializeAds:', error);
     }
 }
 
 // Initialize ads when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait a bit for AdSense to load
-    setTimeout(initializeAds, 1000);
+    console.log('Page loaded, initializing ads...');
+    setTimeout(initializeAds, 2000);
+});
+
+// Also try when window loads
+window.addEventListener('load', function() {
+    setTimeout(initializeAds, 3000);
 });
 
 /**
