@@ -1051,8 +1051,8 @@ function showInterstitialAd(reason = 'general') {
                 <button class="close-interstitial" onclick="closeInterstitialAd()">&times;</button>
             </div>
             <div class="interstitial-ad-body">
-                <ins class="adsbygoogle"
-                     style="display:block"
+                <ins class="adsbygoogle interstitial-ad"
+                     style="display:block; width:100%; min-width:280px; min-height:280px;"
                      data-ad-client="ca-pub-3261569477417964"
                      data-ad-slot="1864255122"
                      data-ad-format="auto"
@@ -1067,19 +1067,23 @@ function showInterstitialAd(reason = 'general') {
     document.body.appendChild(modal);
     document.body.style.overflow = 'hidden';
     
-    // Load the ad
-    try {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (error) {
-        console.error('Error loading interstitial ad:', error);
-    }
+    // Show modal first
+    setTimeout(() => {
+        modal.classList.add('active');
+        
+        // Load the ad after modal is visible
+        setTimeout(() => {
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                console.log('Interstitial ad loaded');
+            } catch (error) {
+                console.error('Error loading interstitial ad:', error);
+            }
+        }, 300);
+    }, 100);
     
     // Mark as shown
     markInterstitialShown();
-    
-    setTimeout(() => {
-        modal.classList.add('active');
-    }, 100);
 }
 
 /**
