@@ -1129,3 +1129,26 @@ function markInterstitialShown() {
     sessionStorage.setItem(window.adConfig.interstitialShownKey, 'true');
     localStorage.setItem(window.adConfig.lastInterstitialKey, new Date().toISOString());
 }
+
+/**
+ * Add interstitial ads to direct download links
+ */
+function addDownloadInterstitials() {
+    // Find all download buttons that aren't erotic (those use the modal)
+    const downloadBtns = document.querySelectorAll('a.download-btn:not(.erotic-download)');
+    
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Show interstitial ad
+            if (typeof showInterstitialAd === 'function') {
+                showInterstitialAd('pack_download');
+            }
+            // Let the download proceed normally
+        });
+    });
+}
+
+// Initialize download interstitials when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(addDownloadInterstitials, 500);
+});
