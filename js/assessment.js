@@ -53,6 +53,11 @@ function confirmAge(isAdult) {
     }
     
     if (isAdult) {
+        // Show interstitial ad first
+        if (typeof showInterstitialAd === 'function') {
+            showInterstitialAd('age_verification');
+        }
+        
         // Continue with the assessment (no longer saving to localStorage)
         initAssessment();
     } else {
