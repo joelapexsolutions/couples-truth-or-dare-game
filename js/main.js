@@ -1041,6 +1041,9 @@ function showInterstitialAd(reason = 'general') {
         return;
     }
     
+    // Create unique ID for this ad
+    const adId = 'interstitial-' + Date.now();
+    
     // Create interstitial modal
     const modal = document.createElement('div');
     modal.className = 'interstitial-ad-modal';
@@ -1051,7 +1054,7 @@ function showInterstitialAd(reason = 'general') {
                 <button class="close-interstitial" onclick="closeInterstitialAd()">&times;</button>
             </div>
             <div class="interstitial-ad-body">
-                <ins class="adsbygoogle interstitial-ad"
+                <ins class="adsbygoogle interstitial-ad" id="${adId}"
                      style="display:block; width:100%; min-width:280px; min-height:280px;"
                      data-ad-client="ca-pub-3261569477417964"
                      data-ad-slot="1864255122"
@@ -1074,8 +1077,14 @@ function showInterstitialAd(reason = 'general') {
         // Load the ad after modal is visible
         setTimeout(() => {
             try {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                console.log('Interstitial ad loaded');
+                // Only initialize if this specific ad hasn't been initialized
+                const adElement = document.getElementById(adId);
+                if (adElement && !adElement.hasAttribute('data-adsbygoogle-status')) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    console.log('Interstitial ad loaded');
+                } else {
+                    console.log('Ad already initialized or element not found');
+                }
             } catch (error) {
                 console.error('Error loading interstitial ad:', error);
             }
