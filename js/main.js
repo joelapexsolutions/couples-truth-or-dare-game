@@ -1008,3 +1008,102 @@ document.addEventListener('DOMContentLoaded', function() {
     // Wait a bit for AdSense to load
     setTimeout(initializeAds, 1000);
 });
+
+/**
+ * Show interstitial ad with session management
+ */
+function showInterstitialAd(reason = 'general') {
+    // Check if we should show an interstitial
+    if (!shouldShowInterstitial()) {
+        console.log('Interstitial ad skipped due to cooldown/session');
+        return;
+    }
+    
+    // Create interstitial modal
+    const modal = document.createElement('div');
+    modal.className = 'interstitial-ad-modal';
+    modal.innerHTML = `
+        <div class="interstitial-ad-content">
+            <div class="interstitial-ad-header">
+                <span class="ad-label">Advertisement</span>
+                <button class="close-interstitial" onclick="closeInterstitialAd()">&times;</button>
+            </div>
+            <div class="interstitial-ad-body">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3261569477417964"
+                     data-ad-slot="1864255122"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+            <div class="interstitial-ad-footer">
+                <button class="continue-button" onclick="closeInterstitialAd()">Continue</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // Load the ad
+    try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (error) {
+        console.error('Error loading interstitial ad:', error);
+    }
+    
+    // Mark as shown
+    markInterstitialShown();
+    
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 100);
+}
+
+/**
+ * Close interstitial ad
+ */
+function closeInterstitialAd() {
+    const modal = document.querySelector('.interstitial-ad-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            document.body.removeChild(modal);
+            document.body.style.overflow = '';
+        }, 300);
+    }
+}
+
+/**
+ * Check if we should show interstitial ad
+ */
+function shouldShowInterstitial() {
+    const lastShown = localStorage.getItem(window.adConfig.lastInterstitialKey);
+    const sessionShown = sessionStorage.getItem(window.adConfig.interstitialShownKey);
+    
+    // Don't show if already shown this session
+    if (sessionShown) {
+        return false;
+    }
+    
+    // Check cooldown period
+    if (lastShown) {
+        const lastShownTime = new Date(lastShown);
+        const now = new Date();
+        const hoursSinceLastShown = (now - lastShownTime) / (1000 * 60 * 60);
+        
+        if (hoursSinceLastShown < window.adConfig.cooldownHours) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+/**
+ * Mark interstitial as shown
+ */
+function markInterstitialShown() {
+    sessionStorage.setItem(window.adConfig.interstitialShownKey, 'true');
+    localStorage.setItem(window.adConfig.lastInterstitialKey, new Date().toISOString());
+}
