@@ -989,3 +989,22 @@ function initLongDistanceAnimations() {
         });
     });
 }
+
+/**
+ * Initialize AdSense ads
+ */
+function initializeAds() {
+    try {
+        // Initialize banner ads
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        console.log('AdSense ads initialized');
+    } catch (error) {
+        console.error('Error initializing ads:', error);
+    }
+}
+
+// Initialize ads when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for AdSense to load
+    setTimeout(initializeAds, 1000);
+});
