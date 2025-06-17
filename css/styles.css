@@ -2783,3 +2783,37 @@ button {
         transform: translateX(100%);
     }
 }
+
+/* Banner Ad Styles */
+.banner-ad-container {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(26, 5, 5, 0.3);
+    border-bottom: 1px solid rgba(178, 0, 0, 0.3);
+    position: relative;
+    z-index: 999;
+}
+
+.banner-ad {
+    max-width: 728px;
+    width: 100%;
+    height: 90px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Adjust main content to account for banner */
+.hero, .packs-hero, .assessment-container {
+    padding-top: 180px !important;
+}
+
+@media (max-width: 768px) {
+    .banner-ad {
+        height: 60px;
+    }
+    
+    .hero, .packs-hero, .assessment-container {
+        padding-top: 160px !important;
+    }
+}
