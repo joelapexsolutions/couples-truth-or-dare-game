@@ -93,6 +93,11 @@ function initAgeVerification() {
     // Handle confirm download button
     if (confirmDownload) {
         confirmDownload.addEventListener('click', function() {
+            // Show interstitial ad first
+            if (typeof showInterstitialAd === 'function') {
+                showInterstitialAd('pack_download');
+            }
+            
             // Proceed with download
             if (currentPackUrl && currentFilename) {
                 // Create a temporary link element and trigger download
@@ -110,15 +115,6 @@ function initAgeVerification() {
             
             // Close modal
             closeAgeVerificationModal();
-        });
-    }
-    
-    // Close modal when clicking outside
-    if (ageModal) {
-        ageModal.addEventListener('click', function(e) {
-            if (e.target === ageModal) {
-                closeAgeVerificationModal();
-            }
         });
     }
     
