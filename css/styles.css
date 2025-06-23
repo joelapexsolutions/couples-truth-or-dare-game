@@ -2533,6 +2533,8 @@ button {
     visibility: hidden;
     transition: all var(--transition-speed) ease;
     backdrop-filter: blur(5px);
+    padding: 20px; /* Add padding to prevent edge touching */
+    box-sizing: border-box;
 }
 
 .modal.active {
@@ -2543,13 +2545,16 @@ button {
 .modal-content {
     width: 90%;
     max-width: 500px;
+    max-height: 90vh; /* Limit height to 90% of viewport height */
     background: linear-gradient(135deg, rgba(26, 15, 19, 0.95), rgba(50, 30, 40, 0.9));
     border-radius: 15px;
-    padding: 30px;
     transform: scale(0.8);
     transition: all var(--transition-speed) ease;
     border: 2px solid var(--primary-color);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent content from spilling out */
 }
 
 .modal.active .modal-content {
@@ -2560,9 +2565,9 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    padding: 20px 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; /* Prevent header from shrinking */
 }
 
 .modal-header h3 {
@@ -2589,7 +2594,17 @@ button {
 
 .modal-body {
     text-align: center;
-    margin-bottom: 25px;
+    padding: 20px 30px;
+    overflow-y: auto; /* Allow scrolling if content is too long */
+    flex: 1; /* Take up available space */
+}
+
+.modal-footer {
+    text-align: center;
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    background: rgba(26, 15, 19, 0.3); /* Slight background to distinguish */
 }
 
 .premium-icon {
@@ -2619,10 +2634,6 @@ button {
     margin-right: 10px;
 }
 
-.modal-footer {
-    text-align: center;
-}
-
 .modal-button {
     display: inline-block;
     padding: 12px 30px;
@@ -2631,10 +2642,10 @@ button {
     border-radius: 50px;
     font-weight: 600;
     transition: all var(--transition-speed) ease;
-    animation: pulse 2s infinite;
     border: none;
     cursor: pointer;
     margin: 0 10px;
+    font-size: 1rem;
 }
 
 .modal-button:hover {
@@ -2683,14 +2694,17 @@ button {
 .age-verification-list li {
     margin-bottom: 12px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Changed from center to flex-start for better text wrapping */
     color: var(--text-color);
+    line-height: 1.4;
 }
 
 .age-verification-list i {
     color: var(--secondary-color);
     margin-right: 10px;
     font-size: 1rem;
+    margin-top: 2px; /* Slight top margin to align with text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .age-disclaimer {
@@ -2702,86 +2716,91 @@ button {
     border-radius: 8px;
     border-left: 4px solid #ff6b35;
     margin-top: 20px;
+    line-height: 1.5;
 }
 
-/* Erotic Pack Styles */
-.pack-card.erotic-pack {
-    border-color: #ff6b35;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.9), rgba(60, 25, 35, 0.8));
-    position: relative;
-}
-
-.pack-card.erotic-pack::before {
-    background: linear-gradient(90deg, #ff6b35, var(--primary-color));
-}
-
-.pack-card.erotic-pack:hover {
-    border-color: #ff8c69;
-    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-}
-
-.adult-badge {
-    background: #ff6b35 !important;
-    color: white;
-    font-weight: 700;
-    animation: pulse 2s infinite;
-}
-
-.erotic-download {
-    background: linear-gradient(135deg, #ff6b35, var(--primary-color));
-    border: none;
-    cursor: pointer;
-}
-
-.erotic-download:hover {
-    background: linear-gradient(135deg, #ff8c69, var(--darker-red));
-}
-
-/* Download Notification */
-.download-notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 15px 20px;
-    border-radius: 10px;
-    z-index: 3000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: slideInRight 0.5s ease, fadeOut 0.5s ease 3s forwards;
-}
-
-.notification-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.notification-content i {
-    color: #4CAF50;
-    font-size: 1.2rem;
-}
-
-@keyframes slideInRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    .modal {
+        padding: 10px;
     }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
+    
+    .modal-content {
+        width: 95%;
+        max-height: 95vh; /* Slightly larger on mobile */
+    }
+    
+    .modal-header {
+        padding: 15px 20px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-body {
+        padding: 15px 20px;
+    }
+    
+    .modal-footer {
+        padding: 15px 20px;
+    }
+    
+    .modal-button {
+        padding: 10px 20px;
+        margin: 5px;
+        display: block;
+        width: calc(50% - 10px);
+        display: inline-block;
+    }
+    
+    .age-verification-list {
+        padding: 15px;
+    }
+    
+    .age-disclaimer {
+        padding: 12px;
+        font-size: 0.85rem;
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: translateX(0);
+@media (max-width: 480px) {
+    .modal-content {
+        max-height: 98vh;
     }
-    100% {
-        opacity: 0;
-        transform: translateX(100%);
+    
+    .modal-button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
     }
+    
+    .modal-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .close-modal {
+        font-size: 1.5rem;
+    }
+}
+
+/* Scrollbar styling for the modal body */
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
 }
 
 /* Banner Ad Styles */
