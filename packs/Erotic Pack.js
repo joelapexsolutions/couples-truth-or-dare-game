@@ -4688,7 +4688,7 @@
       points: 3,
       timer: 0
     },
-	{
+    {
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
@@ -4696,7 +4696,15 @@
       points: 3,
       timer: 0
     },
-	{
+    {
+      type: 'truth',
+      level: 'Hot',
+      gender: 'Female',
+      text: 'Which of these you definately would like to try with Female. Anal sex, Threesome, Couple Swing, an Orgy or None?',
+      points: 3,
+      timer: 0
+    },
+    {
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
@@ -5365,6 +5373,14 @@
       level: 'Hot',
       gender: 'Female',
       text: 'What is the hottest thing someone has ever done with you in bed?',
+      points: 3,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Hot',
+      gender: 'Female',
+      text: 'Which of these you definately would like to try with Male. Anal sex, Threesome, Couple Swing, an Orgy or None?',
       points: 3,
       timer: 0
     },
@@ -6608,6 +6624,14 @@
       points: 4,
       timer: 60
     },
+	{
+      type: 'dare',
+      level: 'Hot',
+      gender: 'Female',
+      text: 'Choose any of these dare\'s and complete it before the end of next month. French kiss a girl, have a threesome with Male, attend an exclusive Adults only party, Try anal with Male.',
+      points: 4,
+      timer: 60
+    },	   
     {
       type: 'dare',
       level: 'Hot',
@@ -7100,6 +7124,14 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
+      text: 'Choose any of these dare\'s and complete it before the end of next month. Book a sensual couple\'s massage for you and Female, have a threesome with Female, attend an exclusive Adults only party, Try anal with Female.',
+      points: 5,
+      timer: 1200
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
       text: 'Position yourselves in a mutual oral pleasure arrangement where both partners can simultaneously stimulate each other. Use both your mouth and hands, experimenting with various techniques including different speeds, pressures, and suction patterns. Continue this mutual stimulation until both of you reach climax.',
       points: 5,
       timer: 300
@@ -7272,7 +7304,7 @@
       points: 5,
       timer: 300
     },
-	{
+    {
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
@@ -7288,7 +7320,7 @@
       points: 5,
       timer: 600
     },
-	{
+    {
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
