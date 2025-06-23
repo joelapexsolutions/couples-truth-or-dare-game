@@ -52,12 +52,7 @@ function confirmAge(isAdult) {
         modal.remove();
     }
     
-    if (isAdult) {
-        // Show interstitial ad first
-        if (typeof showInterstitialAd === 'function') {
-            showInterstitialAd('age_verification');
-        }
-        
+    if (isAdult) {              
         // Continue with the assessment (no longer saving to localStorage)
         initAssessment();
     } else {
