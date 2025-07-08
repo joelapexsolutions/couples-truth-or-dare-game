@@ -4,7 +4,7 @@
      description: 'A laugh-out-loud collection of playful questions and silly dares designed to spark joy and create memorable moments between couples. From gentle teasing to outright hilarious challenges, this pack guarantees endless entertainment while deepening your connection through shared laughter.',
      contentRating: 'PG-13',
      version: '1.0',
-     questionCount: 360,
+     questionCount: 244,
      createdAt: '2025-05-04T12:00:00Z'
   },
    signature: 'fun-couples-hilarious-1.0-2025',
@@ -1492,6 +1492,490 @@
       text: 'Do a WWE wrestling entrance as "The Dishwasher Defender."',
       points: 4,
       timer: 0
+    },
+	// SPICY LEVEL - MALE TRUTH
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most embarrassing thing you\'ve done while drunk that Female doesn\'t know about?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'If you had to confess your worst habit to Female\'s parents on live TV, what would it be?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most pathetic thing you\'ve done to avoid conflict with Female?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'If your browser history was projected on a billboard for everyone to see, what would be your biggest shame?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most embarrassing thing you\'ve accidentally said during a serious moment with Female?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'If you had to reveal your most shameful childhood memory to Female\'s entire family, what would it be?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most ridiculous lie you\'ve told to get out of plans with Female\'s friends?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'If you could erase one embarrassing moment from your relationship with Female, which would cause a scandal if revealed?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most cringe-worthy thing you\'ve done trying to be "manly" in front of Female?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'If your ex could rate your relationship skills publicly, what would be their most brutal honest review?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most embarrassing physical reaction you\'ve had around Female that you hoped she didn\'t notice?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'If you had to admit your biggest insecurity about your relationship on a podcast, what would it be?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most shameful thing you\'ve googled about Female or your relationship?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'If you had to reveal the most embarrassing thing in your phone to Female\'s mom, what would destroy you?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'What\'s the most cowardly thing you\'ve done in your relationship that would make Female lose respect for you?',
+      points: 5,
+      timer: 0
+    },
+    // SPICY LEVEL - FEMALE TRUTH
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most embarrassing thing you\'ve done while intoxicated that Male doesn\'t know about?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'If you had to confess your worst personality flaw to Male\'s friends on social media, what would it be?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most manipulative thing you\'ve done to get your way with Male?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'If your group chat about Male was read aloud at your wedding, what would cause the biggest scandal?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most embarrassing bathroom incident Male has almost caught you in?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'If you had to reveal your most shameful shopping purchase to Male\'s entire family, what would it be?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most pathetic thing you\'ve done when you were jealous about Male?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'If you could delete one mortifying moment from your relationship that would ruin your reputation, what would it be?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most embarrassing way you\'ve tried to get Male\'s attention that completely backfired?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'If your ex could expose your most toxic relationship behavior publicly, what would destroy your image?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most embarrassing physical thing that\'s happened to you around Male that you pray he forgot?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'If you had to admit your biggest relationship fear on a reality show, what would make you look desperate?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most shameful thing you\'ve stalked about Male online that you\'d never admit?',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'If your diary entries about Male were published, what would be the most humiliating revelation?',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'truth',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'What\'s the most dramatic overreaction you\'ve had with Male that you\'re ashamed of?',
+      points: 4,
+      timer: 0
+    },
+    // SPICY LEVEL - MALE DARE
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Run around the outside of your house/building in just your underwear while singing "I\'m a Little Teapot."',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Call your mom and dramatically confess to a ridiculous fake crime while Female listens.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Post an embarrassing photo of yourself with a cringe caption for everyone to see for 10 minutes.',
+      points: 4,
+      timer: 600
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Do 50 push-ups while Female sits on your back, or take a cold shower for 2 minutes.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Text your boss a completely ridiculous excuse for being late tomorrow (then immediately explain it was a dare).',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Strip down to underwear and do a dramatic reading of the most embarrassing text in your phone.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Let Female post anything she wants on your social media for 5 minutes.',
+      points: 4,
+      timer: 300
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Call a random contact and confess your love for Female in the most over-the-top way possible.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Take a humiliating selfie and let Female choose which of your friends gets it sent to them.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Perform a strip tease to the most unsexy song Female can find on your playlist.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Do 20 burpees while screaming "I LOVE FEMALE MORE THAN PIZZA" with each one.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Let Female give you a makeover and keep it on for the rest of the game.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Walk to the nearest public place in just a bathrobe and slippers and buy something.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Record yourself doing the most embarrassing dance possible and let Female decide who sees it.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Do jumping jacks in your underwear while Female times you for 3 minutes straight.',
+      points: 4,
+      timer: 180
+    },
+    // SPICY LEVEL - FEMALE DARE
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Run around the outside of your house/building in just your underwear while yelling "I\'m the queen of the world!"',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Call your dad and dramatically explain why Male is the worst boyfriend ever, then immediately take it back.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Post the most unflattering photo of yourself with a self-roasting caption for 10 minutes.',
+      points: 4,
+      timer: 600
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Do 100 squats while Male counts, or take a freezing cold shower for 2 minutes.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Text your most professional contact the most ridiculous meme you can find.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Strip to underwear and dramatically perform the most embarrassing song on your phone.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Let Male control your social media for 5 minutes and post whatever he wants.',
+      points: 4,
+      timer: 300
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Call a random person in your contacts and sing them a love song about Male.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Take the most ridiculous photo possible and let Male decide which friend gets it sent to them.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Do a seductive dance to children\'s music while Male records it.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Do mountain climbers while screaming "MALE IS MY KING" with each rep for 2 minutes.',
+      points: 4,
+      timer: 120
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Let Male style your hair however he wants and keep it that way for the rest of the game.',
+      points: 4,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Go to the nearest store wearing the most mismatched outfit possible and ask for dating advice.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Film yourself doing the most cringe-worthy talent you can think of and let Male post it.',
+      points: 5,
+      timer: 0
+    },
+    {
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Do planks in your underwear while Male distracts you however he wants for 3 minutes.',
+      points: 4,
+      timer: 180
     }
   ]
 }
