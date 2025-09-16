@@ -3301,7 +3301,7 @@
       type: 'dare',
       level: 'Sensual',
       gender: 'Male',
-      text: 'Kiss female gently in her inner thighs',
+      text: 'Kiss Female gently in her inner thighs',
       points: 3,
       timer: 60
     },
@@ -3759,7 +3759,7 @@
       gender: 'Female',
       text: 'Both of you lie down and enjoy at least 1 minute of passionate kissing.',
       points: 3,
-      timer: 0
+      timer: 60
     },
 	{
       type: 'dare',
@@ -6484,7 +6484,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Put something cold or minty in your mouth and go down on male for 1 min',
+      text: 'Put something cold or minty in your mouth and go down on Male for 1 min',
       points: 4,
       timer: 60
     },
@@ -7682,3 +7682,4 @@
     }
   ]
 }
+
