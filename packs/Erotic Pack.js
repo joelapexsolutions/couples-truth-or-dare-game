@@ -2021,7 +2021,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'How many times do you think you could make love in just one day?',
+      text: 'How many times do you think you could orgasm in just one day?',
       points: 2,
       timer: 0
     },
@@ -2109,7 +2109,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'Would you star in an adult movie for $50,000?',
+      text: 'What is the minimum amount you would accept to star in an adult movie?',
       points: 2,
       timer: 0
     },
@@ -2509,7 +2509,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'How many times do you think you could make love in just one day?',
+      text: 'How many times do you think you could climax in just one day?',
       points: 2,
       timer: 0
     },
@@ -2581,7 +2581,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'Would you star in an adult movie for $50,000?',
+      text: 'What is the minimum amount you would accept to star in an adult movie?',
       points: 2,
       timer: 0
     },
@@ -3733,9 +3733,9 @@
       type: 'dare',
       level: 'Sensual',
       gender: 'Female',
-      text: 'Show how you would give a sensual oral demonstration using a banana for 2 minutes, making it as enticing and captivating as possible.',
+      text: 'Give an oral sex demonstration using a banana for 1 minute, making it as enticing and captivating as possible.',
       points: 3,
-      timer: 120
+      timer: 60
     },
 	{
       type: 'dare',
@@ -4140,7 +4140,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'Have you ever engaged in intimate activities in your parents\' bedroom?',
+      text: 'Have you ever had sex in your parents\' bedroom?',
       points: 3,
       timer: 0
     },
@@ -4868,7 +4868,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'Have you ever engaged in intimate activities in your parents\' bedroom?',
+      text: 'Have you ever had sex in your parents\' bedroom?',
       points: 3,
       timer: 0
     },
@@ -5660,7 +5660,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Lick something delicious off Female\'s intimate area in a sensual manner.',
+      text: 'Lick something delicious off Female\'s private part.',
       points: 4,
       timer: 0
     },
@@ -7682,4 +7682,5 @@
     }
   ]
 }
+
 
