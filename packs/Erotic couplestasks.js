@@ -1011,8 +1011,16 @@
             value: 2,
             type: 'erotic'
         },
-        {
+		{
             id: 'erotic_83',
+            text: 'Create your own Sex Tutorial',
+            level: 'spicy',
+            description: 'Over the next month, create a kamaSutra sex tutorial video together featuring at least 15 different sex positions. Be adventurous, try new things, and keep adding to your guide as you discover more favourites. For an extra challenge, aim for 64+ positions, inspired by the classic KamaSutra number. Revisit your guide whenever you want to add excitement, variety, and inspiration to your relationship.',
+            value: 3,
+            type: 'erotic'
+        },
+        {
+            id: 'erotic_84',
             text: 'Create and watch a video of your intimate moments',
             level: 'spicy',
             description: 'In the next week, you both will create a close-up video of your intimate moments until you both reach climax. Afterward, you\'ll watch the video together while pleasuring yourselves simultaneously. The first one to finish can either continue watching or help the other along the way.',
