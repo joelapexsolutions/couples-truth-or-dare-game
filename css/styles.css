@@ -181,14 +181,16 @@ button {
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 18px;
 }
 
 .nav-links a {
     color: var(--text-color);
     font-weight: 500;
+    font-size: 0.85rem;
     position: relative;
-    padding: 8px 5px;
+    padding: 6px 4px;
+    white-space: nowrap;
 }
 
 .nav-links a:after {
@@ -212,10 +214,13 @@ button {
 
 .nav-cta {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    padding: 10px 20px !important;
+    padding: 8px 14px !important;
     border-radius: 50px;
     color: white !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    font-size: 0.85rem !important;
+    line-height: 1.4;
 }
 
 .nav-cta:hover {
@@ -401,6 +406,7 @@ button {
     transform: translate(-50%, -50%);
     z-index: 1;
     animation: pulse 3s infinite;
+    pointer-events: none;
 }
 
 /* === Games Section === */
@@ -1524,6 +1530,7 @@ button {
     transform: translate(-50%, -50%);
     z-index: 1;
     animation: pulse 3s infinite;
+    pointer-events: none;
 }
 
 /* === Footer === */
