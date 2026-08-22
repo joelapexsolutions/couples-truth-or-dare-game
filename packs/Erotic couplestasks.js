@@ -355,6 +355,38 @@
             value: 3,
             type: 'erotic'
         },
+		{
+            id: 'erotic_101',
+            text: '8 Extreme Positions challenge',
+            level: 'spicy',
+            description: 'In the coming week, try all eight positions. You can try more than one position in a session or in a day. By the end of the week, you should have completed all 8 positions. If not, start again the following week.  [8 Extreme sex positions](https://www.pornhub.com/view_video.php?viewkey=ph62741e15e166e)',
+            value: 3,
+            type: 'erotic'
+        },
+		{
+            id: 'erotic_102',
+            text: 'Resist each other challenge',
+            level: 'spicy',
+            description: 'In the next month, watch this 30 min compilation of these Top 10 Erotic scenes and see it you can resist each other until scene 1. You have to watch the scenes in the nude and are allowed to touch each other but no penetration or any mastubation. If you fail, try it again another day until you reach the end of the number one scene.[Top 10 Erotic scenes](https://www.xnxx.com/video-14v2vzc6/compilation_of_erotic_n_sensual_scenes)',
+            value: 3,
+            type: 'erotic'
+        },
+		{
+            id: 'erotic_103',
+            text: 'Professional Scenes challenge',
+            level: 'spicy',
+            description: 'In the next week you must make a sex tape together. Minimum time is 20min. Get tips by watching real couples making sex videos. You can recreate the scenes or create your own. Try to make it as erotic as possible(no softcore). Set the camera or better multiple cameras in the perfect position to get all angles, closeups, get enough lighting and plan the scenes. Try to make it close to professional as possible. Then watch it the next time you want to get it on. Do you think your video will get over a million viesws?',
+            value: 3,
+            type: 'erotic'
+        },
+		{
+            id: 'erotic_104',
+            text: 'Only Fans page',
+            level: 'spicy',
+            description: 'In the next month, you and Female will create an only fans page(Fake). You can pretend to create a page of couple sex video\'s. Start by watching this couple\'s video and then remake it for your own page. You can create your own scenes or copy other couples. Try and make atleast 5 videos in the next month, then the following month watch your own videos to get you in the mood. [Couple Scene](https://xhamster.com/videos/stepbrother-cant-resist-and-cums-inside-her-pussy-during-the-massage-xhc4kh1)',
+            value: 3,
+            type: 'erotic'
+        },
         {
             id: 'erotic_2',
             text: 'Try a new intimate activity you\'ve both been curious about',
@@ -363,11 +395,43 @@
             value: 3,
             type: 'erotic'
         },
+		{
+            id: 'erotic_105',
+            text: 'Explore new position daily',
+            level: 'spicy',
+            description: 'In the next week, log onto bestsexpositions.com daily and try the sex position of the day.[Best sex positions](https://bestsexpositions.com)',
+            value: 3,
+            type: 'erotic'
+        },
+		{
+            id: 'erotic_106',
+            text: 'Exclusive Adult Parties',
+            level: 'spicy',
+            description: 'Venture into the seductive world of adult play parties together. Feel the electric atmosphere as you enter a space where couples indulge their deepest desires. Watch as bodies entwine and passion unfolds around you, igniting your own fantasies. Research exclusive events where you can witness the art of shared pleasure in its most intimate forms. Many upscale venues welcome curious couples to simply drink in the sensual energy while deciding how far your adventure will go. Let the heat of this environment awaken new cravings between you, even if you choose only to observe what others dare to explore.',
+            value: 3,
+            type: 'erotic'
+        },
         {
             id: 'erotic_3',
             text: 'Have an outdoor intimate encounter in your garden',
             level: 'spicy',
             description: 'Take your passion outdoors! Find a private spot in your garden for an exciting al fresco encounter. Let nature inspire your wildest sensations!',
+            value: 3,
+            type: 'erotic'
+        },
+		{
+            id: 'erotic_160',
+            text: 'Create your own Sex Tutorial',
+            level: 'spicy',
+            description: 'Over the next month, create a kamasutra sex tutorial video together featuring at least 20 different sex positions. Be adventurous, try new things, and keep adding to your guide as you discover more favourites. For an extra challenge, aim for 64+ positions, inspired by the classic KamaSutra number. Revisit your guide whenever you want to add excitement, variety, and inspiration to your relationship. Here are some ideas to help you create your guide.[Sex positions Tutorial] (https://www.pornhub.com/view_video.php?viewkey=65833412d847b)',
+            value: 3,
+            type: 'erotic'
+        },
+		{
+            id: 'erotic_107',
+            text: 'High Sex challenge',
+            level: 'spicy',
+            description: 'In the next month, purchase CBD edibles, oils and consume or use before and during sex. Set a CBD sexy night a few times and try different types of CBD products and find out which one is your favourite?',
             value: 3,
             type: 'erotic'
         },
@@ -405,9 +469,9 @@
         },
         {
             id: 'erotic_8',
-            text: 'Pleasure Male discreetly during a movie in the theater',
+            text: 'Female, pleasure Male discreetly during a movie in the theater',
             level: 'spicy',
-            description: 'Movie night just got interesting! Find seats in the back row of a dark theater and treat Male to some discreet under-the-blanket pleasure until he reaches a quiet finale. Keep tissues handy for a clean ending to your secret show!',
+            description: 'Movie night just got interesting! Find seats in the back row of a dark theater and Female, treat Male to some discreet under cover pleasure until he reaches a quiet finale. Keep tissues handy for a clean ending to your secret show!',
             value: 3,
             type: 'erotic'
         },
@@ -415,13 +479,13 @@
             id: 'erotic_9',
             text: 'Watch sensual scenes together without completion',
             level: 'medium',
-            description: 'The Ultimate Willpower Challenge! Find a 30-minute compilation of the 10 most sensual scenes and test your restraint. Watch completely naked, allowing yourselves to touch and tease each other—but absolutely no finishing moves allowed! Can you make it through all 10 scenes without giving in to temptation? If either of you breaks, try again another day until you conquer the entire countdown!',
+            description: 'The Ultimate Willpower Challenge! Find a 30-minute compilation of the 10 most sensual sex scenes and test your restraint. Watch completely naked, allowing yourselves to touch and tease each other—but absolutely no finishing moves allowed! Can you make it through all 10 scenes without giving in to temptation? If either of you breaks, try again another day until you conquer the entire countdown!',
             value: 2,
             type: 'erotic'
         },
         {
             id: 'erotic_10',
-            text: 'Find a private spot for Female to pleasure Male orally',
+            text: 'Female, find a private spot for to pleasure Male orally',
             level: 'spicy',
             description: 'Find an adventurous, private spot away from home where Female can treat Male to some oral attention until the exciting conclusion! The thrill of a new location will make this an unforgettable experience for both of you!',
             value: 3,
@@ -429,7 +493,7 @@
         },
         {
             id: 'erotic_11',
-            text: 'Pleasure Female discreetly during a movie in the theater',
+            text: 'Male, pleasure Female discreetly during a movie in the theater',
             level: 'spicy',
             description: 'Movie night challenge! Find seats in a dark corner of the theater where Male can discreetly pleasure Female under a jacket or blanket until she experiences a silent climax. Keeping quiet is half the thrill!',
             value: 3,
@@ -439,7 +503,7 @@
             id: 'erotic_12',
             text: 'Watch an intimate video together then recreate it exactly',
             level: 'spicy',
-            description: 'Plan an evening of extreme temptation! Find a detailed 30-minute intimate video featuring multiple positions and techniques, then project it on your largest screen. Sit close together—you can touch and kiss, but absolutely no intimate connection until the video ends completely. Take mental notes of every position change, unique angle, and special move you see. Once the final scene fades, immediately begin your own passionate recreation—starting with the opening position and working through each transition exactly as demonstrated. Challenge yourselves to match the timing, intensity, and creative positions from the video, treating each new technique like a must-complete item on your pleasure checklist!',
+            description: 'Plan an evening of extreme temptation! Find a detailed 30-minute sex video featuring multiple positions and techniques, then project it on your largest screen. Sit close together—you can touch and kiss, but absolutely no intimate connection until the video ends completely. Take mental notes of every position change, unique angle, and special move you see. Once the final scene fades, immediately begin your own passionate recreation—starting with the opening position and working through each transition exactly as demonstrated. Challenge yourselves to match the timing, intensity, and creative positions from the video, treating each new technique like a must-complete item on your pleasure checklist!',
             value: 3,
             type: 'erotic'
         },
@@ -447,7 +511,7 @@
             id: 'erotic_13',
             text: 'Create a collection of intimate videos of yourselves',
             level: 'spicy',
-            description: 'Become directors of your own private adult film studio! Over the next month, create a collection of 5 intimate videos starring yourselves. Begin by watching couples videos online to study their lighting, angles, and positions. For your first production, recreate a favorite scene you watched—matching the position changes, rhythm, and finishing moments. For your next four videos, experiment with different locations in your home, various themes (passionate, playful, dominant), and unique angles. Use your phone on a stable tripod, set proper lighting, and consider both wide shots and close-ups of the action. Make sure to capture the build-up, main event, and satisfying conclusion in each video. The following month, schedule special date nights where you watch your personal collection together as the perfect prelude to creating new memories!',
+            description: 'Become directors of your own private adult film studio! Over the next month, create a collection of 5 sex videos starring yourselves. Begin by watching couples videos online to study their lighting, angles, and positions. For your first production, recreate a favorite scene you watched—matching the position changes, rhythm, and finishing moments. For your next four videos, experiment with different locations in your home, various themes (passionate, playful, dominant), and unique angles. Use your phone on a stable tripod, set proper lighting, and consider both wide shots and close-ups of the action. Make sure to capture the build-up, main event, and satisfying conclusion in each video. The following month, schedule special date nights where you watch your personal collection together as the perfect prelude to creating new memories!',
             value: 3,
             type: 'erotic'
         },
@@ -643,6 +707,14 @@
             value: 2,
             type: 'erotic'
         },
+		{
+            id: 'erotic_87',
+            text: 'Adventure Challenge: Anal Exploration Night',
+            level: 'spicy',
+            description: 'In the next month, plan a special night dedicated to exploring anal intimacy together. Whether it\'s something you\'ve tried before or something you\'re curious about, many women enjoy it for the unique sensations, increased arousal, and the deeper trust and connection it can create between partners.Make it part of the adventure by researching techniques, discussing boundaries, and preparing properly to ensure a comfortable and pleasurable experience for both of you. For helpful tips and guidance, visit [How to have] (https://badgirlsbible.com/how-to-have-anal-sex)',
+            value: 2,
+            type: 'erotic'
+        },
         {
             id: 'erotic_38',
             text: 'Explore sensory enhancement with CBD products',
@@ -807,7 +879,7 @@
             id: 'erotic_58',
             text: 'Create a blindfolded sensory experience for Female',
             level: 'medium',
-            description: 'Male\'s mission this week: create the ultimate sensory experience! Prepare a warm room with soft lighting, relaxing music, and fragrant candles. Gently blindfold Female to heighten her remaining senses, then spend 40min caressing every inch of her body with varying pressure and techniques. The absence of sight will intensify each touch, creating 40min of pure sensual bliss!',
+            description: 'Male, This week, prepare a warm room with soft lighting, music, and candles. Blindfold Female to heighten Female\'s senses. Spend 40 minutes caressing every inch of Female\'s body—teasing her vagina, breasts, and skin with varying pressure. Alternate between soft touches and firm grips. Let Female\'s lack of sight intensify each sensation on her genitalia and body.',
             value: 2,
             type: 'erotic'
         },
@@ -815,7 +887,7 @@
             id: 'erotic_59',
             text: 'Create your own intimate video to watch together later',
             level: 'spicy',
-            description: 'This week, become directors of your own intimate masterpiece! Create a private 20-minute video showcasing your passion together. First, watch other couples videos for inspiration on creative angles, positions, and scenarios. Set up your phone with flattering lighting and capture multiple scenes throughout your home—from slow, sensual beginnings to passionate peaks. Make it as steamy as possible, trying positions or scenarios you\'ve admired in other couples footage. Then enjoy a special movie night together watching your creation before creating new memories inspired by your film!',
+            description: 'This week, direct your own 20-minute intimate film together. Watch other couples videos for inspiration on angles, positions, and scenarios. Set up your phone with good lighting and capture multiple scenes throughout your home—starting slow with Male\'s penis teasing Female\'s vagina, building to passionate penetration in different rooms. Try positions you\'ve admired. Make it as steamy as possible. Then enjoy a movie night watching your creation before making new memories inspired by your film.',
             value: 3,
             type: 'erotic'
         },
@@ -823,7 +895,7 @@
             id: 'erotic_60',
             text: 'Recreate a video\'s positions in perfect sync',
             level: 'spicy',
-            description: 'Find an inspiring intimate video that shows multiple position changes. Watch it completely first, then play it again while physically recreating each move in perfect sync with the action on screen. If either of you reaches the peak of pleasure before the video ends, simply pause, take a 10-minute breather, and resume your performance where you left off. The challenge is completing the entire choreography!',
+            description: 'Select an inspiring video with varied positions. View it completely, then restart and physically mirror every change—Male penetrating Female\'s vagina in each position exactly as shown, maintaining pace with the performers. If Male finishes or Female climaxes early, take a 10-minute break and continue. Challenge: finish the entire sequence without skipping any position.',
             value: 3,
             type: 'erotic'
         },
@@ -831,7 +903,7 @@
             id: 'erotic_61',
             text: 'Create 5 intimate videos with different themes',
             level: 'spicy',
-            description: 'Your 2-month film project starts now! Create a collection of 5 intimate videos starring yourselves, each with a different theme or style. Research various categories online for inspiration—perhaps try romantic, playful, intense, slow, or adventurous approaches. Get creative with settings, outfits, and scenarios to build a diverse private library that you can enjoy together on special nights!',
+            description: 'Start a 2-month film project together. Make 5 themed sex videos starring yourselves. Browse categories for ideas—romantic with soft lighting and slow penetration, playful with costumes and laughter, intense with hard fast fucking, slow with extended teasing before Male\'s penis enters Female\'s vagina, adventurous with new locations. Get creative with settings and scenarios. Save your diverse collection for special viewing nights.',
             value: 3,
             type: 'erotic'
         },
@@ -839,7 +911,7 @@
             id: 'erotic_62',
             text: 'Recreate a 7-minute video with exact positions and timing',
             level: 'spicy',
-            description: 'Your 7-minute challenge awaits! Find a passionate video online and study it carefully. Within the next week, recreate every position change and technique shown, maintaining the same pace and energy as the original. Time yourselves to match the 7-minute duration, and don\'t stop until you\'ve completed the final position. How accurately can you mirror professional performers?',
+            description: 'Select a 7-minute sex video and analyze it together. Recreate every move shown—each position with Male\'s penis inside Female\'s vagina, every thrust speed, every transition. Match the original timing and energy for the full 7 minutes. Don\'t stop until you finish the final position. Challenge: perform as accurately as the video.',
             value: 3,
             type: 'erotic'
         },
@@ -863,7 +935,7 @@
             id: 'erotic_65',
             text: 'Create a close-up intimate film with detailed connection',
             level: 'spicy',
-            description: 'Create an intimate close-up film capturing your most passionate moments together. Focus on the detailed connection between your bodies, including the natural conclusion inside. Then capture the slow separation and aftermath in detail. Save this private video for your next date night—watching this personal memory together will instantly recreate those intense feelings!',
+            description: 'Create an intimate close-up film together capturing your most passionate moments. Focus the camera on the detailed connection between your bodies—Male\'s penis entering and moving inside Female\'s vagina. Include the natural conclusion with Male finishing inside Female. Then capture the slow separation as Male\'s penis withdraws from Female\'s genitalia and the aftermath in detail. Save this private video for your next date night—watching this personal memory together will instantly recreate those intense feelings.',
             value: 3,
             type: 'erotic'
         },
@@ -879,7 +951,7 @@
             id: 'erotic_67',
             text: 'Female sends an intimate photo during Male\'s day',
             level: 'medium',
-            description: 'Next time you\'re apart this week, find a private moment to take a close-up, revealing photo of your most intimate area. Send it unexpectedly during his workday or while he\'s out with friends with a teasing message like Thinking of you or Missing your touch. This visual surprise will instantly redirect his thoughts to you and build anticipation for when you\'re together again!',
+            description: 'While apart this week, snap a close-up photo of your spread vagina. Send it unexpectedly to Male during Male\'s workday or while Male is with friends. Add a teasing message like "Thinking of you" or "Missing your touch." Let the sight of your exposed genitalia instantly redirect Male\'s thoughts to having sex with you later.',
             value: 2,
             type: 'erotic'
         },
@@ -903,7 +975,7 @@
             id: 'erotic_70',
             text: 'Complete the 12-position Kamasutra challenge',
             level: 'spicy',
-            description: 'Take the 12-position Kamasutra challenge this month! Visit bestsexpositions.com to find their collection of classic intimate configurations, then methodically work through all dozen—from the simplest to the most acrobatic. Check each one off your list as you master it, celebrating when you\'ve conquered all twelve ancient techniques!',
+            description: 'Take the 12-position Kamasutra challenge together. Go to bestsexpositions.com, find their collection, and methodically try each—progressing from simple to complex as a couple. Alternate who picks the position and who guides the rhythm. Mark each complete when you\'ve both mastered the connection, then celebrate your dozen achievements.',
             value: 3,
             type: 'erotic'
         },
@@ -927,7 +999,7 @@
             id: 'erotic_73',
             text: 'Watch trio scenarios and roleplay your favorites',
             level: 'spicy',
-            description: 'Plan a fantasy exploration night! Watch a compilation of intimate trio scenarios together, getting comfortable and building anticipation with light touches during viewing. Once the showcase ends, Female selects her favorite scene to inspire your activities, and Male chooses his. Use these selections to fuel your passionate roleplay, acting out the fantasy as a couple while imagining the additional participant!',
+            description: 'Watch threesome compilations together, lightly touching each other\'s genitalia throughout. After viewing, Female selects her preferred scenario and Male selects his. Perform both fantasies as a pair, imagining a third person—switching roles so sometimes Male pretends another is touching Female\'s vagina, sometimes Female pretends another is stroking Male\'s penis.',
             value: 3,
             type: 'erotic'
         },
@@ -935,7 +1007,7 @@
             id: 'erotic_74',
             text: 'Find a secluded beach cove for intimacy after sunset',
             level: 'spicy',
-            description: 'Find a truly secluded beach cove after sunset. Bring a large blanket to protect from sand, plus a small towel for cleanup afterward. Get intimate while the rhythm of waves provides natural sound cover and moonlight on water creates the perfect lighting for your passionate oceanside connection!',
+            description: 'This week, get completely naked and wait for Male in the bedroom. Find a spot facing the door, lie back, and spread your legs open with your vagina on display. When Male enters, show Male your exposed genitalia and touch yourself seductively while Male watches for 60 seconds. After that, Male takes full control of your vagina.',
             value: 3,
             type: 'erotic'
         },
@@ -943,7 +1015,7 @@
             id: 'erotic_75',
             text: 'Book a professional sensual couples massage',
             level: 'medium',
-            description: 'Research and book a professional couples massage that specializes in sensual techniques. Look for legitimate spas offering tantric or intimate packages where you\'ll both receive relaxing yet stimulating touch in the same room. These specialized experiences often teach techniques you can bring home to enhance your connection!',
+            description: 'Find and reserve a professional couples massage with intimate elements. Choose legitimate spas with tantric packages where you both get sensual touch together. Observe techniques to enhance your home connection—Male pleasuring Female\'s genitalia and Female pleasuring Male\'s genitalia using their specialized methods.',
             value: 2,
             type: 'erotic'
         },
@@ -967,7 +1039,7 @@
             id: 'erotic_78',
             text: 'Explore dual stimulation zones during connection',
             level: 'spicy',
-            description: 'This week, explore dual pleasure zones! While connecting traditionally, Female allows Male to gently insert a well-lubricated finger into her rear entrance. Start with slow, shallow movement while maintaining your regular rhythm, creating intense dual stimulation that intensifies both partners sensation!',
+            description: 'This week, experience double penetration together. Male lies on his back. Female mounts Male in reverse cowgirl, guiding Male\'s penis into her vagina. Female rides Male setting the rhythm. Once in motion, Male slowly inserts a well-lubed finger into Female\'s anus. Male begins with shallow circles in Female\'s rear while maintaining deep thrusts in her vagina. Female grinds harder, feeling dual fullness. Female keeps riding Male\'s penis and Male\'s finger together until you both climax simultaneously.',
             value: 3,
             type: 'erotic'
         },
@@ -975,7 +1047,7 @@
             id: 'erotic_79',
             text: 'Research and explore backdoor pleasure together',
             level: 'spicy',
-            description: 'Explore the final frontier together! After proper research and preparation, try incorporating backdoor pleasure into your intimate repertoire. Use plenty of specialized lubricant, start extremely slowly, and maintain constant communication. With patience and proper technique, this experience can provide unique sensations and satisfaction for both partners!',
+            description: 'Research anal play together, then try it with plenty of lube. Male starts by rubbing Female\'s anus, then slowly inserts a finger. When ready, Male gently enters Female\'s anus with his penis, going slow and checking in constantly. Communicate throughout—stop if Female says so.',
             value: 3,
             type: 'erotic'
         },
@@ -983,7 +1055,7 @@
             id: 'erotic_80',
             text: 'Female pleasures herself during a car ride',
             level: 'spicy',
-            description: 'Turn your next drive into a thrilling adventure! Female takes the passenger seat, getting comfortable with feet on the dashboard for a private pleasure session while Male focuses on driving. He can only assist during complete stops at traffic signals. Your mission: reach your peak before arriving at your destination—timing is everything!',
+            description: 'On your next drive, Female rides passenger with feet on the dashboard. Female rubs your vagina while Male drives. Male can only touch your genitalia when fully stopped at traffic lights. Female must climax before you reach your destination.',
             value: 3,
             type: 'erotic'
         },
@@ -991,7 +1063,7 @@
             id: 'erotic_81',
             text: 'Female takes on a seductive role for a day',
             level: 'medium',
-            description: 'Female, in the upcoming month, you and Male will embark on a playful roleplay adventure for an entire day. You\'ll take on the persona of a seductive nymph, seeking every chance to engage with Male in public settings. Your mission is to explore intimacy in various ways—whether it\'s playful touches, passionate moments, or teasing encounters—all while guiding Male to follow your every playful command',
+            description: 'Female, For one day this month, become a nymph with Male. In public settings, grope Male\'s dick, grind your body on Male, and command Male to touch your vagina when no one is looking. Lead Male with your playful orders all day, mixing teasing touches and passionate moments.',
             value: 2,
             type: 'erotic'
         },
@@ -999,7 +1071,7 @@
             id: 'erotic_82',
             text: 'Male experiences a double climax in continuous positions',
             level: 'spicy',
-            description: 'Male, begin by selecting any position you prefer to connect intimately with Female until you reach your first climax. Without taking a break, immediately transition as Female positions herself at the edge of the bed with legs apart. Standing before her, enter and vary your rhythm from slow to fast until achieving a second climax. The challenge: maintaining your stamina throughout both encounters with no pause between them.',
+            description: 'Male, Choose any position and enter Female\'s vagina until you climax. Without pausing, have Female move to the bed\'s edge with legs apart. Stand before Female, enter Female\'s vagina again, and vary your rhythm from slow to fast until you reach a second climax. No breaks between.',
             value: 3,
             type: 'erotic'
         },
@@ -1007,23 +1079,15 @@
             id: 'erotic_82',
             text: 'Watch an erotic movie together',
             level: 'medium',
-            description: 'In the coming month, both of you will enjoy an erotic movie together. Feel free to get a little frisky during the film, but make sure to watch the whole thing! Take some time to browse for great movie options.',
+            description: 'In the coming month, pick an erotic movie and watch it together from start to finish. Feel free to touch each other during the film—Male can rub Female\'s vagina and Female can stroke Male\'s penis—but don\'t stop watching until the credits roll. Spend time browsing for the perfect movie.',
             value: 2,
             type: 'erotic'
         },
-		{
-            id: 'erotic_83',
-            text: 'Create your own Sex Tutorial',
-            level: 'spicy',
-            description: 'Over the next month, create a kamaSutra sex tutorial video together featuring at least 15 different sex positions. Be adventurous, try new things, and keep adding to your guide as you discover more favourites. For an extra challenge, aim for 64+ positions, inspired by the classic KamaSutra number. Revisit your guide whenever you want to add excitement, variety, and inspiration to your relationship.',
-            value: 3,
-            type: 'erotic'
-        },
         {
-            id: 'erotic_84',
+            id: 'erotic_83',
             text: 'Create and watch a video of your intimate moments',
             level: 'spicy',
-            description: 'In the next week, you both will create a close-up video of your intimate moments until you both reach climax. Afterward, you\'ll watch the video together while pleasuring yourselves simultaneously. The first one to finish can either continue watching or help the other along the way.',
+            description: 'Create a close-up video of penetration until you both reach orgasm. Watch it together in the next week while pleasuring yourselves simultaneously. The first one to finish can either continue watching or help the other along the way.',
             value: 3,
             type: 'erotic'
         }
