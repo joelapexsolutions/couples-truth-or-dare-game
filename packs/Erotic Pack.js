@@ -1265,14 +1265,6 @@
       points: 2,
       timer: 0
     },
-	{
-      type: 'dare',
-      level: 'Soft',
-      gender: 'Male',
-      text: 'Attempt to guess Female\'s favorite things (movie, food, color, etc.).',
-      points: 2,
-      timer: 60
-    },
     {
       type: 'dare',
       level: 'Soft',
@@ -2021,7 +2013,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'How many times do you think you could orgasm in just one day?',
+      text: 'How many times do you think you could make love in just one day?',
       points: 2,
       timer: 0
     },
@@ -2109,7 +2101,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Male',
-      text: 'What is the minimum amount you would accept to star in an adult movie?',
+      text: 'Would you star in an adult movie for $50,000?',
       points: 2,
       timer: 0
     },
@@ -2437,7 +2429,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'Would you dance to a sensual song with Male during a party in front of your friends?',
+      text: 'Would you grind against Male on the dance floor to a sensual song while your friends watch?',
       points: 2,
       timer: 0
     },
@@ -2509,7 +2501,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'How many times do you think you could climax in just one day?',
+      text: 'How many times do you think you could make love in just one day?',
       points: 2,
       timer: 0
     },
@@ -2581,7 +2573,7 @@
       type: 'truth',
       level: 'Sensual',
       gender: 'Female',
-      text: 'What is the minimum amount you would accept to star in an adult movie?',
+      text: 'Would you star in an adult movie for $50,000?',
       points: 2,
       timer: 0
     },
@@ -3301,7 +3293,7 @@
       type: 'dare',
       level: 'Sensual',
       gender: 'Male',
-      text: 'Kiss Female gently in her inner thighs',
+      text: 'Kiss female gently in her inner thighs',
       points: 3,
       timer: 60
     },
@@ -3733,9 +3725,9 @@
       type: 'dare',
       level: 'Sensual',
       gender: 'Female',
-      text: 'Give an oral sex demonstration using a banana for 1 minute, making it as enticing and captivating as possible.',
+      text: 'Show how you would give a sensual oral demonstration using a banana for 2 minutes, making it as enticing and captivating as possible.',
       points: 3,
-      timer: 60
+      timer: 120
     },
 	{
       type: 'dare',
@@ -3759,7 +3751,7 @@
       gender: 'Female',
       text: 'Both of you lie down and enjoy at least 1 minute of passionate kissing.',
       points: 3,
-      timer: 60
+      timer: 0
     },
 	{
       type: 'dare',
@@ -4140,7 +4132,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Male',
-      text: 'Have you ever had sex in your parents\' bedroom?',
+      text: 'Have you ever engaged in intimate activities in your parents\' bedroom?',
       points: 3,
       timer: 0
     },
@@ -4688,7 +4680,7 @@
       points: 3,
       timer: 0
     },
-    {
+	{
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
@@ -4696,15 +4688,7 @@
       points: 3,
       timer: 0
     },
-    {
-      type: 'truth',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Which of these you definately would like to try with Female. Anal sex, Threesome, Couple Swing, an Orgy or None?',
-      points: 3,
-      timer: 0
-    },
-    {
+	{
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
@@ -4868,7 +4852,7 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'Have you ever had sex in your parents\' bedroom?',
+      text: 'Have you ever engaged in intimate activities in your parents\' bedroom?',
       points: 3,
       timer: 0
     },
@@ -5380,14 +5364,6 @@
       type: 'truth',
       level: 'Hot',
       gender: 'Female',
-      text: 'Which of these you definately would like to try with Male. Anal sex, Threesome, Couple Swing, an Orgy or None?',
-      points: 3,
-      timer: 0
-    },
-    {
-      type: 'truth',
-      level: 'Hot',
-      gender: 'Female',
       text: 'Who is the most inappropriate person you have ever had a fantasy about?',
       points: 3,
       timer: 0
@@ -5540,7 +5516,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Recreate a steamy scene like you’re in a movie. Watch a hot sex scene and try to make it even more realistic, but remember, no penetration!',
+      text: 'Pick a steamy movie sex scene. Act it out with Female—press your penis against Female\'s vagina, dry hump, and simulate penetration. Make it hotter than the film, but keep your dick outside Female\'s genitalia.',
       points: 4,
       timer: 120
     },
@@ -5556,7 +5532,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Give a pen and paper to Female. You must pose with your manhood revealed while Female sketches for 3 minutes. After the drawing, you must rate it from 1 to 10. If you rate it under 5, Female must reveal her intimate area for the rest of the game.',
+      text: 'Hand Female a pen and paper. Pose with your penis fully revealed while Female sketches your dick for 3 minutes. Rate Female\'s drawing 1 to 10. If you give under 5, Female\'s vagina stays exposed for the rest of the game.',
       points: 4,
       timer: 180
     },
@@ -5567,14 +5543,6 @@
       text: 'Show Female a video (an adult one) of something you would like to try together.',
       points: 4,
       timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Focus on Female\'s breasts for 3 minutes. Start by softly circling a finger around them, then softly touch and stimulate her nipples. Can you make Female excited just by teasing her nipples?',
-      points: 4,
-      timer: 180
     },
     {
       type: 'dare',
@@ -5636,33 +5604,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Female lies on her back, and you lie beside her. With one finger, gently tease her intimate spot while kissing her passionately. How long does it take for Female to feel close to ecstasy? However, exciting tasks await, so don’t let her reach that point yet!',
+      text: 'Lie facing Female with both of you on your sides. Put one finger in Female\'s vagina and rub her genitalia while kissing her passionately. Stop if Female is about to cum.',
       points: 4,
       timer: 120
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Female lies on her back with her legs stretched. You kiss her lips, neck, and breasts for a while, then gently explore her intimate area. Alternate between slow, fast, shallow, and deep movements in a pattern of three repetitions each.',
-      points: 4,
-      timer: 120
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Blindfold Female and tie her hands above her head. Female should lie on her back and spread her legs. Use a smooth, rounded ice cube to slowly trace along her pubic area until the ice has completely melted away.',
-      points: 4,
-      timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Lick something delicious off Female\'s private part.',
-      points: 4,
-      timer: 0
     },
     {
       type: 'dare',
@@ -5676,17 +5620,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Lay Female on her side with her leg raised. Gently kiss and caress her intimate area with your mouth for 2 minutes.',
+      text: 'Lay Female on her side with one leg raised. Gently kiss and lick Female\'s vagina with your mouth for 2 minutes. Caress her genitalia with your tongue until time is up.',
       points: 4,
       timer: 120
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Gently caress Female\'s intimate area with your manhood for 60 seconds. When the timer stops, Female will sit on you. It will slide in completely, and she will kiss you. No thrusting is allowed, and she will remove herself after the kiss.',
-      points: 4,
-      timer: 60
     },
     {
       type: 'dare',
@@ -5708,7 +5644,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Request Female to lie comfortably on her stomach. Give her a sensual massage for 3 minutes. If you manage to bring her to pleasure before the time is up, she must give you a 20-minute massage anytime you choose.',
+      text: 'Have Female lie on her stomach. Give her a sensual massage for 3 minutes. If you make Female cum before time is up, Female must give you a 20-minute massage anytime you choose.',
       points: 4,
       timer: 180
     },
@@ -5732,17 +5668,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Lay down on your back while Female massages your member with her intimate area. She must try to bring you to pleasure before the 3 minutes are up.',
+      text: 'Lie on your back. Female rubs your penis with her vagina, sliding her genitalia against your dick. Female tries to make you cum before 3 minutes are up.',
       points: 4,
       timer: 180
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Put on a song you find really sexy and go down on Female for the length of the song.',
-      points: 4,
-      timer: 0
     },
     {
       type: 'dare',
@@ -5756,7 +5684,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Spread whipped cream, honey, jam, or chocolate sauce on Female\'s pleasure zone, then lick it off clean.',
+      text: 'Spread whipped cream, honey, jam, or chocolate sauce on Female\'s vagina. Lick it all off Female\'s genitalia until clean.',
       points: 4,
       timer: 0
     },
@@ -5772,25 +5700,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Female chooses a song and reclines comfortably on the bed, inviting you to pleasure her orally. Begin with gentle kisses, gradually exploring her most sensitive areas with your tongue. Follow the rhythm of her chosen music, varying your tempo and pressure based on her responses. Continue this intimate dance until the final notes fade away.',
+      text: 'Female ties your hands behind your back. Lie back. Female squats over your face with her legs open and her vagina directly on your mouth. Kiss and suck Female\'s genitalia until time is up.',
       points: 4,
-      timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Have Female bind your hands securely behind your back, then recline onto the bed. With her legs spread wide, Female squats over your mouth, ensuring that every kiss brings her to a state of blissful pleasure.',
-      points: 4,
-      timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Sit in front of Female and reveal yourself for 1 minute. Gently stimulate yourself while trying to turn Female on at the same time.',
-      points: 4,
-      timer: 60
+      timer: 120
     },
     {
       type: 'dare',
@@ -5812,7 +5724,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Sit on the couch, and have Female place her knees on your shoulders in an upside-down position. Now pleasure each other orally for 3 minutes.',
+      text: 'Sit down. Female positions upside-down with knees on your shoulders, Female\'s genitalia at your face and your penis at Female\'s face. Eat Female\'s vagina while Female blows your dick for 3 minutes.',
       points: 4,
       timer: 180
     },
@@ -5860,7 +5772,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'You are a thriving actor in erotic movies. Female records a short video with you on mobile/camera, where you will be self-pleasuring according to her orders. After the game, delete it all.',
+      text: 'Lick Female\'s vagina a few times, then stick your tongue as far as possible into Female\'s vagina. Let Female hold your hair to guide your head. Female decides when you stop licking Female\'s genitalia.',
       points: 4,
       timer: 0
     },
@@ -5868,17 +5780,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Begin with a few licks and then stick your tongue into Female as far as possible. Female, hold Male by the hair to guide him. It\'s up to you to decide when the licking stops.',
+      text: 'Get Female on Female\'s back at the bed or sofa edge. Use your penis to massage Female\'s vagina and anus, rotating between both with your dick for 3 minutes. Penetrate Female\'s vagina and anus with only your penis head, switching between rubbing and penetration.',
       points: 4,
-      timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Stand at the edge of the bed. Place Female\'s ankles on your shoulders and engage in intimacy, moving slowly for 1 minute.',
-      points: 4,
-      timer: 60
+      timer: 180
     },
     {
       type: 'dare',
@@ -5892,7 +5796,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Take out a pen and paper. In 1 minute, draw and name 9 shapes. But before you do, Female must try her best to distract you by giving you a sensual blowjob. If you fail, you will have to do 10 push-ups.',
+      text: 'Female lies on her back. Stand in front of Female, rub your penis around Female\'s anus, then slowly push just the tip of your dick inside. Use lots of lube or sexual oil on your penis and Female\'s ass.',
       points: 4,
       timer: 60
     },
@@ -5900,7 +5804,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Sit in front of Female and reveal yourself. Now take massage oil or lotion and slowly stimulate yourself for 2 minutes.',
+      text: 'Sit in front of Female and pull out your penis. Take massage oil or lotion and slowly stroke your dick for 2 minutes while Female watches.',
       points: 4,
       timer: 180
     },
@@ -5908,7 +5812,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Record a 1-minute close-up video of you and Female having Intercourse. Then watch it together after the minute is up.',
+      text: 'Record a 1-minute close-up of your penis inside Female\'s vagina. Watch the video together after—see your dick moving in Female\'s genitalia.',
       points: 4,
       timer: 60
     },
@@ -5916,17 +5820,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Lie on your back while Female positions herself on top of you. She will guide you in and stay there until the next task requires her to move. Try to remain still while she is on top.',
+      text: 'Lie down. Female mounts you and slides your penis into her vagina. Keep your dick held inside Female without moving until the next dare requires Female to get off.',
       points: 4,
       timer: 0
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'Role-play as a police officer who has stopped Female for reckless driving. You discover she’s under the influence. Gently guide her against the wall for a "search." Caress her affectionately before connecting with her from behind for 1 minute. Afterward, let her know she’s free to go.',
-      points: 4,
-      timer: 60
     },
 	{
       type: 'dare',
@@ -5940,7 +5836,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Lie down on your back. Female will sit on your lap facing away from you. She will gently guide you inside her and tilt her body until she is close to you. She will slowly move for 60 seconds.',
+      text: 'Lie on your back. Female sits on your lap facing away, guiding your penis into her vagina. Female tilts back until close to you, then slowly moves on your dick for 60 seconds.',
       points: 4,
       timer: 60
     },
@@ -5948,7 +5844,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Female lies on her back with her knees bent. Position yourself between her thighs and connect intimately, supporting yourself with your hands. Move slowly while Female counts each movement. If she stops counting, you must stop. If she makes a mistake, start over. Can you reach 33? Whoever reaches pleasure first loses!',
+      text: 'Choose your preferred position. Then once in position, slowly push your penis into Female\'s anus in one stroke, then slowly pull out. Use enough lube on your dick and Female\'s ass.',
       points: 4,
       timer: 0
     },
@@ -5956,7 +5852,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Sit or lie down comfortably while Female positions herself on top of you. Select a 4-minute erotic video featuring a riding scene and watch it together without moving for the entire duration.',
+      text: 'Sit or lie facing the TV. Have Female straddle you and put your penis inside Female\'s vagina. Select a 4-minute erotic riding scene and watch it together—stay completely still with your dick in Female for the full duration.',
       points: 4,
       timer: 240
     },
@@ -5964,25 +5860,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Male',
-      text: 'Find an app or site that has a random position selector and try the first position it suggests for 1 minute.',
+      text: 'Find a random sex position app or site. Let it pick a position for you and Female. Get into that position with Female for 1 minute—your penis in Female\'s vagina if penetration is required.',
       points: 4,
       timer: 60
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Male',
-      text: 'No penetration allowed. Bring Female to pleasure using only your hands and mouth.',
-      points: 4,
-      timer: 180
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'In a sitting position, spread your legs to give Male a clear view of your intimate area. Guide him through your anatomy, showing the most sensitive spots. Male can only watch!',
-      points: 4,
-      timer: 0
     },
     {
       type: 'dare',
@@ -6016,11 +5896,11 @@
       points: 4,
       timer: 0
     },
-	{
+    {
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'In a sitting position, spread your legs so Male has a clear view of your private region, now open your outer parts, and show Male where the Love button is. Male can only watch!',
+      text: 'Hold your vagina open in front of Male for 2 minutes. Walk Male through every detail of your genitalia—explain each part while Male watches.',
       points: 4,
       timer: 120
     },
@@ -6028,15 +5908,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Show your private region to Male for 2min and explain every part in detail',
-      points: 4,
-      timer: 120
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Give a pen and paper to Male. You must pose with your private region exposed while Male sketches it for 3 min. After the drawing, you must rate the sketch from 1 to 10. 10 being accurate.  Anything under 5, Male must expose his private region for the entire game',
+      text: 'Give Male a pen and paper. Pose with your vagina exposed while Male sketches your genitalia for 3 minutes. Rate Male\'s drawing 1 to 10. If under 5, Male\'s penis stays exposed for the entire game.',
       points: 4,
       timer: 0
     },
@@ -6044,7 +5916,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'For the rest of the game, sit in front of Male completely exposed. Maintain a position that gives him a full view of your intimate area without hiding anything.',
+      text: 'For the rest of the game, sit in front of Male with your vagina fully exposed. Keep your legs spread wide so Male sees your genitalia without anything hidden.',
       points: 4,
       timer: 0
     },
@@ -6052,15 +5924,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Role-play as a anatomy teacher with Male as your student. Give him an educational tour of your intimate parts, explaining each area. Answer his questions and allow exploratory touch.',
-      points: 4,
-      timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'place Male\'s member between your breasts and use your hands to help move it back and forth.',
+      text: 'Lie on your back. Slide Male\'s penis between your breasts. Press your breasts together with your hands and stroke Male\'s dick back and forth.',
       points: 4,
       timer: 60
     },
@@ -6076,17 +5940,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Stand naked in front of a mirror . Now Male must stand behind you and massage your intimate area and breasts for 2min.',
+      text: 'Stand naked in front of a mirror. Male stands behind you and rubs your vagina and breasts for 2 minutes. Watch Male\'s hands on your genitalia and chest in the reflection.',
       points: 4,
       timer: 120
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Imagine you and Male are auditioning for a movie, and the scene calls for a sensual encounter with various positions. The catch? There’s no actual penetration involved. The goal is to make the scene as realistic and erotic as possible. The one who can bring the most authenticity and passion to the performance will land the role!',
-      points: 4,
-      timer: 180
     },
     {
       type: 'dare',
@@ -6112,19 +5968,11 @@
       points: 4,
       timer: 60
     },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'get Male to lie on his back, get massage oil and rub and massage Male\'s manhood slowly for 90s',
-      points: 4,
-      timer: 90
-    },
     {
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Use your breasts to stimulate Male. If you can bring him to pleasure before the time is up, he must give you a 20-minute massage of your choice at any time you select.',
+      text: 'Slide your breasts up and down Male\'s penis. If you bring Male to orgasm before time is up, Male must give you a 20-minute full body massage when you want it.',
       points: 4,
       timer: 120
     },
@@ -6140,17 +5988,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Lie over Male\'s lap with your hips elevated. He must gently massage your bottom and intimate area for 2 minutes.',
+      text: 'Lie facing away from Male with your ass raised to Male\'s face. Give Male full view of your vagina and bottom. Male rubs your genitalia and ass for 2 minutes.',
       points: 4,
       timer: 120
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Pop an ice cube in your mouth and go down on Male for 1 minute.',
-      points: 4,
-      timer: 60
     },
 	{
       type: 'dare',
@@ -6180,25 +6020,9 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Lay Male flat on his back and gently stimulate his manhood and crown jewels orally while using your hand to pleasure him for 60 seconds.',
+      text: 'Lay Male flat on Male\'s back. Lick Male\'s penis and testicles while stroking Male\'s dick with your hand for 60 seconds.',
       points: 4,
       timer: 60
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Provide oral pleasure to Male for 2 minutes, focusing on his manhood and crown jewels.',
-      points: 4,
-      timer: 120
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Blindfold Male and guide his fingers to pleasure you, as if using a toy.',
-      points: 4,
-      timer: 90
     },
 	{
       type: 'dare',
@@ -6212,7 +6036,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Touch yourself over Male\'s chest for 1 min',
+      text: 'Rub your vagina over Male\'s chest for 1 minute. Touch your genitalia against Male\'s skin while Male watches.',
       points: 4,
       timer: 60
     },
@@ -6220,7 +6044,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'You have 2 options: provide oral pleasure to Male for 5 minutes or engage in a 69 position for mutual pleasure. You can stop before the 5 minutes are up if either of you reaches pleasure.',
+      text: 'Your choice: orally pleasure Male\'s dick for 5 minutes, or 69 with Male for mutual oral on each other\'s genitalia. End early if Male finishes or if your vagina climaxes.',
       points: 4,
       timer: 300
     },
@@ -6228,7 +6052,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Position yourself in front of Male with your legs open. Hold his manhood near your intimate area. Pleasure him for 2 minutes or until completion, allowing just the tip to make contact for increased stimulation.',
+      text: 'Spread your legs open in front of Male. Hold Male\'s penis near your vagina. Rub Male\'s dick against your genitalia for 2 minutes, only let the tip of Male\'s penis touch your vagina.',
       points: 4,
       timer: 120
     },
@@ -6236,23 +6060,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Sit in front of Male and let him tell you how to touch yourself for 3 minutes.',
-      points: 4,
-      timer: 180
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Lay flat with your legs close together. Male must use in between your legs as a bowl and eat cereal with milk out of it.',
-      points: 4,
-      timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Engage in a 69 position with Male and decide whether you want to be on top or bottom. The first one to finish loses!',
+      text: '69 with Male—pick top or bottom. Lick Male\'s penis while Male eats your vagina. Race to make each other cum. Whoever finishes first loses and must grant the winner any request.',
       points: 4,
       timer: 300
     },
@@ -6260,7 +6068,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Rub your intimate area in front of Male for 2 minutes. Aim to get aroused while also making Male hard at the same time.',
+      text: 'Lie back and put both legs on Male\'s shoulders. Let Male eat your vagina with Male\'s tongue for 2 minutes. Male licks your genitalia with full skill until time is up.',
       points: 4,
       timer: 120
     },
@@ -6268,31 +6076,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: '"Lie on a table and place both your legs on Male\'s shoulders. Male must pleasure you orally with maximum skill for 2 minutes.',
-      points: 4,
-      timer: 120
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'You have 5 minutes to bring yourself to climax while Male watches. You can use your hands, toys, etc.',
-      points: 4,
-      timer: 300
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Select a sensual video showing intimate oral pleasure. Choose one that demonstrates your preferences. Now Male must watch it and recreate the technique.',
-      points: 4,
-      timer: 300
-    },
-    {
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Take a 1-minute intimate close-up video of you and Male together. Then watch it together after the minute is up.',
+      text: 'Record a 1-minute intimate video of Male\'s penis penetrating your vagina. Watch it together after and see your genitalia wrapped around Male\'s dick.',
       points: 4,
       timer: 60
     },
@@ -6308,7 +6092,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Male will slowly explore you with his fingers, one at a time. Guide him on your preferences until the time is up.',
+      text: 'Male fingers your vagina slowly. Guide Male\'s fingers inside your genitalia and tell Male what you want until time is up.',
       points: 4,
       timer: 180
     },
@@ -6324,7 +6108,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'If not off already, remove Male\'s underwear. Then tease him with your tongue 5 times, taking a short break after each to build anticipation.',
+      text: 'Strip Male\'s underwear off. Tease Male\'s penis with 5 separate tongue licks, taking a short break after each one. Let Male anticipate your mouth returning to his dick.',
       points: 4,
       timer: 300
     },
@@ -6340,7 +6124,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Male must lie on his back. Straddle him and position your intimate area over his. Create friction without allowing penetration for 2 minutes. Can you bring Male to climax?',
+      text: 'Straddle Male with your vagina pressed against Male\'s penis. Slide your genitalia up and down Male\'s dick for 2 minutes without letting Male\'s penis inside your vagina. Can you bring Male close to climax',
       points: 4,
       timer: 120
     },
@@ -6348,7 +6132,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Sit on Male\'s chest and lean back, fully exposed. Pleasure yourself for 5 minutes or until completion. Male must watch without touching you.',
+      text: 'Sit on Male\'s chest with your vagina fully exposed to Male\'s face. Lean back and finger your vagina for 5 minutes or when you about to cum. Male only watches—no touching.',
       points: 4,
       timer: 300
     },
@@ -6356,7 +6140,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Find an adult film site and let Male select a video showing oral techniques. Recreate what you see on him immediately.',
+      text: 'Let Male select a blowjob video on an adult site. Watch how she pleasures the penis, then do exactly that to Male\'s dick immediately.',
       points: 4,
       timer: 300
     },
@@ -6364,7 +6148,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Male will gradually explore you with his fingers, adding one at a time until using three, then pleasure you for 2 minutes.',
+      text: 'Let Male slowly finger your vagina, adding one finger at a time until Male has three fingers inside your vagina. Then let Male pleasure your vagina with those three fingers for 2 minutes',
       points: 4,
       timer: 120
     },
@@ -6380,7 +6164,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Use your tongue to tease Male\'s most sensitive area for 3 minutes, occasionally taking him fully into your mouth.',
+      text: 'Spend 3 minutes with your tongue on the most sensitive part of Male\'s penis. Tease Male\'s dick head, then take Male\'s full penis into your mouth before going back to licking',
       points: 4,
       timer: 180
     },
@@ -6388,7 +6172,15 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Trace the alphabet on the tip of Male\'s intimate parts using your tongue.',
+      text: 'Trace every letter of the alphabet on the tip of Male\'s penis using your tongue. Lick each letter slowly across Male\'s dick head until you reach Z',
+      points: 4,
+      timer: 0
+    },
+	{
+      type: 'dare',
+      level: 'Hot',
+      gender: 'Female',
+      text: 'Spread your legs wide in front of a mirror. Let Male position behind you and rub your clit and finger your vagina. Male tries to bring you to orgasm in 3 minutes.',
       points: 4,
       timer: 180
     },
@@ -6396,31 +6188,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Sit before a mirror with legs spread wide. Male positions behind you to stimulate you manually, trying to bring you to climax in 3 minutes.',
-      points: 4,
-      timer: 180
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Pleasure Male from behind him for 1 minute.',
-      points: 4,
-      timer: 60
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Set a timer and explore your intimate areas for one minute. Enjoy the sensations with your eyes closed as Male observes.',
-      points: 4,
-      timer: 60
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Show Male how you would like him to massage your genitalia. Set the timer for 5 minutes and start slowly touching yourself. Focus on your sensations. Close your eyes and breathe deeply. Male is allowed only to watch and learn.',
+      text: 'Rub your vagina how you want Male to rub it. Spend 5 minutes slowly touching your clit and fingering your vagina. Eyes closed, breathe deep. Male only watches and learns—no touching Female\'s vagina',
       points: 4,
       timer: 300
     },
@@ -6428,7 +6196,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Take three intimate close-up photos and send them to Male\'s phone. He can only delete them next time you play.',
+      text: 'Photograph your vagina up close from three different angles and send the pictures to Male\'s phone. They stay on Male\'s phone until your next game.',
       points: 4,
       timer: 300
     },
@@ -6436,7 +6204,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Arouse Male by pleasuring yourself in front of him for 2 minutes. He should be exposed so you can watch his reaction. He cannot touch himself.',
+      text: 'Spread your legs wide, rub and finger your vagina in front of Male for 2 minutes. Make sure Male\'s dick is fully exposed so you can watch his reaction while you pleasure yourself. Male cannot touch his penis.',
       points: 4,
       timer: 120
     },
@@ -6444,7 +6212,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Press your intimate area against Male\'s chest and face.',
+      text: 'Press your vagina against Male\'s chest and face.',
       points: 4,
       timer: 180
     },
@@ -6460,7 +6228,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Orally pleasure Male\'s manhood and crown jewels for 1 minute.',
+      text: 'Lick and suck Male\'s dick and testicles for 2 minutes. Spend most of your time with your mouth on his balls—suck them, lick them, and take them deep while giving his penis less attention.',
       points: 4,
       timer: 60
     },
@@ -6484,7 +6252,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Put something cold or minty in your mouth and go down on Male for 1 min',
+      text: 'Put something cold or minty in your mouth and go down on male for 1 min',
       points: 4,
       timer: 60
     },
@@ -6492,15 +6260,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Kneel on the floor, lean against the wall, and open your mouth. Male stands before you and places himself in your mouth. Remain still while Male controls the movement to reach satisfaction.',
-      points: 4,
-      timer: 180
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Kneel down on the floor. Male stands in front of you with his hands behind his head. Take him into your mouth and pleasure him gently with your tongue for 2 minutes.',
+      text: 'Get on your knees. Make Male stand before you with his hands behind his head. Put his penis in your mouth and gently lick his dick with your tongue for 2 full minutes.',
       points: 4,
       timer: 120
     },
@@ -6508,23 +6268,15 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Take an intimate selfie while pleasuring Male orally. Show him the photo - if he\'s not satisfied with the quality, you\'ll need to take another. All photos should be deleted after the game!',
+      text: 'Take an intimate selfie while pleasuring Male orally. Show him the photo - if he\'s not satisfied with the quality, you\'ll need to take another.',
       points: 4,
-      timer: 180
+      timer: 0
     },
 	{
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Straddle yourself above Male\'s mouth and let him show you how well he can pleasure you. Duration 1 minute.',
-      points: 4,
-      timer: 60
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Place your phone far enough away so you can get a good view and film yourselves as you straddle Male for 60 seconds.',
+      text: 'Kneel over Male\'s head, plant your vagina directly on his open mouth, and let him eat your vagina for 1 minute. Stay seated—do not pull your vagina away until the 60 seconds are up.',
       points: 4,
       timer: 60
     },
@@ -6532,7 +6284,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: '"Straddle your partner intimately and connect physically. While maintaining this close Soft, read him a short story for 1 minute.',
+      text: 'Place your phone for a full view, then record as you straddle Male. Film the full 60 seconds with his dick inside your vagina—stay connected until the timer ends.',
       points: 4,
       timer: 60
     },
@@ -6540,7 +6292,15 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Have your partner lie on his back. Before giving him a 5-minute head massage, connect with him intimately and maintain that Soft throughout the massage.',
+      text: 'Climb on top of Male and slide his penis deep into your vagina. While he is fully buried inside you, read him a short story aloud for 1 minute. Stay seated on his penis and do not pull out or break contact until you finish reading.',
+      points: 4,
+      timer: 60
+    },
+	{
+      type: 'dare',
+      level: 'Hot',
+      gender: 'Female',
+      text: 'Have Male lie on his back and insert his penis into your vagina. While sitting on him with his penis held deep inside your vagina, run your hands through his hair and give him a continuous 5-minute head massage. Keep him fully penetrated in you every second until the dare is over.',
       points: 4,
       timer: 300
     },
@@ -6556,15 +6316,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Role-play as a nurse examining your partner who\'s lying on the bed pretending to be immobile. Check his pulse, breathing, and temperature by touching different parts of his body. Then perform a thorough examination of his intimate area, using your hands to test his sensitivity and responsiveness until you determine if he can still reach climax.',
-      points: 4,
-      timer: 180
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Lie on your back and open your legs. Male must pleasure you to climax using only his hands and fingers before the 3 minutes are up.',
+      text: 'Lie on your back with your legs open. Male must pleasure you using only his hands and fingers, aiming to make you climax within 3 minutes. Your goal is to do your best to hold back from climaxing. If Male succeeds in making you climax, you must take the next dare.',
       points: 4,
       timer: 180
     },
@@ -6580,7 +6332,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Use your tongue to trace circles around Male\'s most sensitive area without taking him fully into your mouth for 1 minute.',
+      text: 'Use your tongue to trace circles around Male\'s penis, paying special attention to the tip and the shaft, without taking him fully into your mouth for 1 minute.',
       points: 4,
       timer: 60
     },
@@ -6588,7 +6340,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Sit facing Male with your legs apart. Use two fingers to make circular motions on your most sensitive spot for 3 minutes.',
+      text: 'Sit facing Male with your legs spread apart. For 3 minutes, use two fingers to make circular motions on your vagina.',
       points: 4,
       timer: 180
     },
@@ -6596,7 +6348,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Stand unclothed in front of Male. Male must connect with you intimately for 2 minutes while you both remain standing. Female, you cannot lift your leg. Can Male successfully join with you in this position?',
+      text: 'Stand naked in front of Male. For 2 minutes, he must connect with you intimately while both of you remain standing. Female, you are not allowed to lift your leg. Can Male achieve this connection in this position?',
       points: 4,
       timer: 120
     },
@@ -6604,7 +6356,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Massage Male\'s private part throughout the game until someone gets a dare.',
+      text: 'Massage Male\'s penis throughout the game until someone gets a dare.',
       points: 4,
       timer: 0
     },
@@ -6612,7 +6364,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Male must sensually massage your intimate areas for 3 minutes while you lay face down.',
+      text: 'Male must sensually massage your vagina for 3 minutes while you lay face down.',
       points: 4,
       timer: 180
     },
@@ -6624,19 +6376,11 @@
       points: 4,
       timer: 60
     },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Choose any of these dare\'s and complete it before the end of next month. French kiss a girl, have a threesome with Male, attend an exclusive Adults only party, Try anal with Male.',
-      points: 4,
-      timer: 60
-    },	   
     {
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Stand with one leg raised on the bed. Male must position himself below you and use his mouth to pleasure your intimate area for 2 minutes.',
+      text: 'Stand with one leg raised on the bed. Male must position himself below you and use his mouth to pleasure your vagina for 2 minutes.',
       points: 4,
       timer: 120
     },
@@ -6644,7 +6388,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Use your tongue to slowly pleasure Male\'s manhood and crown jewels for 2 minutes.',
+      text: 'Use your tongue to slowly pleasure Male\'s penis and testicles for 2 minutes.',
       points: 4,
       timer: 120
     },
@@ -6652,23 +6396,7 @@
       type: 'dare',
       level: 'Hot',
       gender: 'Female',
-      text: 'Male lies down on his back with his hands restrained. Straddle him in a dominant position, teasing him with only external contact for 3 minutes. If he tries to initiate deeper Soft, he remains restrained for the next 3 rounds.',
-      points: 4,
-      timer: 180
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Male lies on his back while you lie beside him. Take him in your hand, providing rhythmic stimulation while kissing him passionately. How long until he approaches the edge? Don\'t let him finish yet—more exciting challenges await!',
-      points: 4,
-      timer: 180
-    },
-	{
-      type: 'dare',
-      level: 'Hot',
-      gender: 'Female',
-      text: 'Pleasure Male orally for 3 minutes, using various techniques to bring him to climax before time runs out. Use only your mouth for this intimate challenge.',
+      text: 'Female, position yourself over Male, who is lying on his back with his hands restrained. Carefully guide his penis into your vagina and straddle him, moving slowly for 30 seconds. After that, remain still while kissing him passionately on his lips, neck, and chest for the duration of the 3 minutes. If he tries to escalate the intimacy or initiate deeper contact during this time, he must stay restrained for the next three rounds of the game.',
       points: 4,
       timer: 180
     },
@@ -7068,23 +6796,47 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
-      text: 'For this challenge, maintain continuous intimate contact for 20 minutes. Begin with 10 minutes of oral pleasure - Female providing slow, sensual oral stimulation including attention to your crown jewels. If you approach climax before 5 minutes, switch roles and pleasure Female with your mouth and fingers. After 10 minutes, Female will position herself at the bed\'s edge while you connect with her from a standing position for 5 minutes. For the final 5 minutes, adjust your pace or try a different position. If either reaches climax early, continue pleasuring your partner until the full 20 minutes elapse. No breaks permitted.',
+      text: 'Maintain intimate contact for 20 minutes with no breaks. First 10 minutes: Female sucks your penis and licks your testicles slowly. If you cum before 5 minutes, switch—eat Female\'s vagina and finger her until 10 minutes. Next 5 minutes: Female lies at the bed\'s edge, you stand and fuck. Final 5 minutes: change pace or position. If either cums early, keep pleasuring your partner until 20 minutes end.',
       points: 5,
       timer: 1200
     },
-    {
+	{
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
-      text: 'Think of any kinky act you are afraid or feel uncomfortable doing with Female and do it now. Drink 4 shots if you are not willing to try it.',
+      text: 'Fuck Female in 5 different doggy style variations. Make sure you both climax.',
       points: 5,
       timer: 0
     },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Try all of these positions now. Watch the video and reenact the scene. Stop when the video scene is over. [8 Extreme sex positions](https://www.pornhub.com/view_video.php?viewkey=ph62741e15e166e).',
+      points: 5,
+      timer: 0
+    },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Video your penis slowly sliding in and out of Female\'s vagina until you cum. Keep the camera rolling until your semen waterfalls out of Female\'s vagina. Watch that video together in the week before you have sex again.',
+      points: 5,
+      timer: 600
+    },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'You and Female get into a spider position and have sex until both of you orgasm. [The Spider position](https://bestsexpositions.com/spider/).',
+      points: 5,
+      timer: 600
+    },
     {
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
-      text: 'Time for consensual fantasy role-play. Male, exit the room while Female lies face down, pretending to be deeply asleep. Quietly return, carefully remove Female\'s underwear without waking her. Begin by caressing her exposed buttocks, then progress to massaging and stimulating her intimate area until she responds physically. Proceed to enter her from behind, continuing until you reach completion. Slip away undetected before she awakens.',
+      text: 'Set up a camera with full view of you and Female. Lie on your back. Female jumps on top of you facing away, sliding Female\'s vagina onto your penis. Female rides your dick while the camera records every stroke until you both cum. Let the camera catch your cum dripping out of Female\'s vagina.',
       points: 5,
       timer: 300
     },
@@ -7092,7 +6844,7 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
-      text: 'Time for fantasy role-play: Male, you\'ve been selected for an intimate performance role. Female conducts your interview, then directs you to undress completely and stand before her for physical evaluation. She\'ll explore your body thoroughly until you\'re fully aroused. Next, she\'ll request you demonstrate your oral skills on her before finally testing your physical compatibility and performance abilities. For inspiration, search online for audition scenarios.',
+      text: 'Start in 69 position. Then Female gets on all fours in doggy style and raises her ass high. Lick Female\'s vagina and ass, then penetrate Female from behind with your dick. Rotate between Female\'s vagina and anus until you both cum.',
       points: 5,
       timer: 300
     },
@@ -7100,7 +6852,7 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
-      text: 'Time for intimate role-play. Female pretends she has been unable to reach climax during intimate encounters for months and has been faking satisfaction. Male, assume the role of an intimacy specialist and physical therapist. Begin with a gentle examination of her sensitive areas, exploring with careful touch. Then use every technique at your disposal—fingers, oral stimulation, accessories, and full physical connection—to help her achieve genuine pleasure and release.',
+      text: 'Lie down and have Female mount you facing away, her back to you. While Female rides your penis, rub Female\'s anus with your finger. Then get behind Female in doggy style and penetrate Female\'s vagina. While stroking, slowly finger Female\'s anus. Use lube on your finger and Female\'s ass if needed.',
       points: 5,
       timer: 300
     },
@@ -7108,7 +6860,7 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
-      text: 'Female takes one minute to write 5 questions. Then she positions herself on top of you, straddling your body in a dominant position. While maintaining physical connection and rhythmic movement, she must ask all questions within 3 minutes. Your challenge is to provide coherent answers despite the intense physical distraction. Can you maintain focus and communicate clearly?',
+      text: 'Start in any sex position with your penis in Female\'s vagina. Change positions as you choose, but end in doggy style. Before you finish, penetrate Female\'s anus with your dick until Female says change, then finish in Female\'s vagina.',
       points: 5,
       timer: 180
     },
@@ -7119,14 +6871,6 @@
       text: 'Challenge yourselves to explore 5 adventurous intimate positions with Female for 5 minutes. Browse adult content sites specifically for unconventional position ideas. Focus on discovering and attempting positions you\'ve never experienced together before.',
       points: 5,
       timer: 300
-    },
-    {
-      type: 'dare',
-      level: 'Spicy',
-      gender: 'Male',
-      text: 'Choose any of these dare\'s and complete it before the end of next month. Book a sensual couple\'s massage for you and Female, have a threesome with Female, attend an exclusive Adults only party, Try anal with Female.',
-      points: 5,
-      timer: 1200
     },
     {
       type: 'dare',
@@ -7304,7 +7048,7 @@
       points: 5,
       timer: 300
     },
-    {
+	{
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
@@ -7320,7 +7064,7 @@
       points: 5,
       timer: 600
     },
-    {
+	{
       type: 'dare',
       level: 'Spicy',
       gender: 'Male',
@@ -7328,19 +7072,51 @@
       points: 5,
       timer: 600
     },
-    {
+	{
       type: 'dare',
       level: 'Spicy',
       gender: 'Female',
-      text: 'Get ready for the ultimate 20-minute pleasure marathon! Start with 10 minutes of oral delights—Female, tease and please him with your lips and tongue, giving special attention to all his sensitive spots. If he gets too close to the edge before 5 minutes, swap places and let him work his magic with his mouth and fingers. Once the clock hits 10 minutes, Female positions herself at the bed\'s edge for a slow, standing connection for 5 minutes. For the final stretch, switch things up however you like! The catch? If either of you reaches paradise early, you still have to keep pleasuring your partner until all 20 minutes are complete. No breaks allowed in this endurance challenge!',
+      text: 'Lie on your tummy, stretch your legs wide, and lift your ass up. Male penetrates your vagina from behind until you both cum. Do not stop until both of you have climaxed',
       points: 5,
-      timer: 1200
+      timer: 0
+    },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Lie face down, spread your legs wide, and arch your back. Male enters your vagina from behind until you both climax',
+      points: 5,
+      timer: 600
+    },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Kneel in reverse cowgirl, push your ass up, and put your head between Male\'s legs to expose your vagina to Male. Male rubs and fingers your vagina for 2 minutes. Then Male gently inserts his penis into your vagina while you keep riding his dick in this position until you both cum.',
+      points: 5,
+      timer: 600
     },
     {
       type: 'dare',
       level: 'Spicy',
       gender: 'Female',
-      text: 'Time to become an oral pleasure artist! Find a tutorial video showing various techniques for bringing a man to ecstasy with your mouth. Study the different moves and styles, then put on your own live performance, recreating everything you learned until Male experiences pure bliss!',
+      text: 'Have Male sit on the sofa. Put both your legs on Male\'s shoulders, facing down. Male licks your vagina and anus for 3 minutes. Then choose any position until you both cum.',
+      points: 5,
+      timer: 0
+    },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
+      text: 'Lie flat on your tummy. Male slides his dick into your vagina from behind and holds still. Male gives you a 5-minute back and butt massage while inside you. After the 5 minutes, Male will continue to thrust you until you both climax.',
+      points: 5,
+      timer: 300
+    },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Male',
+      text: 'Lie on your tummy, stretch your legs as far as possible and pull your butt up. Male ties your hands to the edge of the bed and penetrates you from the back until you both cum.',
       points: 5,
       timer: 300
     },
@@ -7348,15 +7124,7 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Female',
-      text: 'Challenge your boundaries! Think of that spicy fantasy you\'ve been curious about but too shy to try with Male. Now\'s your chance to explore it together! Not feeling brave enough? Take 4 drinks instead and save the adventure for another day.',
-      points: 5,
-      timer: 0
-    },
-    {
-      type: 'dare',
-      level: 'Spicy',
-      gender: 'Female',
-      text: 'Put on a sultry solo show for 2 minutes, using your favorite techniques to reach the peak of pleasure before time runs out! If you succeed in your mission, Male must perform the same challenge. May the quickest climber win!',
+      text: 'Sit facing Male and rub your vagina while Male strokes his penis for 2 minutes. Then 69 for 3 minutes. Then Make out for another 2 minutes without touching genitalia. Once the 2 min is up you can then get into any position and continue until you both climax.',
       points: 5,
       timer: 120
     },
@@ -7364,15 +7132,7 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Female',
-      text: 'The ultimate multitasking challenge! Male prepares 5 questions, then you connect physically while facing each other. He\'ll quiz you while maintaining rhythm, and you must answer everything coherently despite the delicious distraction. Can you keep your wits about you when pleasure takes over?',
-      points: 5,
-      timer: 180
-    },
-    {
-      type: 'dare',
-      level: 'Spicy',
-      gender: 'Female',
-      text: 'Time for a position adventure! Find inspiration online for 5 exciting new ways to connect that you\'ve never tried before. Push your flexibility and creativity for 5 minutes of exploring uncharted territory together!',
+      text: 'Search online for 5 exciting positions you and Male haven\'t done. Try each one for atleast 2 min each until you both climax.',
       points: 5,
       timer: 300
     },
@@ -7404,7 +7164,7 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Female',
-      text: 'Give Male a unique thrill by using just your feet to pleasure him for 2 minutes. Time to show off those toe talents!',
+      text: 'Have Male lie back. Mount Male in rodeo, guide his penis into your vagina, and bounce on his dick for 3 minutes. Then slowly switch Male\'s penis to your anus and ride for 2 more minutes. Decide where Male cums—your anus or vagina.',
       points: 5,
       timer: 120
     },
@@ -7636,6 +7396,14 @@
       type: 'dare',
       level: 'Spicy',
       gender: 'Female',
+      text: 'Lay on your back and give Male a blowjob and allow him to ejaculate on your face.',
+      points: 5,
+      timer: 180
+    },
+	{
+      type: 'dare',
+      level: 'Spicy',
+      gender: 'Female',
       text: 'Get into your sexiest face-down position with your back arched just right and legs spread wide open. Give Male a view he won\'t forget before he joins you from behind for a wild ride that\'ll make you both see stars!',
       points: 5,
       timer: 0
@@ -7682,5 +7450,3 @@
     }
   ]
 }
-
-
