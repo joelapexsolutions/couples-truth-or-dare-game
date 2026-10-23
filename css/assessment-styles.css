@@ -1,760 +1,210 @@
-/* Assessment Page Styles */
-html, body {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
+/* ==========================================================================
+   Couples Intimacy Profile (assessment) - velvet theme
+   Works together with css/styles.css. Every id/class below is used by
+   couples-intimacy-profile.html or js/assessment.js - do not rename them.
+   ========================================================================== */
 
 :root {
-    --primary-color: #B20000;
-    --secondary-color: #FF9123;
-    --start-color: #FF9123;
-    --reset-color: #B20000;
-    --text-color: #f2e6e8;
-    --border-color: rgba(178, 0, 0, 0.8);
-    --dark-bg: #1a0f13;
+    --start-color: #f5c26b;      /* gold: headings & accents on this page */
+    --reset-color: #c2185b;
+    --border-color: rgba(255, 255, 255, 0.16);
 }
 
-/* Base Assessment Styles */
+.assessment-container { max-width: 1000px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) 20px 20px; min-height: 80vh; }
+
+/* ---------- Intro ---------- */
 .assessment-intro {
-    text-align: center;
-    margin-bottom: 20px;
-    line-height: 1.5;
-    color: var(--text-color);
-    padding: 10px;
-    background: rgba(26, 15, 19, 0.4);
-    border-radius: 10px;
-    border: 1px solid rgba(178, 0, 0, 0.3);
+    text-align: center; margin-bottom: 26px; padding: clamp(24px, 4vw, 40px);
+    border-radius: 28px; border: 1px solid var(--line2);
+    background: linear-gradient(165deg, var(--card2), var(--card));
 }
+.assessment-intro h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 0.3em; }
+.assessment-intro p { max-width: 38rem; margin: 0 auto; color: var(--muted); }
 
-/* Gauges Preview Section */
-.gauges-preview {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.7), rgba(50, 30, 40, 0.5));
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-    animation: fadeIn 0.8s ease;
+/* ---------- Panels ---------- */
+.gauges-preview, .profile-summary, .relationship-balance, .relationship-duration-container, .previous-results {
+    margin-bottom: 26px; padding: clamp(20px, 3vw, 30px);
+    border-radius: var(--radius); border: 1px solid var(--line);
+    background: linear-gradient(165deg, var(--card2), var(--card));
+    animation: fadeIn 0.6s ease;
 }
+.gauge-info { text-align: center; margin-top: 10px; font-style: italic; color: var(--muted); }
+.gauge-info p { margin: 0; }
 
-.gauge-info {
-    text-align: center;
-    margin-top: 15px;
-    font-style: italic;
-    color: #ccc;
+/* ---------- Duration picker ---------- */
+.relationship-duration-container { text-align: center; }
+.relationship-duration-container h3 { font-family: var(--font-display); font-size: 1.7rem; margin-bottom: 16px; }
+.duration-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.duration-button {
+    display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 200px; padding: 16px 22px;
+    border-radius: var(--radius-sm); border: 1px solid var(--line2); background: rgba(255, 255, 255, 0.04);
+    color: var(--text); cursor: pointer; font-size: 1rem; transition: transform 0.2s, background 0.2s, border-color 0.2s;
 }
+.duration-button:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.08); }
+.duration-button.active { background: linear-gradient(160deg, rgba(224, 36, 94, 0.45), rgba(156, 16, 80, 0.35)); border-color: var(--pink); }
+.duration-button i { font-size: 1.4rem; color: var(--gold); margin-bottom: 6px; }
+.duration-button span { font-weight: 600; }
+.duration-button small { color: var(--muted); }
 
-.section-toggles {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(178, 0, 0, 0.2);
-}
-
+/* ---------- Section toggles ---------- */
+.section-toggles { display: flex; justify-content: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
 .section-toggle {
-    padding: 12px 25px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.7), rgba(50, 30, 40, 0.5));
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    font-size: 16px;
+    padding: 12px 26px; min-height: 48px; border-radius: 999px; cursor: pointer; font-size: 1rem; font-weight: 600;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line2); color: var(--muted); transition: all 0.2s;
 }
+.section-toggle:hover { color: var(--text); }
+.section-toggle.active { background: var(--grad); color: #2a0415; border-color: transparent; }
 
-.section-toggle.active {
-    background: linear-gradient(135deg, var(--reset-color), var(--border-color));
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
+.assessment-section { display: none; margin-bottom: 20px; }
+.assessment-section.active { display: block; animation: fadeIn 0.5s ease; }
+.assessment-section h3 { text-align: center; margin-bottom: 14px; color: var(--gold); font-family: var(--font-display); font-size: 1.8rem; }
 
-.assessment-section {
-    display: none;
-    margin-bottom: 20px;
-}
-
-.assessment-section.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
-}
-
-.assessment-section h3 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: var(--start-color);
-    font-size: 22px;
-}
-
+/* ---------- Task list ---------- */
 .tasks-list {
-    max-height: 400px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: rgba(26, 15, 19, 0.3);
-    border-radius: 10px;
-    border: 1px solid rgba(178, 0, 0, 0.2);
+    max-height: 480px; overflow-y: auto; margin-bottom: 20px; padding: 14px;
+    border-radius: var(--radius); border: 1px solid var(--line); background: rgba(0, 0, 0, 0.25);
+    scrollbar-width: thin; scrollbar-color: var(--wine) transparent;
 }
-
 .task-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.6), rgba(50, 30, 40, 0.4));
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(178, 0, 0, 0.3);
+    display: flex; align-items: center; gap: 14px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer;
+    border-radius: var(--radius-sm); border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04);
+    transition: transform 0.2s, border-color 0.2s, background 0.2s;
 }
+.task-item:last-child { margin-bottom: 0; }
+.task-item:hover { transform: translateY(-2px); border-color: var(--line2); }
+.task-item.selected { background: linear-gradient(160deg, rgba(224, 36, 94, 0.30), rgba(156, 16, 80, 0.22)); border-color: var(--pink); }
+.task-checkbox { font-size: 1.4rem; color: var(--gold); flex: none; }
+.task-text { flex: 1; line-height: 1.4; font-size: 1rem; }
+.task-level { flex: none; padding: 4px 11px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; color: #2a0415; }
+.task-level.soft { background: #ffc2d3; }
+.task-level.sensual { background: #ff94b1; }
+.task-level.hot { background: #ff7a5c; }
+.task-level.extreme { background: #ff3d7f; color: #fff; }
+.loading-message { text-align: center; padding: 20px; color: var(--muted); font-style: italic; }
 
-.task-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border-color: rgba(178, 0, 0, 0.6);
+/* ---------- Results ---------- */
+.results-title { text-align: center; font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 22px; }
+.profile-summary { text-align: center; }
+.profile-name { font-family: var(--font-display); font-size: clamp(2rem, 4.6vw, 2.8rem); font-weight: 600; font-style: italic; color: var(--gold); margin: 12px 0; line-height: 1.15; }
+.profile-description { line-height: 1.7; color: var(--muted); max-width: 44rem; margin: 0 auto; }
+#resultsScreen { position: relative; top: 0; }
+
+.transition-message {
+    margin: 0 0 22px; padding: 16px 20px; border-radius: var(--radius-sm); font-style: italic; line-height: 1.6; color: var(--gold);
+    background: rgba(245, 194, 107, 0.08); border: 1px solid rgba(245, 194, 107, 0.3); animation: fadeIn 0.8s ease;
 }
+.previous-results h3 { text-align: center; font-family: var(--font-display); font-size: 1.7rem; color: var(--gold); }
+.previous-scores p { text-align: center; font-style: italic; color: var(--muted); }
+.score-comparison { display: flex; justify-content: center; align-items: center; gap: 22px; flex-wrap: wrap; }
+.score-label { font-weight: 600; color: var(--gold); }
+.score-arrows { display: flex; flex-direction: column; font-size: 1.5rem; gap: 4px; }
+.arrow-up { color: #4ade80; }
+.arrow-down { color: #ff6b81; }
+.arrow-same { color: var(--gold); }
 
-.task-item.selected {
-    background: linear-gradient(135deg, rgba(70, 30, 40, 0.8), rgba(100, 40, 50, 0.6));
-    border-color: var(--border-color);
-    box-shadow: 0 5px 15px rgba(178, 0, 0, 0.3);
+.relationship-balance { text-align: center; }
+.relationship-balance h3 { font-family: var(--font-display); font-size: 1.8rem; color: var(--gold); }
+#balanceDescription { line-height: 1.7; color: var(--muted); max-width: 44rem; margin: 0 auto; }
+
+.app-download-cta {
+    margin: 26px 0; padding: clamp(22px, 4vw, 34px); text-align: center; border-radius: var(--radius);
+    border: 1px solid rgba(255, 61, 127, 0.4);
+    background: radial-gradient(500px 220px at 50% 0%, rgba(255, 61, 127, 0.22), transparent 70%), linear-gradient(165deg, var(--card2), var(--card));
 }
+.app-download-cta h3 { font-family: var(--font-display); font-size: 1.8rem; color: var(--gold); }
+.app-download-cta p { color: var(--muted); max-width: 34rem; margin: 0 auto 18px; }
+.google-play-badge { height: 58px; width: auto; transition: transform 0.2s; }
+.google-play-badge:hover { transform: scale(1.04); }
 
-.task-checkbox {
-    margin-right: 15px;
-    font-size: 22px;
-    color: var(--start-color);
-    transition: all 0.3s ease;
-}
+/* ---------- Gauges ---------- */
+.gauges-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 26px; }
+.gauge-container { position: relative; width: 100%; max-width: 300px; margin: 10px auto; flex: 0 1 300px; }
+.gauge-container h3 { text-align: center; margin-bottom: 12px; color: var(--gold); font-family: var(--font-display); font-size: 1.6rem; }
+.gauge { width: 100%; margin: 0 auto; }
+.gauge svg { display: block; width: 100%; height: auto; aspect-ratio: 200 / 120; overflow: visible; }
+.gauge-label { font-size: 8px; fill: #fff; text-anchor: middle; }
+.gauge-percentage { display: none !important; }
+.gauge-level { text-align: center; margin-top: 8px; font-size: 1.1rem; font-weight: 600; color: var(--gold); }
 
-.task-item.selected .task-checkbox {
-    transform: scale(1.1);
-}
+.gauge-segment { stroke: rgba(13, 1, 12, 0.6); stroke-width: 1px; }
+#eroticGauge .gauge-segment-1, #eroticGaugePreview .gauge-segment-1 { fill: #f5c26b; }
+#eroticGauge .gauge-segment-2, #eroticGaugePreview .gauge-segment-2 { fill: #ff9d5c; }
+#eroticGauge .gauge-segment-3, #eroticGaugePreview .gauge-segment-3 { fill: #ff6f61; }
+#eroticGauge .gauge-segment-4, #eroticGaugePreview .gauge-segment-4 { fill: #ff3d7f; }
+#eroticGauge .gauge-segment-5, #eroticGaugePreview .gauge-segment-5 { fill: #c2185b; }
+#romanticGauge .gauge-segment-1, #romanticGaugePreview .gauge-segment-1 { fill: #ffb3c7; }
+#romanticGauge .gauge-segment-2, #romanticGaugePreview .gauge-segment-2 { fill: #ff7fa3; }
+#romanticGauge .gauge-segment-3, #romanticGaugePreview .gauge-segment-3 { fill: #e0245e; }
+#romanticGauge .gauge-segment-4, #romanticGaugePreview .gauge-segment-4 { fill: #9c1050; }
+/* light segments get dark labels would be nicer, but labels sit on top so keep them readable */
+.gauge-label { paint-order: stroke; stroke: rgba(13, 1, 12, 0.85); stroke-width: 2px; stroke-linejoin: round; }
 
-.task-text {
-    flex: 1;
-    line-height: 1.4;
-    font-size: 16px;
-}
-
-.task-level {
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 20px;
-    margin-left: 10px;
-    color: white;
-    font-weight: bold;
-}
-
-.task-level.soft {
-    background: #9b59b6;
-}
-
-.task-level.sensual {
-    background: #8e44ad;
-}
-
-.task-level.hot {
-    background: #e67e22;
-}
-
-.task-level.extreme {
-    background: #e74c3c;
-}
-
-.loading-message {
-    text-align: center;
-    padding: 20px;
-    color: #ccc;
-    font-style: italic;
-}
-
-/* Results Screen Styles */
-.profile-summary {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.7), rgba(50, 30, 40, 0.5));
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-    animation: fadeIn 0.8s ease;
-}
-
-#resultsScreen {
-    position: relative;
-    top: 0;
-}
-
-.profile-name {
-    font-size: 28px;
-    color: var(--start-color);
-    margin: 15px 0;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 145, 35, 0.5);
-}
-
-.profile-description {
-    line-height: 1.6;
-    margin-top: 15px;
-    font-size: 16px;
-}
-
-.gauges-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    min-height: 280px;
-}
-
-.gauge-container h3 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: var(--start-color);
-    font-size: 20px;
-}
-
-.gauge {
-    width: 100%;
-    height: 200px;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.gauge svg {
-    width: 100%;
-    height: 100%;
-    max-width: 300px;
-    max-height: 200px;
-}
-
-.gauge-label {
-    font-size: 10px;
-    fill: white;
-    text-anchor: middle;
-}
-
-.gauge-percentage {
-    font-size: 16px;
-    fill: var(--start-color);
-    font-weight: bold;
-}
-
-.gauge-level {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
-    color: var(--start-color);
-    font-weight: bold;
-}
-
-.relationship-balance {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.7), rgba(50, 30, 40, 0.5));
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-    animation: fadeIn 1s ease;
-}
-
-.relationship-balance h3 {
-    margin-bottom: 15px;
-    color: var(--start-color);
-    font-size: 22px;
-}
-
-#balanceDescription {
-    line-height: 1.6;
-    font-size: 16px;
-}
-
-/* Gauge Animations */
-@keyframes needleMove {
-    from { transform: rotate(-90deg); }
-    to { transform: rotate(var(--rotation-angle)); }
-}
-
-@keyframes gaugeAppear {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes colorPulse {
-    0% { filter: brightness(1); }
-    50% { filter: brightness(1.2); }
-    100% { filter: brightness(1); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Apply to gauge elements */
-#eroticGauge, #romanticGauge, #eroticGaugePreview, #romanticGaugePreview {
-    animation: gaugeAppear 1s ease forwards;
-}
-
-/* Colors for the erotic gauge */
-#eroticGauge .gauge-segment-1, #eroticGaugePreview .gauge-segment-1 { fill: #3498db; }
-#eroticGauge .gauge-segment-2, #eroticGaugePreview .gauge-segment-2 { fill: #2ecc71; }
-#eroticGauge .gauge-segment-3, #eroticGaugePreview .gauge-segment-3 { fill: #f1c40f; }
-#eroticGauge .gauge-segment-4, #eroticGaugePreview .gauge-segment-4 { fill: #e67e22; }
-#eroticGauge .gauge-segment-5, #eroticGaugePreview .gauge-segment-5 { fill: #e74c3c; }
-
-/* Colors for the romantic gauge */
-#romanticGauge .gauge-segment-1, #romanticGaugePreview .gauge-segment-1 { fill: #9b59b6; }
-#romanticGauge .gauge-segment-2, #romanticGaugePreview .gauge-segment-2 { fill: #8e44ad; }
-#romanticGauge .gauge-segment-3, #romanticGaugePreview .gauge-segment-3 { fill: #6c3483; }
-#romanticGauge .gauge-segment-4, #romanticGaugePreview .gauge-segment-4 { fill: #4a235a; }
-
-/* Active segment animation */
-.active-segment {
-    animation: colorPulse 2s infinite;
-}
-
-/* Gauge needle */
 .gauge-needle {
     transform-origin: 100px 100px !important;
     transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    stroke: #ffffff !important;
     stroke-width: 3px !important;
     stroke-linecap: round;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
 }
+.gauge-center { fill: #0d010c !important; stroke: #ffffff !important; stroke-width: 2px !important; }
 
-#eroticGauge .gauge-needle, #eroticGaugePreview .gauge-needle {
-    stroke: #c0392b !important;
-    stroke-width: 3px !important;
-    filter: drop-shadow(0 0 5px rgba(231, 76, 60, 0.8)) !important;
-}
+#eroticGauge, #romanticGauge, #eroticGaugePreview, #romanticGaugePreview { animation: gaugeAppear 0.8s ease forwards; }
 
-#romanticGauge .gauge-needle, #romanticGaugePreview .gauge-needle {
-    stroke: #8e44ad !important;
-    stroke-width: 3px !important;
-    filter: drop-shadow(0 0 5px rgba(142, 68, 173, 0.8)) !important;
-}
+.active-segment { animation: colorPulse 2s infinite; }
+@keyframes needleMove { from { transform: rotate(-90deg); } to { transform: rotate(var(--rotation-angle)); } }
+@keyframes gaugeAppear { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+@keyframes colorPulse { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.25); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Gauge center */
-.gauge-center {
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
-}
-
-/* Enhanced gauge visuals */
-.gauge-container {
-    position: relative;
-    margin: 20px auto;
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
-    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
-}
-
-.gauge-container::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
-    z-index: -1;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-/* Button styling */
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 25px 0;
-}
-
+/* ---------- Buttons ---------- */
+.button-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin: 26px 0; }
 .button {
-    padding: 12px 25px;
-    min-width: 150px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-width: 190px; min-height: 52px; padding: 13px 24px;
+    border-radius: 999px; border: 1px solid var(--line2); background: rgba(255, 255, 255, 0.06); color: var(--text);
+    font-family: inherit; font-size: 1rem; font-weight: 600; text-decoration: none; text-align: center; cursor: pointer;
+    transition: transform 0.2s, filter 0.2s, background 0.2s;
 }
+.button:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.12); color: var(--text); }
+#submitAssessmentButton, #retakeAssessmentButton { background: var(--grad); color: #2a0415; border-color: transparent; }
+#submitAssessmentButton:hover, #retakeAssessmentButton:hover { background: var(--grad); filter: brightness(1.07); color: #2a0415; }
 
-.button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+.screen { display: none; }
+.screen.active { display: block; }
 
-.relationship-duration-container {
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.6), rgba(50, 30, 40, 0.4));
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-    animation: fadeIn 0.8s ease;
-}
-
-.relationship-duration-container h3 {
-    color: var(--start-color);
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.duration-options {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.duration-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 20px;
-    min-width: 180px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.8), rgba(50, 30, 40, 0.6));
-    border: 1px solid rgba(178, 0, 0, 0.3);
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.duration-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.duration-button.active {
-    background: linear-gradient(135deg, var(--reset-color), var(--border-color));
-    border-color: var(--border-color);
-    box-shadow: 0 5px 15px rgba(178, 0, 0, 0.3);
-}
-
-.duration-button i {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.duration-button span {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.duration-button small {
-    font-size: 12px;
-    opacity: 0.8;
-}
-
-/* Transition Message */
-.transition-message {
-    background: rgba(26, 15, 19, 0.5);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px 0;
-    font-style: italic;
-    line-height: 1.5;
-    color: #f1c40f;
-    animation: fadeIn 1s ease;
-}
-
-/* Previous Results Section */
-.previous-results {
-    margin: 20px 0 30px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.6), rgba(50, 30, 40, 0.4));
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-    animation: fadeIn 0.8s ease;
-}
-
-.previous-results h3 {
-    color: var(--start-color);
-    margin-bottom: 15px;
-    text-align: center;
-    font-size: 20px;
-}
-
-.previous-scores p {
-    text-align: center;
-    margin-bottom: 15px;
-    font-style: italic;
-}
-
-.score-comparison {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.score-label {
-    font-weight: bold;
-    color: var(--start-color);
-}
-
-.score-arrows {
-    display: flex;
-    flex-direction: column;
-    font-size: 24px;
-    gap: 5px;
-}
-
-.arrow-up {
-    color: #2ecc71;
-}
-
-.arrow-down {
-    color: #e74c3c;
-}
-
-.arrow-same {
-    color: #f1c40f;
-}
-
-.screen {
-    display: none;
-}
-
-.screen.active {
-    display: block;
-}
-
-/* Age Verification Modal */
+/* ---------- Age verification (created by assessment.js) ---------- */
 .age-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    backdrop-filter: blur(10px);
+    position: fixed; inset: 0; z-index: 10000; padding: 20px; display: flex; align-items: center; justify-content: center;
+    background: rgba(8, 0, 7, 0.92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
-
 .age-modal-content {
-    background: linear-gradient(135deg, rgba(26, 15, 19, 0.95), rgba(50, 30, 40, 0.9));
-    border: 2px solid var(--border-color);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    width: 100%; max-width: 500px; padding: clamp(26px, 5vw, 40px); text-align: center;
+    border-radius: 28px; border: 1px solid var(--line2); background: linear-gradient(165deg, var(--card2), var(--card));
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
 }
-
-.age-modal h2 {
-    color: var(--start-color);
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-.age-modal p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.age-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
+.age-modal h2 { font-size: 2.1rem; margin-bottom: 14px; color: var(--gold); }
+.age-modal h2 i { display: block; font-size: 1.8rem; margin-bottom: 8px; }
+.age-modal p { color: var(--muted); margin-bottom: 18px; }
+.age-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .age-button {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 120px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 150px; min-height: 52px; padding: 13px 24px;
+    border-radius: 999px; border: 1px solid transparent; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 700; transition: transform 0.2s, filter 0.2s;
+}
+.age-button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.age-button.yes { background: var(--grad); color: #2a0415; }
+.age-button.no { background: rgba(255, 255, 255, 0.07); color: var(--text); border-color: var(--line2); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+    .duration-button { width: 100%; }
+    .button { width: 100%; }
+    .task-item { align-items: flex-start; flex-wrap: wrap; }
+    .task-text { flex-basis: calc(100% - 50px); }
+    .score-comparison { flex-direction: column; gap: 10px; }
+    .score-arrows { flex-direction: row; }
+    .age-button { width: 100%; }
 }
 
-.age-button.yes {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-}
-
-.age-button.no {
-    background: linear-gradient(135deg, #666, #888);
-    color: white;
-}
-
-.age-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .gauges-container, .button-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .gauge-container {
-        width: 100%;
-        max-width: 250px;
-    }
-    
-    .section-toggles {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .button {
-        width: 80%;
-    }
-
-    .duration-options {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .duration-button {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .score-comparison {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .score-arrows {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .age-buttons {
-        flex-direction: column;
-    }
-
-    .age-modal-content {
-        padding: 30px 20px;
-    }
-}
-
-@media (max-width: 600px) {
-    .duration-options {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .duration-button {
-        width: 100%;
-        max-width: 250px;
-    }
-}
-
-/* Force consistent gauge sizing */
-#eroticGauge, #romanticGauge, #eroticGaugePreview, #romanticGaugePreview {
-    width: 300px !important;
-    height: 200px !important;
-    max-width: 300px !important;
-    max-height: 200px !important;
-}
-
-#eroticGauge svg, #romanticGauge svg, #eroticGaugePreview svg, #romanticGaugePreview svg {
-    width: 300px !important;
-    height: 200px !important;
-}
-
-/* Ensure gauge containers don't shrink */
-.gauges-container .gauge-container {
-    flex-shrink: 0 !important;
-    width: 300px !important;
-    min-width: 300px !important;
-}
-
-/* Fix grey background on erotic gauge */
-#eroticGauge .gauge-segment, #eroticGaugePreview .gauge-segment {
-    background: none !important;
-}
-
-/* Fix mobile gauge shrinking */
-@media (max-width: 768px) {
-    .gauge-container {
-        width: 280px !important;
-        min-width: 280px !important;
-        max-width: 280px !important;
-        flex-shrink: 0 !important;
-    }
-    
-    .gauge, .gauge svg {
-        width: 280px !important;
-        height: 180px !important;
-        max-width: 280px !important;
-        max-height: 180px !important;
-    }
-    
-    #eroticGauge, #romanticGauge, #eroticGaugePreview, #romanticGaugePreview {
-        width: 280px !important;
-        height: 180px !important;
-    }
-    
-    .gauges-container {
-        min-height: 200px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .gauge-container {
-        width: 250px !important;
-        min-width: 250px !important;
-    }
-    
-    .gauge, .gauge svg {
-        width: 250px !important;
-        height: 160px !important;
-    }
-}
-
-/* Remove grey background from erotic gauge */
-#eroticGauge {
-    background: transparent !important;
-}
-
-#eroticGauge svg {
-    background: transparent !important;
-}
-
-/* Ensure SVG paths don't have grey fill */
-#eroticGauge path {
-    fill: none !important;
-}
-
-#eroticGauge .gauge-segment-1 { fill: #3498db !important; }
-#eroticGauge .gauge-segment-2 { fill: #2ecc71 !important; }
-#eroticGauge .gauge-segment-3 { fill: #f1c40f !important; }
-#eroticGauge .gauge-segment-4 { fill: #e67e22 !important; }
-#eroticGauge .gauge-segment-5 { fill: #e74c3c !important; }
-
-/* Hide percentage text from gauges */
-.gauge-percentage {
-    display: none !important;
-}
-
-#eroticPercentage, #romanticPercentage, 
-#eroticPercentagePreview, #romanticPercentagePreview {
-    display: none !important;
-}
+/* outlined checkbox icons (script uses fa-square / fa-check-square) */
+.task-checkbox .fas { font-weight: 400; }
+.task-item.selected .task-checkbox { color: var(--pink); }
