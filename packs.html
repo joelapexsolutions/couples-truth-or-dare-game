@@ -42,17 +42,48 @@
     <style>
         .packs-howto { padding: clamp(40px, 6vw, 90px) 0 clamp(20px, 3vw, 40px); }
         .packs-howto .section-head h2 { font-size: clamp(2rem, 4vw, 3.4rem); margin-bottom: 0.3em; }
-        .howto-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); align-items: start; }
-        .howto-card { padding: clamp(24px, 3vw, 40px); }
-        .howto-card h3 { font-family: var(--font-display); font-size: clamp(1.7rem, 2.6vw, 2.3rem); margin: 0 0 22px; }
-        .howto-card h3 i { color: var(--pink); margin-right: 10px; font-size: 0.8em; }
-        .packs-howto .howto-card .steps { display: block; margin: 0 0 8px; }
-        .packs-howto .howto-card .steps li { position: relative; padding: 4px 0 20px 58px; }
-        .packs-howto .howto-card .steps li::before { position: absolute; margin: 0; }
-        .packs-howto .steps span strong { display: inline; font-size: inherit; color: var(--text); }
-        .howto-note { margin: 6px 0 0; padding: 16px 18px; border-radius: 16px; background: rgba(245, 194, 107, 0.08); border: 1px solid rgba(245, 194, 107, 0.28); color: var(--muted); font-size: 0.98rem; }
-        .howto-note strong { color: var(--text); }
-        @media (max-width: 960px) { .howto-grid { grid-template-columns: 1fr; } }
+        .howto-premium { display: flex; gap: 14px; align-items: flex-start; margin: 0 0 24px; padding: 16px 20px; border-radius: 18px; background: rgba(245, 194, 107, 0.08); border: 1px solid rgba(245, 194, 107, 0.3); color: var(--muted); font-size: 1rem; }
+        .howto-premium i { color: var(--gold); margin-top: 4px; }
+        .howto-premium strong { color: var(--text); }
+        .howto-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; }
+        .howto-tab { font: inherit; font-weight: 600; font-size: 1.02rem; padding: 14px 24px; border-radius: 999px; cursor: pointer; color: var(--muted); background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line2); transition: background .2s, color .2s, border-color .2s; }
+        .howto-tab i { margin-right: 8px; }
+        .howto-tab:hover { color: var(--text); }
+        .howto-tab.active { color: #2a0415; background: linear-gradient(135deg, var(--pink), var(--coral)); border-color: transparent; }
+        .howto-layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(32px, 5vw, 96px); align-items: start; }
+        .howto-list { display: grid; gap: 12px; }
+        .howto-stage { position: sticky; top: calc(var(--nav-h) + 24px); }
+        .stage-phone { position: relative; width: 100%; max-width: 330px; margin: 0 auto; aspect-ratio: 330 / 714; }
+        .stage-phone::before { content: ""; position: absolute; inset: -14% -22%; background: radial-gradient(closest-side, rgba(255, 61, 127, 0.28), transparent); pointer-events: none; }
+        .stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 36px; border: 1px solid var(--line2); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 7px rgba(255, 255, 255, 0.035); background: #12020f; opacity: 0; transform: translateY(10px) scale(0.98); transition: opacity .35s ease, transform .35s ease; pointer-events: none; }
+        .stage-img.active { opacity: 1; transform: none; }
+        .howto-panel[hidden] { display: none; }
+        .howto-step { border-radius: 20px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); overflow: hidden; transition: border-color .2s, background .2s; }
+        .howto-step[open] { border-color: rgba(255, 61, 127, 0.45); background: rgba(255, 61, 127, 0.05); }
+        .howto-step summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 18px 22px; }
+        .howto-step summary::-webkit-details-marker { display: none; }
+        .howto-step summary:hover .hs-title { color: #fff; }
+        .hs-num { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: var(--gold); border: 1px solid rgba(245, 194, 107, 0.5); background: rgba(245, 194, 107, 0.08); }
+        .howto-step[open] .hs-num { color: #2a0415; background: var(--gold); border-color: var(--gold); }
+        .hs-title { flex: 1; font-weight: 600; font-size: 1.12rem; color: var(--text); }
+        .hs-chev { flex: none; color: var(--muted); transition: transform .25s; }
+        .howto-step[open] .hs-chev { transform: rotate(180deg); color: var(--pink); }
+        .hs-body { padding: 2px 24px 26px 78px; }
+        .hs-body p { margin: 0; color: var(--muted); font-size: 1.12rem; line-height: 1.7; max-width: 46em; }
+        .hs-body strong { color: var(--text); }
+        .hs-shot { display: none; margin: 18px auto 0; width: min(78%, 260px); }
+        .hs-shot img { display: block; width: 100%; height: auto; border-radius: 30px; border: 1px solid var(--line2); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 0 6px rgba(255, 255, 255, 0.03); background: #12020f; }
+        @media (max-width: 900px) {
+            .howto-layout { grid-template-columns: 1fr; }
+            .howto-stage { display: none; }
+            .hs-shot { display: block; }
+        }
+        @media (max-width: 760px) {
+            .howto-step summary { padding: 16px 16px; gap: 12px; }
+            .hs-title { font-size: 1.04rem; }
+            .hs-body { padding: 2px 16px 22px 16px; }
+            .howto-tab { flex: 1 1 100%; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -90,37 +121,112 @@
 
         <section class="packs-howto" id="how-to-import">
             <div class="container">
-                <div class="section-head left" style="margin-bottom:28px">
+                <div class="section-head left" style="margin-bottom:24px">
                     <span class="eyebrow">Step by step</span>
                     <h2>How to add a pack to the app</h2>
-                    <p>Download the pack first (tap <strong>Download</strong> on a pack below). It saves to your phone as a small file, usually in your <strong>Downloads</strong> folder. Then follow the steps for the game it belongs to.</p>
+                    <p>Download a pack below first. It saves to your phone as a small file, usually in your <strong>Downloads</strong> folder. Then pick your game and tap a step to open it.</p>
                 </div>
-                <div class="howto-grid">
-                    <div class="card howto-card">
-                        <h3><i class="fas fa-fire" aria-hidden="true"></i> Truth or Dare packs</h3>
-                        <ol class="steps">
-                            <li><strong>Open the Couples Games app and tap &ldquo;Truth or Dare&rdquo;</strong><span>You will find it on the Home screen under &ldquo;More ways to play&rdquo;.</span></li>
-                            <li><strong>Tap &ldquo;Settings&rdquo;</strong><span>It is the button with the cog icon on the Truth or Dare start screen, next to Start Game and Reset.</span></li>
-                            <li><strong>Scroll down to &ldquo;Upload Custom Questions&rdquo;</strong><span>It is below your question lists and the &ldquo;Add New Question&rdquo; button.</span></li>
-                            <li><strong>Tap &ldquo;Choose File&rdquo;</strong><span>Your phone's file picker opens. Open your Downloads folder and tap the pack you downloaded.</span></li>
-                            <li><strong>Check the pack details, then tap &ldquo;Import Questions&rdquo;</strong><span>You will see the pack name, description, question count and version first. Tap OK on &ldquo;Question pack imported successfully!&rdquo;.</span></li>
-                            <li><strong>Go back and tap &ldquo;Start Game&rdquo;</strong><span>The imported pack is switched on automatically.</span></li>
-                        </ol>
-                        <p class="howto-note"><strong>Good to know:</strong> while a pack is active, the game uses that pack's questions plus any questions you added yourself. To go back to the normal questions, open Settings, scroll to <strong>Active Question Pack</strong> and tap <strong>Return to Default Questions</strong>. Under <strong>Imported Question Packs</strong> you can tap <strong>Activate Pack</strong> to switch between packs, or the bin icon to remove one.</p>
-                    </div>
-                    <div class="card howto-card">
-                        <h3><i class="fas fa-list-check" aria-hidden="true"></i> Couples Tasks packs</h3>
-                        <ol class="steps">
-                            <li><strong>Open the Couples Games app and tap &ldquo;Couples Tasks&rdquo;</strong><span>You will find it on the Home screen under &ldquo;More ways to play&rdquo;.</span></li>
-                            <li><strong>Scroll to the bottom of the page</strong><span>Go past the Romantic Tasks, Passion Tasks and To Do Tasks lists, to the section called <strong>Upload Custom Tasks</strong>. There is no Settings button on this screen, the upload box is on the page itself.</span></li>
-                            <li><strong>Tap &ldquo;Choose File&rdquo;</strong><span>Your phone's file picker opens. Open your Downloads folder and tap the tasks pack you downloaded.</span></li>
-                            <li><strong>Check the pack details, then tap &ldquo;Import Tasks&rdquo;</strong><span>You will see the pack name, description, task count and version first. Tap OK on &ldquo;Tasks pack imported successfully!&rdquo;.</span></li>
-                            <li><strong>Scroll back up and start ticking tasks</strong><span>The imported pack is switched on automatically, and your Romantic and Passion lists now show its tasks.</span></li>
-                        </ol>
-                        <p class="howto-note"><strong>Good to know:</strong> each tasks pack keeps its own progress, so switching packs will not lose your ticks. To go back to the normal tasks, scroll to <strong>Active Tasks Pack</strong> and tap <strong>Return to Default Tasks</strong>. Under <strong>Imported Tasks Packs</strong> you can tap <strong>Activate Pack</strong> to switch between packs, or the bin icon to remove one.</p>
+                <div class="howto-premium"><i class="fas fa-crown" aria-hidden="true"></i><span><strong>Premium feature.</strong> Adding your own packs to Truth or Dare, and playing Couples Tasks, need Couples Games Premium. Packs you already have can always be switched on and off.</span></div>
+                <div class="howto-tabs" role="tablist" aria-label="Choose a game">
+                    <button type="button" role="tab" id="tab-tod" aria-controls="panel-tod" aria-selected="true" class="howto-tab active"><i class="fas fa-fire" aria-hidden="true"></i> Truth or Dare packs</button>
+                    <button type="button" role="tab" id="tab-ct" aria-controls="panel-ct" aria-selected="false" class="howto-tab"><i class="fas fa-list-check" aria-hidden="true"></i> Couples Tasks packs</button>
+                </div>
+                <div class="howto-panel" id="panel-tod" role="tabpanel" aria-labelledby="tab-tod">
+                    <div class="howto-layout">
+                        <div class="howto-list">
+                        <details class="howto-step" name="howto-tod" data-i="1" open>
+                            <summary><span class="hs-num">1</span><span class="hs-title">Open Truth or Dare and tap Game settings</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>Open the Couples Games app and tap <strong>Truth or Dare</strong> under &ldquo;More ways to play&rdquo;. On the start screen, tap <strong>Game settings</strong>, the button under Start game.</p>
+                                <figure class="hs-shot"><img src="/images/howto-tod-1.webp" alt="Truth or Dare start screen with the Game settings button highlighted" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-tod" data-i="2">
+                            <summary><span class="hs-num">2</span><span class="hs-title">Tap Question packs</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>Under <strong>Your questions</strong>, tap <strong>Question packs</strong>. It also shows which pack you are playing with right now.</p>
+                                <figure class="hs-shot"><img src="/images/howto-tod-2.webp" alt="Game settings screen with the Question packs row highlighted" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-tod" data-i="3">
+                            <summary><span class="hs-num">3</span><span class="hs-title">Tap Add question packs and choose your file</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>In the <strong>Add your own</strong> box, tap <strong>Add question packs</strong>. Your phone's file picker opens. Go to your <strong>Downloads</strong> folder and tap the pack you downloaded. You can choose more than one file at a time.</p>
+                                <figure class="hs-shot"><img src="/images/howto-tod-3.webp" alt="Question packs screen with the Add question packs box highlighted" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-tod" data-i="4">
+                            <summary><span class="hs-num">4</span><span class="hs-title">Check the pack, then tap Import this pack</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>The app reads the file and shows the pack's name, how many cards it has, and how they split across truths, dares and levels. If it looks right, tap <strong>Import this pack</strong>. Your other progress is kept safe, because each pack saves its own.</p>
+                                <figure class="hs-shot"><img src="/images/howto-tod-4.webp" alt="Pack preview with the Import this pack button highlighted" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-tod" data-i="5">
+                            <summary><span class="hs-num">5</span><span class="hs-title">Tap Start playing</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>You will see <strong>Pack added</strong>. The new pack is now your active pack, so tap <strong>Start playing</strong> to use it straight away.</p>
+                                <figure class="hs-shot"><img src="/images/howto-tod-5.webp" alt="Pack added confirmation with the Start playing button" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-tod" data-i="6">
+                            <summary><span class="hs-num">6</span><span class="hs-title">Switch back to your normal questions, or remove a pack</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>Open <strong>Game settings</strong> then <strong>Question packs</strong> at any time. Under <strong>Playing with</strong>, tap a pack to switch to it, including <strong>Default questions</strong>. Tap the <strong>bin icon</strong> on an imported pack to remove it. Questions you add yourself are always included.</p>
+                                <figure class="hs-shot"><img src="/images/howto-tod-6.webp" alt="Question packs screen listing Default questions and an imported pack" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        </div>
+                        <div class="howto-stage">
+                            <div class="stage-phone"><img class="stage-img active" data-for="1" src="/images/howto-tod-1.webp" alt="Truth or Dare start screen with the Game settings button highlighted" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="2" src="/images/howto-tod-2.webp" alt="Game settings screen with the Question packs row highlighted" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="3" src="/images/howto-tod-3.webp" alt="Question packs screen with the Add question packs box highlighted" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="4" src="/images/howto-tod-4.webp" alt="Pack preview with the Import this pack button highlighted" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="5" src="/images/howto-tod-5.webp" alt="Pack added confirmation with the Start playing button" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="6" src="/images/howto-tod-6.webp" alt="Question packs screen listing Default questions and an imported pack" width="330" height="714" loading="lazy" decoding="async"></div>
+                        </div>
                     </div>
                 </div>
-                <p class="muted" style="margin:26px 0 0">If the app says the pack format is invalid, download the file again from this page and retry. Don't have the app yet? Get it free on Google Play at the bottom of this page.</p>
+                <div class="howto-panel" id="panel-ct" role="tabpanel" aria-labelledby="tab-ct" hidden>
+                    <div class="howto-layout">
+                        <div class="howto-list">
+                        <details class="howto-step" name="howto-ct" data-i="1" open>
+                            <summary><span class="hs-num">1</span><span class="hs-title">Open Couples Tasks and tap Task packs</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>Open the Couples Games app and tap <strong>Couples Tasks</strong> under &ldquo;More ways to play&rdquo;. Scroll down, past the wheel and your task list, and tap the <strong>Task packs</strong> tile next to the To-do list.</p>
+                                <figure class="hs-shot"><img src="/images/howto-ct-1.webp" alt="Couples Tasks screen with the Task packs tile highlighted" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-ct" data-i="2">
+                            <summary><span class="hs-num">2</span><span class="hs-title">Tap Add task packs and choose your file</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>In the <strong>Add your own</strong> box, tap <strong>Add task packs</strong>. Your phone's file picker opens. Go to your <strong>Downloads</strong> folder and tap the tasks pack you downloaded. You can choose more than one file at a time.</p>
+                                <figure class="hs-shot"><img src="/images/howto-ct-2.webp" alt="Task packs screen with the Add task packs box highlighted" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-ct" data-i="3">
+                            <summary><span class="hs-num">3</span><span class="hs-title">Check the pack, then tap Import this pack</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>The app reads the file and shows the pack's name, how many tasks it has, and the split between Romantic and Passion tasks. If it looks right, tap <strong>Import this pack</strong>. Your other progress is kept safe, because each pack saves its own.</p>
+                                <figure class="hs-shot"><img src="/images/howto-ct-3.webp" alt="Pack preview with the Import this pack button highlighted" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-ct" data-i="4">
+                            <summary><span class="hs-num">4</span><span class="hs-title">Tap Start playing</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>You will see <strong>Pack added</strong>. The new pack is now your active pack, so tap <strong>Start playing</strong> to use it. Each pack keeps its own progress, hearts and to-do list.</p>
+                                <figure class="hs-shot"><img src="/images/howto-ct-4.webp" alt="Pack added confirmation with the Start playing button" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        <details class="howto-step" name="howto-ct" data-i="5">
+                            <summary><span class="hs-num">5</span><span class="hs-title">Switch back to your normal tasks, or remove a pack</span><i class="fas fa-chevron-down hs-chev" aria-hidden="true"></i></summary>
+                            <div class="hs-body">
+                                <p>Open <strong>Task packs</strong> at any time. Under <strong>Playing with</strong>, tap a pack to switch to it, including <strong>Default tasks</strong>. Tap the <strong>bin icon</strong> on an imported pack to remove it.</p>
+                                <figure class="hs-shot"><img src="/images/howto-ct-5.webp" alt="Task packs screen listing Default tasks and an imported pack" width="280" height="605" loading="lazy" decoding="async"></figure>
+                            </div>
+                        </details>
+                        </div>
+                        <div class="howto-stage">
+                            <div class="stage-phone"><img class="stage-img active" data-for="1" src="/images/howto-ct-1.webp" alt="Couples Tasks screen with the Task packs tile highlighted" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="2" src="/images/howto-ct-2.webp" alt="Task packs screen with the Add task packs box highlighted" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="3" src="/images/howto-ct-3.webp" alt="Pack preview with the Import this pack button highlighted" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="4" src="/images/howto-ct-4.webp" alt="Pack added confirmation with the Start playing button" width="330" height="714" loading="lazy" decoding="async"><img class="stage-img" data-for="5" src="/images/howto-ct-5.webp" alt="Task packs screen listing Default tasks and an imported pack" width="330" height="714" loading="lazy" decoding="async"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="muted" style="margin:24px 0 0">If the app says a file is not a valid pack, download it again from this page and retry. Only use packs from this page.</p>
             </div>
         </section>
 
@@ -260,5 +366,30 @@
     </footer>
 
     <script src="/js/main.js?v=2"></script>
+    <script>
+    (function () {
+        var tabs = document.querySelectorAll('.howto-tab');
+        function show(id) {
+            tabs.forEach(function (t) {
+                var on = t.getAttribute('aria-controls') === id;
+                t.classList.toggle('active', on);
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+                var p = document.getElementById(t.getAttribute('aria-controls'));
+                if (p) p.hidden = !on;
+            });
+        }
+        tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.getAttribute('aria-controls')); }); });
+        // one step open at a time (also for browsers that ignore the name attribute)
+        document.querySelectorAll('.howto-step').forEach(function (d) {
+            d.addEventListener('toggle', function () {
+                if (!d.open) return;
+                d.parentNode.querySelectorAll('.howto-step[open]').forEach(function (o) { if (o !== d) o.open = false; });
+                var lay = d.closest('.howto-layout'), n = d.getAttribute('data-i');
+                if (lay) lay.querySelectorAll('.stage-img').forEach(function (im) { im.classList.toggle('active', im.getAttribute('data-for') === n); });
+            });
+        });
+        if (location.hash === '#couples-tasks-how-to') show('panel-ct');
+    })();
+    </script>
 </body>
 </html>
