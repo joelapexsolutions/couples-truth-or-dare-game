@@ -10,7 +10,7 @@
     --border-color: rgba(255, 255, 255, 0.16);
 }
 
-.assessment-container { max-width: 1000px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) 20px 20px; min-height: 80vh; }
+.assessment-container { max-width: var(--max); margin: 0 auto; padding: clamp(28px, 5vw, 72px) var(--gutter) 20px; min-height: 80vh; }
 
 /* ---------- Intro ---------- */
 .assessment-intro {
@@ -19,7 +19,7 @@
     background: linear-gradient(165deg, var(--card2), var(--card));
 }
 .assessment-intro h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 0.3em; }
-.assessment-intro p { max-width: 38rem; margin: 0 auto; color: var(--muted); }
+.assessment-intro p { max-width: 44rem; margin: 0 auto; color: var(--muted); font-size: 1.1rem; }
 
 /* ---------- Panels ---------- */
 .gauges-preview, .profile-summary, .relationship-balance, .relationship-duration-container, .previous-results {
@@ -61,12 +61,13 @@
 
 /* ---------- Task list ---------- */
 .tasks-list {
-    max-height: 480px; overflow-y: auto; margin-bottom: 20px; padding: 14px;
+    max-height: 680px; overflow-y: auto; margin-bottom: 20px; padding: 14px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr)); gap: 10px; align-content: start;
     border-radius: var(--radius); border: 1px solid var(--line); background: rgba(0, 0, 0, 0.25);
     scrollbar-width: thin; scrollbar-color: var(--wine) transparent;
 }
 .task-item {
-    display: flex; align-items: center; gap: 14px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer;
+    display: flex; align-items: center; gap: 14px; padding: 14px 16px; margin-bottom: 0; cursor: pointer;
     border-radius: var(--radius-sm); border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04);
     transition: transform 0.2s, border-color 0.2s, background 0.2s;
 }
@@ -80,7 +81,7 @@
 .task-level.sensual { background: #ff94b1; }
 .task-level.hot { background: #ff7a5c; }
 .task-level.extreme { background: #ff3d7f; color: #fff; }
-.loading-message { text-align: center; padding: 20px; color: var(--muted); font-style: italic; }
+.loading-message { grid-column: 1 / -1; text-align: center; padding: 20px; color: var(--muted); font-style: italic; }
 
 /* ---------- Results ---------- */
 .results-title { text-align: center; font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 22px; }
@@ -117,45 +118,81 @@
 .google-play-badge:hover { transform: scale(1.04); }
 
 /* ---------- Gauges ---------- */
-.gauges-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 26px; }
-.gauge-container { position: relative; width: 100%; max-width: 300px; margin: 10px auto; flex: 0 1 300px; }
-.gauge-container h3 { text-align: center; margin-bottom: 12px; color: var(--gold); font-family: var(--font-display); font-size: 1.6rem; }
-.gauge { width: 100%; margin: 0 auto; }
-.gauge svg { display: block; width: 100%; height: auto; aspect-ratio: 200 / 120; overflow: visible; }
-.gauge-label { font-size: 8px; fill: #fff; text-anchor: middle; }
-.gauge-percentage { display: none !important; }
-.gauge-level { text-align: center; margin-top: 8px; font-size: 1.1rem; font-weight: 600; color: var(--gold); }
-
-.gauge-segment { stroke: rgba(13, 1, 12, 0.6); stroke-width: 1px; }
-#eroticGauge .gauge-segment-1, #eroticGaugePreview .gauge-segment-1 { fill: #f5c26b; }
-#eroticGauge .gauge-segment-2, #eroticGaugePreview .gauge-segment-2 { fill: #ff9d5c; }
-#eroticGauge .gauge-segment-3, #eroticGaugePreview .gauge-segment-3 { fill: #ff6f61; }
-#eroticGauge .gauge-segment-4, #eroticGaugePreview .gauge-segment-4 { fill: #ff3d7f; }
-#eroticGauge .gauge-segment-5, #eroticGaugePreview .gauge-segment-5 { fill: #c2185b; }
-#romanticGauge .gauge-segment-1, #romanticGaugePreview .gauge-segment-1 { fill: #ffb3c7; }
-#romanticGauge .gauge-segment-2, #romanticGaugePreview .gauge-segment-2 { fill: #ff7fa3; }
-#romanticGauge .gauge-segment-3, #romanticGaugePreview .gauge-segment-3 { fill: #e0245e; }
-#romanticGauge .gauge-segment-4, #romanticGaugePreview .gauge-segment-4 { fill: #9c1050; }
-/* light segments get dark labels would be nicer, but labels sit on top so keep them readable */
-.gauge-label { paint-order: stroke; stroke: rgba(13, 1, 12, 0.85); stroke-width: 2px; stroke-linejoin: round; }
-
-.gauge-needle {
-    transform-origin: 100px 100px !important;
-    transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    stroke: #ffffff !important;
-    stroke-width: 3px !important;
-    stroke-linecap: round;
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
+.gauges-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px; margin-bottom: 26px; }
+.gauge-container {
+    position: relative; width: 100%; max-width: 560px; margin: 6px auto; flex: 1 1 420px;
+    padding: 24px 18px 22px; border-radius: 30px; text-align: center;
+    background: radial-gradient(120% 90% at 50% 100%, rgba(255, 61, 127, 0.10), transparent 60%), rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
-.gauge-center { fill: #0d010c !important; stroke: #ffffff !important; stroke-width: 2px !important; }
+.gauge-container h3 { text-align: center; margin-bottom: 6px; color: var(--gold); font-family: var(--font-display); font-size: 1.75rem; letter-spacing: 0.01em; }
+.gauge { position: relative; width: 100%; margin: 0 auto; }
+.gauge::before {
+    content: ""; position: absolute; left: 4%; right: 4%; top: 8%; bottom: 0; pointer-events: none;
+    background: radial-gradient(ellipse 52% 58% at 50% 62%, rgba(255, 61, 127, 0.28), transparent 100%);
+    animation: gaugeBreath 5s ease-in-out infinite;
+}
+.gauge svg { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 388 / 206; overflow: visible; }
+.gauge-percentage { display: none !important; }
 
-#eroticGauge, #romanticGauge, #eroticGaugePreview, #romanticGaugePreview { animation: gaugeAppear 0.8s ease forwards; }
+.gauge-ticks line { stroke: rgba(255, 255, 255, 0.22); stroke-width: 1; stroke-linecap: round; }
+.gauge-ticks line.major { stroke: rgba(255, 255, 255, 0.42); stroke-width: 1.6; }
+.gauge-ticks { animation: fadeIn 1.2s ease 0.3s both; }
 
-.active-segment { animation: colorPulse 2s infinite; }
+.gauge-segment, .gauge-lit-seg { fill: none; stroke-width: 16; stroke-linecap: butt; }
+.gauge-segment { opacity: 0.2; transition: opacity 0.5s; }
+.gauge-segment.is-active { opacity: 0.38; }
+.gauge-progress { transition: stroke-dashoffset 1.5s cubic-bezier(0.22, 1, 0.36, 1); }
+
+.gauge-label { font-family: var(--font-body); font-size: 11.5px; font-weight: 500; letter-spacing: 0.02em; fill: rgba(255, 238, 244, 0.5); transition: fill 0.4s, font-size 0.4s; }
+.gauge-label.is-active { fill: var(--gold); font-weight: 700; font-size: 12.5px; }
+
+.gauge-needle, .gauge-tip { transform-origin: 170px 160px; transition: transform 1.6s cubic-bezier(0.34, 1.35, 0.5, 1); }
+.gauge-needle polygon { fill: #fff; filter: drop-shadow(0 0 5px rgba(255, 61, 127, 0.9)); }
+.gauge-needle .gauge-tail { fill: rgba(255, 255, 255, 0.55); filter: none; }
+.gauge-wobble { transform-origin: 170px 160px; animation: needleIdle 4.5s ease-in-out 2s infinite; }
+.gauge-tip circle { fill: #fff; filter: drop-shadow(0 0 7px #ff3d7f) drop-shadow(0 0 14px rgba(255, 122, 92, 0.8)); animation: tipPulse 1.8s ease-in-out infinite; transform-origin: 170px 55px; }
+.gauge-svg.is-zero .gauge-tip { opacity: 0; }
+.gauge-tip { transition: transform 1.6s cubic-bezier(0.34, 1.35, 0.5, 1), opacity 0.4s; }
+
+.gauge-pulse { fill: none; stroke: rgba(255, 61, 127, 0.75); stroke-width: 2; transform-origin: 170px 160px; animation: hubPulse 2.6s ease-out infinite; }
+.gauge-center { fill: #12020f; stroke: #fff; stroke-width: 2.5; }
+.gauge-center-dot { fill: #ff3d7f; }
+.gauge-svg.bump .gauge-center { animation: hubBump 0.7s ease; transform-origin: 170px 160px; }
+
+.gauge-score { font-family: var(--font-body); font-size: 30px; font-weight: 600; fill: #fff; letter-spacing: 0.01em; }
+.gauge-score .pct { font-size: 16px; fill: var(--gold); font-weight: 600; }
+
+.gauge-level {
+    display: block; width: fit-content; max-width: 100%; margin: 12px auto 0; padding: 8px 22px; border-radius: 999px;
+    font-size: 1.05rem; font-weight: 600; color: var(--gold); letter-spacing: 0.01em;
+    background: rgba(245, 194, 107, 0.09); border: 1px solid rgba(245, 194, 107, 0.35);
+}
+.gauge-level.changed { animation: levelPop 0.6s ease; }
+
+.gauge-svg { animation: gaugeAppear 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.active-segment { animation: none; }
+
+@keyframes gaugeAppear { from { opacity: 0; transform: scale(0.88) translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes gaugeBreath { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+@keyframes needleIdle { 0%, 100% { transform: rotate(0deg); } 30% { transform: rotate(1.6deg); } 65% { transform: rotate(-1.4deg); } }
+@keyframes tipPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+@keyframes hubPulse { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(3); opacity: 0; } }
+@keyframes hubBump { 0% { transform: scale(1); } 40% { transform: scale(1.35); } 100% { transform: scale(1); } }
+@keyframes levelPop { 0% { transform: scale(1); } 40% { transform: scale(1.09); box-shadow: 0 0 24px rgba(245, 194, 107, 0.45); } 100% { transform: scale(1); } }
 @keyframes needleMove { from { transform: rotate(-90deg); } to { transform: rotate(var(--rotation-angle)); } }
-@keyframes gaugeAppear { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
-@keyframes colorPulse { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.25); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 520px) {
+    .gauge-container { padding: 18px 8px 18px; border-radius: 24px; flex-basis: 100%; }
+    .gauge-label { font-size: 12.5px; }
+    .gauge-label.is-active { font-size: 13.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gauge-wobble, .gauge-pulse, .gauge::before, .gauge-tip circle { animation: none !important; }
+    .gauge-needle, .gauge-tip, .gauge-progress { transition: none !important; }
+}
 
 /* ---------- Buttons ---------- */
 .button-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin: 26px 0; }
