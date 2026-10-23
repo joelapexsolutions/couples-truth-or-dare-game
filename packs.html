@@ -39,6 +39,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link rel="stylesheet" href="/css/site.css?v=3">
+    <style>
+        .packs-howto { padding: clamp(40px, 6vw, 90px) 0 clamp(20px, 3vw, 40px); }
+        .packs-howto .section-head h2 { font-size: clamp(2rem, 4vw, 3.4rem); margin-bottom: 0.3em; }
+        .howto-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); align-items: start; }
+        .howto-card { padding: clamp(24px, 3vw, 40px); }
+        .howto-card h3 { font-family: var(--font-display); font-size: clamp(1.7rem, 2.6vw, 2.3rem); margin: 0 0 22px; }
+        .howto-card h3 i { color: var(--pink); margin-right: 10px; font-size: 0.8em; }
+        .packs-howto .howto-card .steps { display: block; margin: 0 0 8px; }
+        .packs-howto .howto-card .steps li { position: relative; padding: 4px 0 20px 58px; }
+        .packs-howto .howto-card .steps li::before { position: absolute; margin: 0; }
+        .packs-howto .steps span strong { display: inline; font-size: inherit; color: var(--text); }
+        .howto-note { margin: 6px 0 0; padding: 16px 18px; border-radius: 16px; background: rgba(245, 194, 107, 0.08); border: 1px solid rgba(245, 194, 107, 0.28); color: var(--muted); font-size: 0.98rem; }
+        .howto-note strong { color: var(--text); }
+        @media (max-width: 960px) { .howto-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -73,18 +88,39 @@
             </div>
         </header>
 
-        <section class="packs-howto">
+        <section class="packs-howto" id="how-to-import">
             <div class="container">
-                <div class="card">
-                    <h3>How to use a pack</h3>
-                    <ol class="steps">
-                        <li><strong>Download the pack you like</strong><span>It saves as a small file on your phone.</span></li>
-                        <li><strong>Open the Couples Games app</strong></li>
-                        <li><strong>Choose the &ldquo;Choose file&rdquo; option</strong><span>Then select the file you downloaded.</span></li>
-                        <li><strong>Select Import Questions</strong><span>Your new questions are ready to play.</span></li>
-                    </ol>
-                    <p class="muted" style="margin:0">Don't have the app yet? Get it free on Google Play below.</p>
+                <div class="section-head left" style="margin-bottom:28px">
+                    <span class="eyebrow">Step by step</span>
+                    <h2>How to add a pack to the app</h2>
+                    <p>Download the pack first (tap <strong>Download</strong> on a pack below). It saves to your phone as a small file, usually in your <strong>Downloads</strong> folder. Then follow the steps for the game it belongs to.</p>
                 </div>
+                <div class="howto-grid">
+                    <div class="card howto-card">
+                        <h3><i class="fas fa-fire" aria-hidden="true"></i> Truth or Dare packs</h3>
+                        <ol class="steps">
+                            <li><strong>Open the Couples Games app and tap &ldquo;Truth or Dare&rdquo;</strong><span>You will find it on the Home screen under &ldquo;More ways to play&rdquo;.</span></li>
+                            <li><strong>Tap &ldquo;Settings&rdquo;</strong><span>It is the button with the cog icon on the Truth or Dare start screen, next to Start Game and Reset.</span></li>
+                            <li><strong>Scroll down to &ldquo;Upload Custom Questions&rdquo;</strong><span>It is below your question lists and the &ldquo;Add New Question&rdquo; button.</span></li>
+                            <li><strong>Tap &ldquo;Choose File&rdquo;</strong><span>Your phone's file picker opens. Open your Downloads folder and tap the pack you downloaded.</span></li>
+                            <li><strong>Check the pack details, then tap &ldquo;Import Questions&rdquo;</strong><span>You will see the pack name, description, question count and version first. Tap OK on &ldquo;Question pack imported successfully!&rdquo;.</span></li>
+                            <li><strong>Go back and tap &ldquo;Start Game&rdquo;</strong><span>The imported pack is switched on automatically.</span></li>
+                        </ol>
+                        <p class="howto-note"><strong>Good to know:</strong> while a pack is active, the game uses that pack's questions plus any questions you added yourself. To go back to the normal questions, open Settings, scroll to <strong>Active Question Pack</strong> and tap <strong>Return to Default Questions</strong>. Under <strong>Imported Question Packs</strong> you can tap <strong>Activate Pack</strong> to switch between packs, or the bin icon to remove one.</p>
+                    </div>
+                    <div class="card howto-card">
+                        <h3><i class="fas fa-list-check" aria-hidden="true"></i> Couples Tasks packs</h3>
+                        <ol class="steps">
+                            <li><strong>Open the Couples Games app and tap &ldquo;Couples Tasks&rdquo;</strong><span>You will find it on the Home screen under &ldquo;More ways to play&rdquo;.</span></li>
+                            <li><strong>Scroll to the bottom of the page</strong><span>Go past the Romantic Tasks, Passion Tasks and To Do Tasks lists, to the section called <strong>Upload Custom Tasks</strong>. There is no Settings button on this screen, the upload box is on the page itself.</span></li>
+                            <li><strong>Tap &ldquo;Choose File&rdquo;</strong><span>Your phone's file picker opens. Open your Downloads folder and tap the tasks pack you downloaded.</span></li>
+                            <li><strong>Check the pack details, then tap &ldquo;Import Tasks&rdquo;</strong><span>You will see the pack name, description, task count and version first. Tap OK on &ldquo;Tasks pack imported successfully!&rdquo;.</span></li>
+                            <li><strong>Scroll back up and start ticking tasks</strong><span>The imported pack is switched on automatically, and your Romantic and Passion lists now show its tasks.</span></li>
+                        </ol>
+                        <p class="howto-note"><strong>Good to know:</strong> each tasks pack keeps its own progress, so switching packs will not lose your ticks. To go back to the normal tasks, scroll to <strong>Active Tasks Pack</strong> and tap <strong>Return to Default Tasks</strong>. Under <strong>Imported Tasks Packs</strong> you can tap <strong>Activate Pack</strong> to switch between packs, or the bin icon to remove one.</p>
+                    </div>
+                </div>
+                <p class="muted" style="margin:26px 0 0">If the app says the pack format is invalid, download the file again from this page and retry. Don't have the app yet? Get it free on Google Play at the bottom of this page.</p>
             </div>
         </section>
 
