@@ -12,6 +12,19 @@ const webState = {
     sessionStartTime: null
 };
 
+/**
+ * Escape text before it is placed inside innerHTML (stops names/questions from
+ * being read as HTML). Added in the website redesign - no game logic changed.
+ */
+function escapeHtml(value) {
+    return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 // Firebase listeners
 let gameListener = null;
 let presenceRefs = null;
@@ -93,6 +106,13 @@ if (joinButton) {
     document.getElementById('closeAlert').addEventListener('click', () => {
         document.getElementById('alertModal').classList.add('hidden');
     });
+    // The OK button in the alert box used to do nothing; make it close the box too
+    const alertOk = document.getElementById('alertOkButton');
+    if (alertOk) {
+        alertOk.addEventListener('click', () => {
+            document.getElementById('alertModal').classList.add('hidden');
+        });
+    }
 
     // Setup communication handlers
     setupCommunicationHandlers();
@@ -359,7 +379,7 @@ function updateGameDisplay(gameState) {
         }
         
         hideAllButtons();
-        questionDisplay.innerHTML = `Waiting for ${webState.partnerName} to choose...`;
+        questionDisplay.innerHTML = `Waiting for ${escapeHtml(webState.partnerName)} to choose...`;
     }
 }
 
@@ -374,13 +394,13 @@ function displaySharedQuestion(questionData) {
     questionDisplay.innerHTML = `
         <div class="question-content">
             <div class="question-header">
-                <span class="question-type">${questionData.type.toUpperCase()}</span>
-                <span class="question-for">for ${playerName}</span>
+                <span class="question-type">${escapeHtml(String(questionData.type).toUpperCase())}</span>
+                <span class="question-for">for ${escapeHtml(playerName)}</span>
             </div>
-            <div class="question-text">${questionData.text}</div>
+            <div class="question-text">${escapeHtml(questionData.text)}</div>
             ${isForMe ? 
                 '<p class="turn-prompt">Your turn! Complete this challenge:</p>' :
-                `<p class="turn-prompt">Watch ${webState.partnerName} complete this challenge!</p>`
+                `<p class="turn-prompt">Watch ${escapeHtml(webState.partnerName)} complete this challenge!</p>`
             }
         </div>
     `;
@@ -405,10 +425,10 @@ function displayWebQuestion(questionData) {
     questionDisplay.innerHTML = `
         <div class="question-content">
             <div class="question-header">
-                <span class="question-type">${questionData.type.toUpperCase()}</span>
+                <span class="question-type">${escapeHtml(String(questionData.type).toUpperCase())}</span>
                 <span class="question-for">for You</span>
             </div>
-            <div class="question-text">${questionData.text}</div>
+            <div class="question-text">${escapeHtml(questionData.text)}</div>
             <p class="turn-prompt">Your turn! Complete this challenge:</p>
         </div>
     `;
@@ -536,7 +556,7 @@ async function sendResponse(responseType) {
                 forPlayer: 'player2' // Identify this is web user completing
             });
             
-            document.getElementById('questionDisplay').innerHTML = `Waiting for ${webState.partnerName} to choose...`;
+            document.getElementById('questionDisplay').innerHTML = `Waiting for ${escapeHtml(webState.partnerName)} to choose...`;
             hideAllButtons();
             
         } else if (responseType === 'skipped') {
